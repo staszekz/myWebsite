@@ -1,0 +1,345 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+  font-family: "Rock Salt", cursive;
+}
+
+section {
+  min-height: 80vh;
+}
+
+.hero {
+  height: 80vh;
+}
+
+.background-img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: gray;
+  background-image: url(../img/bgr-image.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -2;
+  filter: grayscale(0.4) blur(0.1rem);
+}
+
+.hero {
+  position: relative;
+}
+
+.hero__header {
+  position: absolute;
+  width: 60vw;
+  margin: 6rem auto 2rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+
+.hero__title {
+  position: relative;
+  line-height: 1.3;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  font-size: 5vmax;
+  text-shadow: 1px 1px 1px white,
+    1px 2px 1px white,
+    1px 3px 1px white,
+    1px 4px 1px white,
+    1px 5px 1px white,
+    1px 8px 10px black;
+}
+
+.hero__latin {
+  position: relative;
+  padding-top: 1.5rem;
+  font-size: 2.5vmax;
+  font-family: 'Liu Jian Mao Cao', cursive;
+  text-shadow: 1px 1px 1px white,
+    1px 2px 1px white;
+}
+
+
+.navigation {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px groove darkgray;
+
+  /* background-color: hsla(39, 77%, 83%, 0.2); */
+}
+
+.menu,
+.social {
+  display: flex;
+  width: 50%;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.social {
+  width: 15%;
+}
+
+.menu__link {
+  padding-right: 1.5rem;
+  font-size: 1.2vmax;
+  text-decoration: none;
+  z-index: 2;
+  border-right: 1px dotted gray;
+  color: whitesmoke;
+  text-shadow: 1px 1px 1px black,
+    1px 2px 1px black;
+}
+
+.fab {
+  padding-top: 0.5rem;
+  font-size: 2rem;
+  color: whitesmoke;
+  text-shadow: 1px 1px 1px black,
+    1px 2px 1px black;
+
+}
+
+.aboutMe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../img/liscie\ o\ mnie.jpg');
+  background-attachment: fixed;
+}
+
+.aboutMe__title {
+  height: 20vh;
+  font-size: 2.2vmax;
+  padding-top: 5vh;
+  text-shadow: 1px 1px 1px white,
+    1px 2px 1px grey;
+
+}
+
+.aboutMe__bgr {
+  width: 100%;
+  background-color: whitesmoke;
+  text-align: center;
+}
+
+.aboutMe__content {
+  padding: 6rem;
+  text-align: center;
+  color: aliceblue;
+  font-size: 2vmax;
+  text-shadow: 1px 1px 1px black;
+}
+
+.iLike {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: khaki;
+  height: 80vh;
+}
+
+.iLike__title {
+  padding: 2rem;
+}
+
+.iLike__content--h2 {
+  font-size: 2.5vmax;
+  text-shadow: 1px 1px 1px white,
+    1px 2px 1px grey;
+}
+
+
+.iLike__content--list {
+  list-style: none;
+
+}
+
+.iLike__list {
+  font-size: 1.5vmax;
+  text-shadow: 1px 1px 1px white,
+    1px 2px 1px grey;
+  text-align: center;
+}
+
+.iLike__img {
+  width: 40%;
+  height: auto;
+  right: 0;
+  background-color: khaki;
+}
+
+.iCanDo {
+  height: 85vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 20vh repeat(2, 1fr);
+  grid-template-areas: "iCanDo__title iCanDo__title iCanDo__title iCanDo__title"
+    "photo--1 photo--2 photo--3 photo--4"
+    "photo--5 photo--6 photo--7 photo--8";
+  background-color: lavender;
+}
+
+.iCanDo__title::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f083";
+}
+
+.photo {
+  justify-self: center;
+  align-self: center;
+  border-radius: 30px;
+  height: 80%;
+  width: auto;
+}
+
+.iCanDo__title {
+  grid-area: iCanDo__title;
+  padding: 5vh;
+  font-size: 2.2vmax;
+  text-align: center;
+  text-shadow: 1px 1px 1px white,
+    1px 2px 1px grey;
+  background-color: pink;
+}
+
+.photo--1 {
+  grid-area: photo--1;
+  ;
+}
+
+.photo--2 {
+  grid-area: photo--2;
+  ;
+}
+
+.photo--3 {
+  grid-area: photo--3;
+  ;
+}
+
+.photo--4 {
+  grid-area: photo--4;
+  ;
+}
+
+.photo--5 {
+  grid-area: photo--5;
+}
+
+.photo--6 {
+  grid-area: photo--6;
+}
+
+.photo--7 {
+  grid-area: photo--7;
+}
+
+.photo--8 {
+  grid-area: photo--8;
+}
+
+
+.footer {
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: lemonchiffon;
+}
+
+.footer__description {
+  font-size: 1.2vmax;
+  text-shadow: 1px 1px 1px white,
+    1px 2px 1px grey;
+}
+
+@media (max-width: 1024px) {
+  .navigation {
+    position: sticky;
+    justify-content: space-evenly;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .social {
+    width: 60%;
+    justify-content: space-evenly;
+  }
+
+  .iCanDo {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 20vh repeat(4, 1fr);
+    grid-template-areas: "iCanDo__title iCanDo__title"
+      "photo--1 photo--2"
+      "photo--3 photo--4"
+      "photo--5 photo--6"
+      "photo--7 photo--8";
+  }
+
+  .footer {
+    flex-direction: column;
+  }
+
+  .iLike {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .iLike__img {
+    width: 100%;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 414px) {
+  .hero__title {
+    font-size: 4vmax;
+  }
+
+  .aboutMe__content {
+    font-size: 1.5vmax;
+  }
+
+  .iCanDo__title {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  .iLike__img {
+    width: 40%;
+  }
+
+  .iLike {
+    flex-direction: row;
+  }
+
+  .photo {
+    height: 60%;
+    width: auto;
+  }
+}
