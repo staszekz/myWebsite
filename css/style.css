@@ -30,12 +30,25 @@ section {
   background-image: url(../img/bgr-image.jpg);
   background-size: cover;
   background-attachment: fixed;
-  z-index: -2;
-  filter: grayscale(0.4) blur(0.1rem);
+  filter: blur(3px);
+  -webkit-filter: blur(3px);
 }
 
 .hero {
   position: relative;
+}
+
+.hero__name {
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 3px solid #f1f1f1;
+  position: relative;
+
+  width: 90%;
+  padding: 1rem;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .hero__header {
@@ -49,26 +62,33 @@ section {
 
 
 .hero__title {
+  color: white;
   position: relative;
   line-height: 1.3;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  font-size: 5vmax;
-  text-shadow: 1px 1px 1px white,
-    1px 2px 1px white,
-    1px 3px 1px white,
-    1px 4px 1px white,
-    1px 5px 1px white,
-    1px 8px 10px black;
+  font-size: 4vmax;
+  text-shadow: 1px 1px 1px black,
+    1px 2px 1px black,
+    1px 3px 1px black,
+    1px 4px 1px black,
+    1px 5px 1px black,
+    1px 8px 10px white;
 }
 
 .hero__latin {
+  color: white;
   position: relative;
   padding-top: 1.5rem;
-  font-size: 2.5vmax;
+  font-size: 3vmax;
   font-family: 'Liu Jian Mao Cao', cursive;
-  text-shadow: 1px 1px 1px white,
-    1px 2px 1px white;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px black,
+    1px 2px 1px black,
+    1px 3px 1px black,
+    1px 4px 1px black,
+    1px 5px 1px black,
+    1px 8px 10px white;
 }
 
 
@@ -121,8 +141,12 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('../img/liscie\ o\ mnie.jpg');
+  background-image: url('../img/omnie.jpg');
   background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
 }
 
 .aboutMe__title {
@@ -130,7 +154,7 @@ section {
   font-size: 2.2vmax;
   padding-top: 5vh;
   text-shadow: 1px 1px 1px white,
-    1px 2px 1px grey;
+    1px 2px 1px black;
 
 }
 
@@ -144,7 +168,7 @@ section {
   padding: 6rem;
   text-align: center;
   color: aliceblue;
-  font-size: 2vmax;
+  font-size: 1.5vmax;
   text-shadow: 1px 1px 1px black;
 }
 
