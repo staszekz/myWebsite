@@ -24,8 +24,8 @@ section {
   position: absolute;
   height: 100%;
   width: 100%;
-  top: 0;
-  left: 0;
+  /* top: 0;
+  left: 0; */
   background-color: gray;
   background-image: url(../img/bgr-image.jpg);
   background-size: cover;
@@ -45,7 +45,7 @@ section {
   border: 3px solid #f1f1f1;
   position: relative;
 
-  width: 90%;
+  width: 100%;
   padding: 1rem;
   text-align: center;
   margin: 0 auto;
@@ -53,7 +53,7 @@ section {
 
 .hero__header {
   position: absolute;
-  width: 60vw;
+  width: 90vw;
   margin: 6rem auto 2rem;
   left: 0;
   right: 0;
@@ -96,36 +96,116 @@ section {
   position: fixed;
   top: 0;
   width: 100%;
+  height: 60px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: 1px groove darkgray;
-
-  /* background-color: hsla(39, 77%, 83%, 0.2); */
+  align-content: center;
+  /* border-bottom: 1px groove darkgray; */
+  background-color: #000;
 }
 
-.menu,
 .social {
   display: flex;
-  width: 50%;
-  flex-direction: row;
+  order: -1;
+  width: 35%;
+  align-self: center;
   justify-content: space-around;
   list-style: none;
 }
 
-.social {
-  width: 15%;
+
+.hamburger {
+  position: absolute;
+  cursor: pointer;
+  right: 5%;
+  top: 50%;
+  transform: translate(-5%, -50%);
+  z-index: 2;
+  z-index: 99;
+}
+
+.line {
+  position: relative;
+  width: 30px;
+  height: 3px;
+  background: white;
+  margin: 5px;
+  transition: transform .3s ease-out;
+
+}
+
+.makeCross:nth-child(1) {
+  top: 1px;
+  transform: rotate(45deg);
+}
+
+.makeCross:nth-child(2) {
+  opacity: 0;
+}
+
+.makeCross:nth-child(3) {
+  top: -15px;
+  transform: rotate(-45deg);
+}
+
+.menu {
+  position: fixed;
+  background: #000;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  clip-path: circle(100px at 90% -10%);
+  -webkit-clip-path: circle(100px at 90% -10%);
+  transition: all .5s ease-out;
+  pointer-events: none;
+}
+
+/* dodawane do klasy menu po kliknięciu w hamburger */
+.open {
+  clip-path: circle(1000px at 80% -20%);
+  -webkit-clip-path: circle(1000px at 80% -20%);
+  pointer-events: all;
+}
+
+.menu__item {
+  opacity: 0;
+}
+
+.menu__item:nth-child(1) {
+  transition: all 0.3s ease 0.1s;
+}
+
+.menu__item:nth-child(2) {
+  transition: all 0.3s ease 0.2s;
+}
+
+.menu__item:nth-child(3) {
+  transition: all 0.3s ease 0.3s;
+}
+
+.menu__item:nth-child(4) {
+  transition: all 0.3s ease 0.4s;
+}
+
+/* dodac do menu__item lub menu__link */
+.fade {
+  opacity: 1;
 }
 
 .menu__link {
-  padding-right: 1.5rem;
-  font-size: 1.2vmax;
+  padding: 1.5rem;
+  font-size: 3vmax;
   text-decoration: none;
+  display: grid;
+  place-content: center;
   z-index: 2;
   border-right: 1px dotted gray;
-  color: whitesmoke;
+  color: white;
   text-shadow: 1px 1px 1px black,
-    1px 2px 1px black;
+    1px 2px 1px black,
+    1px 3px 1px black,
+    1px 3px 4px white;
 }
 
 .fab {
@@ -138,9 +218,9 @@ section {
 }
 
 .aboutMe {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
   background-image: url('../img/omnie.jpg');
   background-attachment: fixed;
   background-size: cover;
@@ -165,10 +245,10 @@ section {
 }
 
 .aboutMe__content {
-  padding: 6rem;
+  padding: 4rem;
   text-align: center;
   color: aliceblue;
-  font-size: 1.5vmax;
+  font-size: 2vmax;
   text-shadow: 1px 1px 1px black;
 }
 
@@ -214,11 +294,14 @@ section {
 .iCanDo {
   height: 85vh;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 20vh repeat(2, 1fr);
-  grid-template-areas: "iCanDo__title iCanDo__title iCanDo__title iCanDo__title"
-    "photo--1 photo--2 photo--3 photo--4"
-    "photo--5 photo--6 photo--7 photo--8";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 20vh repeat(4, 1fr);
+  grid-template-areas: "iCanDo__title iCanDo__title"
+    "photo--1 photo--2"
+    "photo--3 photo--4"
+    "photo--5 photo--6"
+    "photo--7 photo--8";
+
   background-color: lavender;
 }
 
@@ -237,6 +320,8 @@ section {
 }
 
 .iCanDo__title {
+
+
   grid-area: iCanDo__title;
   padding: 5vh;
   font-size: 2.2vmax;
@@ -298,7 +383,7 @@ section {
     1px 2px 1px grey;
 }
 
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .navigation {
     position: sticky;
     justify-content: space-evenly;
@@ -314,13 +399,11 @@ section {
   }
 
   .iCanDo {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 20vh repeat(4, 1fr);
-    grid-template-areas: "iCanDo__title iCanDo__title"
-      "photo--1 photo--2"
-      "photo--3 photo--4"
-      "photo--5 photo--6"
-      "photo--7 photo--8";
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 20vh repeat(2, 1fr);
+  grid-template-areas: "iCanDo__title iCanDo__title iCanDo__title iCanDo__title"
+    "photo--1 photo--2 photo--3 photo--4"
+    "photo--5 photo--6 photo--7 photo--8";
   }
 
   .footer {
@@ -366,4 +449,4 @@ section {
     height: 60%;
     width: auto;
   }
-}
+} */
