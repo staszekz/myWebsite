@@ -263,31 +263,37 @@ section {
 
 .iLike__title {
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  /* justify-items: center; */
+  align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
-.iLike__content--h2 {
+.iLike__h2 {
   font-size: 2.5vmax;
   text-shadow: 1px 1px 1px white,
     1px 2px 1px grey;
 }
 
 
-.iLike__content--list {
+.iLike__contentList {
   list-style: none;
 
 }
 
-.iLike__list {
-  font-size: 1.5vmax;
+.iLike__listElement {
+  font-size: 2vmax;
   text-shadow: 1px 1px 1px white,
     1px 2px 1px grey;
   text-align: center;
 }
 
 .iLike__img {
-  width: 40%;
+  width: 100%;
   height: auto;
-  right: 0;
+  padding-top: 1rem;
   background-color: khaki;
 }
 
@@ -371,14 +377,14 @@ section {
 .footer {
   height: 15vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   background-color: lemonchiffon;
 }
 
 .footer__description {
-  font-size: 1.2vmax;
+  font-size: 1.3vmax;
   text-shadow: 1px 1px 1px white,
     1px 2px 1px grey;
 }
