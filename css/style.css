@@ -89,7 +89,6 @@ section {
   flex-direction: row;
   justify-content: space-between;
   align-content: center;
-  /* border-bottom: 1px groove darkgray; */
   background-color: #000;
 }
 
@@ -147,13 +146,6 @@ section {
   pointer-events: none;
 }
 
-/* dodawane do klasy menu po kliknięciu w hamburger */
-.open {
-  clip-path: circle(1000px at 80% -20%);
-  -webkit-clip-path: circle(1000px at 80% -20%);
-  pointer-events: all;
-}
-
 .menu__item {
   opacity: 0;
 }
@@ -174,11 +166,6 @@ section {
   transition: all 0.3s ease 0.4s;
 }
 
-/* dodac do menu__item lub menu__link */
-.fade {
-  opacity: 1;
-}
-
 .menu__link {
   padding: 1.5rem;
   font-size: 3vmax;
@@ -189,6 +176,18 @@ section {
   border-right: 1px dotted gray;
   color: white;
   text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 3px 4px white;
+}
+
+/* dodac do menu__item lub menu__link */
+.fade {
+  opacity: 1;
+}
+
+/* dodawane do klasy menu po kliknięciu w hamburger */
+.open {
+  clip-path: circle(1000px at 80% -20%);
+  -webkit-clip-path: circle(1000px at 80% -20%);
+  pointer-events: all;
 }
 
 .fab {
@@ -279,7 +278,16 @@ section {
   background-color: lavender;
 }
 
-.iCanDo__title::after {
+.iCanDo__title {
+  grid-area: iCanDo__title;
+  padding: 5vh;
+  font-size: 2.2vmax;
+  text-align: center;
+  text-shadow: 1px 1px 1px white, 1px 2px 1px grey;
+  background-color: pink;
+}
+
+.iCanDo__title:after {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f083";
@@ -291,15 +299,6 @@ section {
   border-radius: 30px;
   height: 80%;
   width: auto;
-}
-
-.iCanDo__title {
-  grid-area: iCanDo__title;
-  padding: 5vh;
-  font-size: 2.2vmax;
-  text-align: center;
-  text-shadow: 1px 1px 1px white, 1px 2px 1px grey;
-  background-color: pink;
 }
 
 .photo--1 {

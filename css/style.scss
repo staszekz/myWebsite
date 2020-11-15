@@ -1,3 +1,11 @@
+$shadow: 1px 1px 1px black,
+1px 2px 1px black,
+1px 3px 1px black,
+1px 4px 1px black,
+1px 5px 1px black,
+1px 8px 10px white;
+
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -36,61 +44,54 @@ section {
 
 .hero {
   position: relative;
+
+  &__name {
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 3px solid #f1f1f1;
+    position: relative;
+
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &__header {
+    position: absolute;
+    width: 90vw;
+    margin: 6rem auto 2rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  &__title {
+    color: white;
+    position: relative;
+    line-height: 1.3;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 4vmax;
+    text-shadow: $shadow;
+  }
+
+  &__latin {
+    color: white;
+    position: relative;
+    padding-top: 1.5rem;
+    font-size: 3vmax;
+    font-family: 'Liu Jian Mao Cao', cursive;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px black,
+      1px 2px 1px black,
+      1px 3px 1px black,
+      1px 4px 1px black,
+      1px 5px 1px black,
+      1px 8px 10px white;
+  }
 }
-
-.hero__name {
-  background-color: rgb(0, 0, 0);
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.7);
-  border: 3px solid #f1f1f1;
-  position: relative;
-
-  width: 100%;
-  padding: 1rem;
-  text-align: center;
-  margin: 0 auto;
-}
-
-.hero__header {
-  position: absolute;
-  width: 90vw;
-  margin: 6rem auto 2rem;
-  left: 0;
-  right: 0;
-  text-align: center;
-}
-
-
-.hero__title {
-  color: white;
-  position: relative;
-  line-height: 1.3;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  font-size: 4vmax;
-  text-shadow: 1px 1px 1px black,
-    1px 2px 1px black,
-    1px 3px 1px black,
-    1px 4px 1px black,
-    1px 5px 1px black,
-    1px 8px 10px white;
-}
-
-.hero__latin {
-  color: white;
-  position: relative;
-  padding-top: 1.5rem;
-  font-size: 3vmax;
-  font-family: 'Liu Jian Mao Cao', cursive;
-  text-transform: uppercase;
-  text-shadow: 1px 1px 1px black,
-    1px 2px 1px black,
-    1px 3px 1px black,
-    1px 4px 1px black,
-    1px 5px 1px black,
-    1px 8px 10px white;
-}
-
 
 .navigation {
   position: fixed;
@@ -101,7 +102,6 @@ section {
   flex-direction: row;
   justify-content: space-between;
   align-content: center;
-  /* border-bottom: 1px groove darkgray; */
   background-color: #000;
 }
 
@@ -159,53 +159,57 @@ section {
   -webkit-clip-path: circle(100px at 90% -10%);
   transition: all .5s ease-out;
   pointer-events: none;
+
+  &__item {
+    opacity: 0;
+
+    &:nth-child(1) {
+      transition: all 0.3s ease 0.1s;
+    }
+
+    &:nth-child(2) {
+      transition: all 0.3s ease 0.2s;
+    }
+
+    &:nth-child(3) {
+      transition: all 0.3s ease 0.3s;
+    }
+
+    &:nth-child(4) {
+      transition: all 0.3s ease 0.4s;
+    }
+  }
+
+  &__link {
+    padding: 1.5rem;
+    font-size: 3vmax;
+    text-decoration: none;
+    display: grid;
+    place-content: center;
+    z-index: 2;
+    border-right: 1px dotted gray;
+    color: white;
+    text-shadow: 1px 1px 1px black,
+      1px 2px 1px black,
+      1px 3px 1px black,
+      1px 3px 4px white;
+  }
+
+
 }
 
-/* dodawane do klasy menu po kliknięciu w hamburger */
-.open {
-  clip-path: circle(1000px at 80% -20%);
-  -webkit-clip-path: circle(1000px at 80% -20%);
-  pointer-events: all;
-}
-
-.menu__item {
-  opacity: 0;
-}
-
-.menu__item:nth-child(1) {
-  transition: all 0.3s ease 0.1s;
-}
-
-.menu__item:nth-child(2) {
-  transition: all 0.3s ease 0.2s;
-}
-
-.menu__item:nth-child(3) {
-  transition: all 0.3s ease 0.3s;
-}
-
-.menu__item:nth-child(4) {
-  transition: all 0.3s ease 0.4s;
-}
 
 /* dodac do menu__item lub menu__link */
 .fade {
   opacity: 1;
 }
 
-.menu__link {
-  padding: 1.5rem;
-  font-size: 3vmax;
-  text-decoration: none;
-  display: grid;
-  place-content: center;
-  z-index: 2;
-  border-right: 1px dotted gray;
-  color: white;
-  text-shadow: 1px 1px 1px black,
-    1px 2px 1px black,
-    1px 3px 1px black,
-    1px 3px 4px white;
+/* dodawane do klasy menu po kliknięciu w hamburger */
+
+.open {
+  clip-path: circle(1000px at 80% -20%);
+  -webkit-clip-path: circle(1000px at 80% -20%);
+  pointer-events: all;
 }
 
 .fab {
@@ -226,31 +230,30 @@ section {
   background-size: cover;
   background-repeat: no-repeat;
 
+  &__title {
+    height: 20vh;
+    font-size: 2.2vmax;
+    padding-top: 5vh;
+    text-shadow: 1px 1px 1px white,
+      1px 2px 1px black;
+  }
 
+  &__bgr {
+    width: 100%;
+    background-color: whitesmoke;
+    text-align: center;
+  }
+
+  &__content {
+    padding: 4rem;
+    text-align: center;
+    color: aliceblue;
+    font-size: 2vmax;
+    text-shadow: 1px 1px 1px black;
+  }
 }
 
-.aboutMe__title {
-  height: 20vh;
-  font-size: 2.2vmax;
-  padding-top: 5vh;
-  text-shadow: 1px 1px 1px white,
-    1px 2px 1px black;
 
-}
-
-.aboutMe__bgr {
-  width: 100%;
-  background-color: whitesmoke;
-  text-align: center;
-}
-
-.aboutMe__content {
-  padding: 4rem;
-  text-align: center;
-  color: aliceblue;
-  font-size: 2vmax;
-  text-shadow: 1px 1px 1px black;
-}
 
 .iLike {
   display: flex;
@@ -259,42 +262,40 @@ section {
   justify-content: space-between;
   background-color: khaki;
   height: 80vh;
-}
 
-.iLike__title {
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  /* justify-items: center; */
-  align-items: center;
-  height: 100%;
-  width: 100%;
-}
+  &__title {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-items: center; */
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
 
-.iLike__h2 {
-  font-size: 2.5vmax;
-  text-shadow: 1px 1px 1px white,
-    1px 2px 1px grey;
-}
+  &__h2 {
+    font-size: 2.5vmax;
+    text-shadow: 1px 1px 1px white,
+      1px 2px 1px grey;
+  }
 
+  &__contentList {
+    list-style: none;
+  }
 
-.iLike__contentList {
-  list-style: none;
+  &__listElement {
+    font-size: 2vmax;
+    text-shadow: 1px 1px 1px white,
+      1px 2px 1px grey;
+    text-align: center;
+  }
 
-}
-
-.iLike__listElement {
-  font-size: 2vmax;
-  text-shadow: 1px 1px 1px white,
-    1px 2px 1px grey;
-  text-align: center;
-}
-
-.iLike__img {
-  width: 100%;
-  height: auto;
-  padding-top: 1rem;
-  background-color: khaki;
+  &__img {
+    width: 100%;
+    height: auto;
+    padding-top: 1rem;
+    background-color: khaki;
+  }
 }
 
 .iCanDo {
@@ -309,13 +310,25 @@ section {
     "photo--7 photo--8";
 
   background-color: lavender;
+
+  &__title {
+    grid-area: iCanDo__title;
+    padding: 5vh;
+    font-size: 2.2vmax;
+    text-align: center;
+    text-shadow: 1px 1px 1px white,
+      1px 2px 1px grey;
+    background-color: pink;
+
+    &:after {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f083";
+    }
+  }
 }
 
-.iCanDo__title::after {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f083";
-}
+
 
 .photo {
   justify-self: center;
@@ -323,18 +336,6 @@ section {
   border-radius: 30px;
   height: 80%;
   width: auto;
-}
-
-.iCanDo__title {
-
-
-  grid-area: iCanDo__title;
-  padding: 5vh;
-  font-size: 2.2vmax;
-  text-align: center;
-  text-shadow: 1px 1px 1px white,
-    1px 2px 1px grey;
-  background-color: pink;
 }
 
 .photo--1 {
@@ -381,13 +382,15 @@ section {
   align-items: center;
   justify-content: space-evenly;
   background-color: lemonchiffon;
+
+
+  &__description {
+    font-size: 1.3vmax;
+    text-shadow: 1px 1px 1px white,
+      1px 2px 1px grey;
+  }
 }
 
-.footer__description {
-  font-size: 1.3vmax;
-  text-shadow: 1px 1px 1px white,
-    1px 2px 1px grey;
-}
 
 /* @media (max-width: 1024px) {
   .navigation {
