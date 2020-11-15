@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -40,11 +39,12 @@ section {
 }
 
 .hero__name {
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.7);
   border: 3px solid #f1f1f1;
   position: relative;
+
   width: 100%;
   padding: 1rem;
   text-align: center;
@@ -60,6 +60,7 @@ section {
   text-align: center;
 }
 
+
 .hero__title {
   color: white;
   position: relative;
@@ -67,7 +68,12 @@ section {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   font-size: 4vmax;
-  text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 8px 10px white;
+  text-shadow: 1px 1px 1px black,
+    1px 2px 1px black,
+    1px 3px 1px black,
+    1px 4px 1px black,
+    1px 5px 1px black,
+    1px 8px 10px white;
 }
 
 .hero__latin {
@@ -77,8 +83,14 @@ section {
   font-size: 3vmax;
   font-family: 'Liu Jian Mao Cao', cursive;
   text-transform: uppercase;
-  text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 8px 10px white;
+  text-shadow: 1px 1px 1px black,
+    1px 2px 1px black,
+    1px 3px 1px black,
+    1px 4px 1px black,
+    1px 5px 1px black,
+    1px 8px 10px white;
 }
+
 
 .navigation {
   position: fixed;
@@ -102,6 +114,7 @@ section {
   list-style: none;
 }
 
+
 .hamburger {
   position: absolute;
   cursor: pointer;
@@ -119,6 +132,7 @@ section {
   background: white;
   margin: 5px;
   transition: transform .3s ease-out;
+
 }
 
 .makeCross:nth-child(1) {
@@ -188,31 +202,40 @@ section {
   z-index: 2;
   border-right: 1px dotted gray;
   color: white;
-  text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 3px 4px white;
+  text-shadow: 1px 1px 1px black,
+    1px 2px 1px black,
+    1px 3px 1px black,
+    1px 3px 4px white;
 }
 
 .fab {
   padding-top: 0.5rem;
   font-size: 2rem;
   color: whitesmoke;
-  text-shadow: 1px 1px 1px black, 1px 2px 1px black;
+  text-shadow: 1px 1px 1px black,
+    1px 2px 1px black;
+
 }
 
 .aboutMe {
   /* display: flex;
   flex-direction: column;
   align-items: center; */
-  background-image: url("../img/omnie.jpg");
+  background-image: url('../img/omnie.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
+
+
 }
 
 .aboutMe__title {
   height: 20vh;
   font-size: 2.2vmax;
   padding-top: 5vh;
-  text-shadow: 1px 1px 1px white, 1px 2px 1px black;
+  text-shadow: 1px 1px 1px white,
+    1px 2px 1px black;
+
 }
 
 .aboutMe__bgr {
@@ -250,16 +273,20 @@ section {
 
 .iLike__h2 {
   font-size: 2.5vmax;
-  text-shadow: 1px 1px 1px white, 1px 2px 1px grey;
+  text-shadow: 1px 1px 1px white,
+    1px 2px 1px grey;
 }
+
 
 .iLike__contentList {
   list-style: none;
+
 }
 
 .iLike__listElement {
   font-size: 2vmax;
-  text-shadow: 1px 1px 1px white, 1px 2px 1px grey;
+  text-shadow: 1px 1px 1px white,
+    1px 2px 1px grey;
   text-align: center;
 }
 
@@ -275,7 +302,12 @@ section {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 20vh repeat(4, 1fr);
-  grid-template-areas: "iCanDo__title iCanDo__title" "photo--1 photo--2" "photo--3 photo--4" "photo--5 photo--6" "photo--7 photo--8";
+  grid-template-areas: "iCanDo__title iCanDo__title"
+    "photo--1 photo--2"
+    "photo--3 photo--4"
+    "photo--5 photo--6"
+    "photo--7 photo--8";
+
   background-color: lavender;
 }
 
@@ -294,28 +326,35 @@ section {
 }
 
 .iCanDo__title {
+
+
   grid-area: iCanDo__title;
   padding: 5vh;
   font-size: 2.2vmax;
   text-align: center;
-  text-shadow: 1px 1px 1px white, 1px 2px 1px grey;
+  text-shadow: 1px 1px 1px white,
+    1px 2px 1px grey;
   background-color: pink;
 }
 
 .photo--1 {
   grid-area: photo--1;
+  ;
 }
 
 .photo--2 {
   grid-area: photo--2;
+  ;
 }
 
 .photo--3 {
   grid-area: photo--3;
+  ;
 }
 
 .photo--4 {
   grid-area: photo--4;
+  ;
 }
 
 .photo--5 {
@@ -334,6 +373,7 @@ section {
   grid-area: photo--8;
 }
 
+
 .footer {
   height: 15vh;
   display: flex;
@@ -345,7 +385,8 @@ section {
 
 .footer__description {
   font-size: 1.3vmax;
-  text-shadow: 1px 1px 1px white, 1px 2px 1px grey;
+  text-shadow: 1px 1px 1px white,
+    1px 2px 1px grey;
 }
 
 /* @media (max-width: 1024px) {
