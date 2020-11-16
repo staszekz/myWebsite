@@ -266,13 +266,11 @@ section {
 
 
 
-.iLike {
+.skills {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
   background-color: khaki;
-  height: 80vh;
+  min-height: 60vh;
 
   &__title {
     padding: 2rem;
@@ -285,38 +283,41 @@ section {
   }
 
   &__h2 {
-    font-size: 2.5vmax;
+    font-size: 3vmax;
     text-shadow: 1px 1px 1px white,
       1px 2px 1px grey;
+      margin-bottom: 3rem;
   }
 
   &__contentList {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
   }
 
   &__listElement {
     display: flex;
     flex-direction: column;
+    align-items: center;
     font-size: 2vmax;
     text-shadow: 1px 1px 1px white,
       1px 2px 1px grey;
     text-align: center;
   }
-
-  &__img {
-    width: 100%;
-    height: auto;
-    padding-top: 1rem;
-    background-color: khaki;
+  &__icon{
+    width: 96px;
+    height: 96px;
   }
-}
 
-
-.fab {
-  color: #f1502f
 }
+.styled{
+  border: none;
+}
+//skills icons
+
 
 .iCanDo {
   width: 100%;
@@ -334,7 +335,7 @@ section {
     &:after {
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
-      content: "\f083";
+      content: "\f542";
     }
   }
 }
@@ -351,7 +352,6 @@ section {
 .project {
   width: 300px;
   height: 300px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/mygame.png');
   background-size: cover;
   background-repeat: no-repeat;
   margin-top: 1rem;
@@ -380,23 +380,23 @@ section {
 
 
   &__one {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/mygame.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../img/mygame.png');
   }
 
   &__two {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/popeyeApp.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../img/popeyeApp.png');
   }
 
   &__three {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/popeyeWeb.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../img/popeyeWeb.png');
   }
 
   &__four {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/notes.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../img/notes.png');
   }
 
   &__five {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/landing.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('../img/landing.png');
   }
 }
 
