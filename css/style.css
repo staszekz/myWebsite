@@ -318,15 +318,27 @@ section {
   background-size: cover;
   background-repeat: no-repeat;
   margin-top: 1rem;
+  border-radius: 5%;
 }
 
 .project__link {
-  color: red;
-  text-align: center;
+  text-decoration: none;
 }
 
-.project:hover {
-  background-image: url("../img/mygame.png");
+.project__title {
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 2rem;
+}
+
+.project__onHover {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 5%;
 }
 
 .project__one {
