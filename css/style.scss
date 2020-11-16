@@ -5,6 +5,12 @@ $shadow: 1px 1px 1px black,
 1px 5px 1px black,
 1px 8px 10px white;
 
+$mainFont: Alegreya,
+Arial,
+sans-serif;
+$secondFont: Roboto,
+Arial,
+sans-serif;
 
 * {
   box-sizing: border-box;
@@ -17,7 +23,7 @@ body {
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
-  font-family: "Rock Salt", cursive;
+  font-family: $mainFont;
 }
 
 section {
@@ -38,8 +44,8 @@ section {
   background-image: url(../img/bgr-image.jpg);
   background-size: cover;
   background-attachment: fixed;
-  filter: blur(3px);
-  -webkit-filter: blur(3px);
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
 }
 
 .hero {
@@ -73,7 +79,7 @@ section {
     line-height: 1.3;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    font-size: 4vmax;
+    font-size: 5vmax;
     text-shadow: $shadow;
   }
 
@@ -82,8 +88,9 @@ section {
     position: relative;
     padding-top: 1.5rem;
     font-size: 3vmax;
-    font-family: 'Liu Jian Mao Cao', cursive;
-    text-transform: uppercase;
+    font-family: $mainFont;
+    font-style: italic;
+     text-transform: lowercase;
     text-shadow: 1px 1px 1px black,
       1px 2px 1px black,
       1px 3px 1px black,
@@ -312,17 +319,7 @@ section {
 }
 
 .iCanDo {
-  // height: 85vh;
   width: 100%;
-  // display: grid;
-  // grid-template-columns: repeat(2, 1fr);
-  // grid-template-rows: 20vh repeat(4, 1fr);
-  // grid-template-areas: "iCanDo__title iCanDo__title"
-  //   "photo--1 photo--2"
-  //   "photo--3 photo--4"
-  //   "photo--5 photo--6"
-  //   "photo--7 photo--8";
-
   background-color: lavender;
 
   &__title {
@@ -347,10 +344,8 @@ section {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-  // padding: 1vw;
   width: 90%;
   margin: 0 auto;
-
 }
 
 .project {
@@ -363,11 +358,33 @@ section {
 
   &__link {
     color: red;
+    text-align: center;
   }
 
   &:hover {
     background-image: url('../img/mygame.png');
     ;
+  }
+
+
+  &__one {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/mygame.png');
+  }
+
+  &__two {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/popeyeApp.png');
+  }
+
+  &__three {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/popeyeWeb.png');
+  }
+
+  &__four {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/notes.png');
+  }
+
+  &__five {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../img/landing.png');
   }
 }
 

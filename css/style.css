@@ -10,7 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
-  font-family: "Rock Salt", cursive;
+  font-family: Alegreya, Arial, sans-serif;
 }
 
 section {
@@ -31,8 +31,8 @@ section {
   background-image: url(../img/bgr-image.jpg);
   background-size: cover;
   background-attachment: fixed;
-  filter: blur(3px);
-  -webkit-filter: blur(3px);
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
 }
 
 .hero {
@@ -66,7 +66,7 @@ section {
   line-height: 1.3;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  font-size: 4vmax;
+  font-size: 5vmax;
   text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 8px 10px white;
 }
 
@@ -75,8 +75,9 @@ section {
   position: relative;
   padding-top: 1.5rem;
   font-size: 3vmax;
-  font-family: 'Liu Jian Mao Cao', cursive;
-  text-transform: uppercase;
+  font-family: Alegreya, Arial, sans-serif;
+  font-style: italic;
+  text-transform: lowercase;
   text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 8px 10px white;
 }
 
@@ -321,10 +322,31 @@ section {
 
 .project__link {
   color: red;
+  text-align: center;
 }
 
 .project:hover {
   background-image: url("../img/mygame.png");
+}
+
+.project__one {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/mygame.png");
+}
+
+.project__two {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/popeyeApp.png");
+}
+
+.project__three {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/popeyeWeb.png");
+}
+
+.project__four {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/notes.png");
+}
+
+.project__five {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/landing.png");
 }
 
 .photo {
