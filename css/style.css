@@ -21,7 +21,7 @@ section {
   height: 80vh;
   overflow: hidden;
   position: relative;
-  background-color: turquoise;
+  background-color: #3797a4;
   z-index: -2;
 }
 
@@ -31,6 +31,7 @@ section {
   background-color: rgba(0, 0, 0, 0.7);
   border: 3px solid #f1f1f1;
   position: relative;
+  border-radius: 50px;
   width: 100%;
   padding: 1rem;
   text-align: center;
@@ -69,6 +70,7 @@ section {
 
 .navigation {
   position: fixed;
+  z-index: 99;
   top: 0;
   width: 100vw;
   height: 60px;
@@ -205,7 +207,7 @@ section {
 
 .aboutMe__bgr {
   width: 100%;
-  background-color: whitesmoke;
+  background-color: #cee397;
   text-align: center;
 }
 
@@ -222,7 +224,7 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: khaki;
+  background-color: #8bcdcd;
   min-height: 60vh;
 }
 
@@ -335,15 +337,15 @@ section {
 
 .projects {
   width: 100%;
-  background-color: lavender;
+  background-color: #fcf876;
 }
 
 .projects__title {
-  padding: 5vh;
+  padding: 4vh;
+  padding-bottom: 1vh;
   font-size: 6vmin;
   text-align: center;
   text-shadow: 1px 1px 1px white, 1px 2px 1px grey;
-  background-color: pink;
 }
 
 .projects__title:after {
@@ -444,12 +446,25 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background-color: lemonchiffon;
+  background-color: #cee397;
+  padding: 1rem;
 }
 
-.footer__description {
-  font-size: 1.3vmax;
+.footer__description, .footer__link {
+  font-size: 2vmax;
   text-shadow: 1px 1px 1px white, 1px 2px 1px grey;
+  text-decoration: none;
+}
+
+.footer__description:visited, .footer__link:visited {
+  text-shadow: 1px 1px 1px white, 1px 2px 1px grey;
+  color: black;
+}
+
+.footer__iconLink {
+  align-self: flex-end;
+  padding-right: 2rem;
+  font-size: 1.5vmax;
 }
 
 .blob {
