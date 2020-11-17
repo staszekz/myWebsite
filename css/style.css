@@ -118,7 +118,7 @@ section {
   height: 3px;
   background: white;
   margin: 5px;
-  transition: transform .3s ease-out;
+  transition: transform 0.3s ease-out;
 }
 
 .makeCross:nth-child(1) {
@@ -143,7 +143,7 @@ section {
   flex-direction: column;
   clip-path: circle(100px at 90% -10%);
   -webkit-clip-path: circle(100px at 90% -10%);
-  transition: all .5s ease-out;
+  transition: all 0.5s ease-out;
   pointer-events: none;
 }
 
@@ -290,9 +290,9 @@ section {
 }
 
 .projects__title:after {
-  font-family: "Font Awesome 5 Free";
+  font-family: 'Font Awesome 5 Free';
   font-weight: 900;
-  content: "\f542";
+  content: '\f542';
 }
 
 .projects__wrapper {
@@ -312,90 +312,73 @@ section {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border-radius: 5%;
+  transition: 0.3s;
+}
+
+.project:hover {
+  transform: scale(1.1);
 }
 
 .project__link {
   text-decoration: none;
 }
 
-.project__title {
-  height: 300px;
+.project__description {
+  color: lightcyan;
+  padding: 1rem;
+  opacity: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
-  font-family: Roboto, Arial, sans-serif;
-  font-size: 2rem;
-  transition: 0.4s;
+  transition: 0.3s;
+}
+
+.project__wrapper {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   border-radius: 5%;
-  text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 8px 10px white;
+  transition: 0.3s;
   box-shadow: 3px 9px 23px -2px rgba(15, 13, 15, 0.65);
 }
 
-.project__title:hover {
-  background-color: black;
-  transform: scale(1.05);
+.project__wrapper:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.project__wrapper:hover > .project__description {
+  opacity: 1;
+}
+
+.project__title {
+  text-align: center;
+  color: white;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 2rem;
+  text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 8px 10px white;
 }
 
 .project__one {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url("../img/mygame.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/mygame.png");
 }
 
 .project__two {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url("../img/popeyeApp.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/popeyeApp.png");
 }
 
 .project__three {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url("../img/popeyeWeb.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/popeyeWeb.png");
 }
 
 .project__four {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url("../img/notes.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/notes.png");
 }
 
 .project__five {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url("../img/landing.png");
-}
-
-.photo {
-  justify-self: center;
-  align-self: center;
-  border-radius: 30px;
-  height: 80%;
-  width: auto;
-}
-
-.photo--1 {
-  grid-area: photo--1;
-}
-
-.photo--2 {
-  grid-area: photo--2;
-}
-
-.photo--3 {
-  grid-area: photo--3;
-}
-
-.photo--4 {
-  grid-area: photo--4;
-}
-
-.photo--5 {
-  grid-area: photo--5;
-}
-
-.photo--6 {
-  grid-area: photo--6;
-}
-
-.photo--7 {
-  grid-area: photo--7;
-}
-
-.photo--8 {
-  grid-area: photo--8;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/landing.png");
 }
 
 .footer {
@@ -411,71 +394,3 @@ section {
   font-size: 1.3vmax;
   text-shadow: 1px 1px 1px white, 1px 2px 1px grey;
 }
-
-/* @media (max-width: 1024px) {
-  .navigation {
-    position: sticky;
-    justify-content: space-evenly;
-  }
-
-  .menu {
-    display: none;
-  }
-
-  .social {
-    width: 60%;
-    justify-content: space-evenly;
-  }
-
-  .iCanDo {
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 20vh repeat(2, 1fr);
-  grid-template-areas: "iCanDo__title iCanDo__title iCanDo__title iCanDo__title"
-    "photo--1 photo--2 photo--3 photo--4"
-    "photo--5 photo--6 photo--7 photo--8";
-  }
-
-  .footer {
-    flex-direction: column;
-  }
-
-  .iLike {
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .iLike__img {
-    width: 100%;
-    overflow: hidden;
-  }
-}
-
-@media (max-width: 414px) {
-  .hero__title {
-    font-size: 4vmax;
-  }
-
-  .aboutMe__content {
-    font-size: 1.5vmax;
-  }
-
-  .iCanDo__title {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-
-@media screen and (orientation: landscape) {
-  .iLike__img {
-    width: 40%;
-  }
-
-  .iLike {
-    flex-direction: row;
-  }
-
-  .photo {
-    height: 60%;
-    width: auto;
-  }
-} */

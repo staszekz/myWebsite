@@ -1,2 +1,3 @@
 # aboutMe
-a webpage about me
+
+My personal website. Builed in Vanilla JS.

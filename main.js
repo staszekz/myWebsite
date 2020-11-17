@@ -31,19 +31,3 @@ hamburger.addEventListener('click', toggleHamburgerClasses);
 links.forEach(link => {
 	link.addEventListener('click', closeMenu);
 });
-
-//projects on hover
-
-const projects = document.querySelectorAll('.project__title');
-
-const onHover = project => {
-	project.classList.toggle('project__onHover');
-};
-const onMouseLeave = project => {
-	project.classList.toggle('project__onHover');
-};
-
-projects.forEach(project => {
-	project.addEventListener('mouseover', () => onHover(project));
-	project.addEventListener('mouseleave', () => onMouseLeave(project));
-});
