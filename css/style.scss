@@ -19,28 +19,12 @@ body {
 }
 
 section {
-	min-height: 80vh;
+	min-height: 60vh;
 }
 
 .hero {
 	height: 80vh;
-}
-
-// .background-img {
-// 	position: absolute;
-// 	height: 100%;
-// 	width: 100%;
-// 	/* top: 0;
-//   left: 0; */
-// 	background-color: gray;
-// 	background-image: url(../img/bgr-image.jpg);
-// 	background-size: cover;
-// 	background-attachment: fixed;
-// 	filter: blur(4px);
-// 	-webkit-filter: blur(4px);
-// }
-
-.hero {
+	overflow: hidden;
 	position: relative;
 	background-color: turquoise;
 	z-index: -2;
@@ -61,7 +45,7 @@ section {
 	&__header {
 		position: absolute;
 		width: 90vw;
-		margin: 6rem auto 2rem;
+		margin: 12rem auto 2rem;
 		left: 0;
 		right: 0;
 		text-align: center;
@@ -73,7 +57,7 @@ section {
 		line-height: 1.3;
 		padding-top: 1.5rem;
 		padding-bottom: 1.5rem;
-		font-size: 5vmax;
+		font-size: 12vmin;
 		text-shadow: $shadow;
 	}
 
@@ -93,7 +77,7 @@ section {
 .navigation {
 	position: fixed;
 	top: 0;
-	width: 100%;
+	width: 100vw;
 	height: 60px;
 	display: flex;
 	flex-direction: row;
@@ -213,10 +197,11 @@ section {
 }
 
 .aboutMe {
-	background-image: url('../img/omnie.jpg');
+	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/omnie.jpg');
 	background-attachment: fixed;
 	background-size: cover;
 	background-repeat: no-repeat;
+	min-height: 80vh;
 
 	&__title {
 		height: 20vh;
@@ -232,34 +217,34 @@ section {
 	}
 
 	&__content {
-		padding: 4rem;
+		padding: 4rem 1rem;
 		text-align: center;
 		color: aliceblue;
-		font-size: 2.5vmax;
+		font-size: 3vmax;
 		text-shadow: 1px 1px 1px black;
 	}
 }
 
 .skills {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	background-color: khaki;
 	min-height: 60vh;
 
-	&__title {
-		padding: 2rem;
-		display: flex;
-		flex-direction: column;
-		/* justify-items: center; */
-		align-items: center;
-		height: 100%;
-		width: 100%;
-	}
+	// &__title {
+	// 	padding: 2rem;
+	// 	display: flex;
+	// 	height: 100%;
+	// }
 
 	&__h2 {
 		font-size: 3vmax;
+		width: 100%;
+		text-align: center;
 		text-shadow: 1px 1px 1px white, 1px 2px 1px grey;
-		margin-bottom: 3rem;
+		margin-bottom: 5rem;
 	}
 
 	&__contentList {
@@ -276,9 +261,6 @@ section {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		font-size: 2vmax;
-		text-shadow: 1px 1px 1px white, 1px 2px 1px grey;
-		text-align: center;
 		transition: 0.4s;
 
 		&:hover {
@@ -331,7 +313,6 @@ section {
 
 .tooltip:before {
 	position: absolute;
-	z-index: 2;
 	display: none;
 	max-width: 200px;
 	padding: 10px;
@@ -348,7 +329,6 @@ section {
 }
 .tooltip:after {
 	position: absolute;
-	z-index: 1;
 	display: none;
 	width: 0;
 	height: 0;
@@ -363,7 +343,7 @@ section {
 
 .tooltip:hover:before,
 .tooltip:hover:after {
-	display: flex;
+	display: inline-block;
 }
 
 .projects {
@@ -372,7 +352,7 @@ section {
 
 	&__title {
 		padding: 5vh;
-		font-size: 3vmax;
+		font-size: 6vmin;
 		text-align: center;
 		text-shadow: 1px 1px 1px white, 1px 2px 1px grey;
 		background-color: pink;
@@ -502,7 +482,6 @@ section {
 	0% {
 		border-radius: 60% 40% 60% 70%/ 40% 50% 60% 70%;
 		background: radial-gradient(circle at 100px 100px, #5cabfc, #000);
-		// background: linear-gradient(45deg, red 0%, blue 100%);
 		transform: scale(0.8);
 	}
 	48% {
@@ -511,16 +490,13 @@ section {
 	50% {
 		border-radius: 50% 70% 60% 40% / 70% 40% 50% 60%;
 		background: radial-gradient(circle at 100px 100px, #5cabff, #000);
-		// background: linear-gradient(45deg, green 0%, blue 100%);
 	}
 	80% {
 		transform: scale(1.3) translate(10vw, 30vh) rotate(-120deg);
 	}
 	100% {
 		border-radius: 60% 40% 60% 70%/40% 50% 60% 70%;
-		// background: linear-gradient(45deg, red 0%, blue 100%);
 		background: radial-gradient(circle at 100px 100px, #5cabef, #000);
-
 		transform: scale(0.8);
 	}
 }

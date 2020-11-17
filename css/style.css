@@ -14,14 +14,12 @@ body {
 }
 
 section {
-  min-height: 80vh;
+  min-height: 60vh;
 }
 
 .hero {
   height: 80vh;
-}
-
-.hero {
+  overflow: hidden;
   position: relative;
   background-color: turquoise;
   z-index: -2;
@@ -42,7 +40,7 @@ section {
 .hero__header {
   position: absolute;
   width: 90vw;
-  margin: 6rem auto 2rem;
+  margin: 12rem auto 2rem;
   left: 0;
   right: 0;
   text-align: center;
@@ -54,7 +52,7 @@ section {
   line-height: 1.3;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  font-size: 5vmax;
+  font-size: 12vmin;
   text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 8px 10px white;
 }
 
@@ -72,7 +70,7 @@ section {
 .navigation {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 100vw;
   height: 60px;
   display: flex;
   flex-direction: row;
@@ -191,10 +189,11 @@ section {
 }
 
 .aboutMe {
-  background-image: url("../img/omnie.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/omnie.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
+  min-height: 80vh;
 }
 
 .aboutMe__title {
@@ -211,34 +210,28 @@ section {
 }
 
 .aboutMe__content {
-  padding: 4rem;
+  padding: 4rem 1rem;
   text-align: center;
   color: aliceblue;
-  font-size: 2.5vmax;
+  font-size: 3vmax;
   text-shadow: 1px 1px 1px black;
 }
 
 .skills {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: khaki;
   min-height: 60vh;
 }
 
-.skills__title {
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  /* justify-items: center; */
-  align-items: center;
-  height: 100%;
-  width: 100%;
-}
-
 .skills__h2 {
   font-size: 3vmax;
+  width: 100%;
+  text-align: center;
   text-shadow: 1px 1px 1px white, 1px 2px 1px grey;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
 }
 
 .skills__contentList {
@@ -255,9 +248,6 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 2vmax;
-  text-shadow: 1px 1px 1px white, 1px 2px 1px grey;
-  text-align: center;
   transition: 0.4s;
 }
 
@@ -309,7 +299,6 @@ section {
 
 .tooltip:before {
   position: absolute;
-  z-index: 2;
   display: none;
   max-width: 200px;
   padding: 10px;
@@ -327,7 +316,6 @@ section {
 
 .tooltip:after {
   position: absolute;
-  z-index: 1;
   display: none;
   width: 0;
   height: 0;
@@ -342,7 +330,7 @@ section {
 
 .tooltip:hover:before,
 .tooltip:hover:after {
-  display: flex;
+  display: inline-block;
 }
 
 .projects {
@@ -352,7 +340,7 @@ section {
 
 .projects__title {
   padding: 5vh;
-  font-size: 3vmax;
+  font-size: 6vmin;
   text-align: center;
   text-shadow: 1px 1px 1px white, 1px 2px 1px grey;
   background-color: pink;
