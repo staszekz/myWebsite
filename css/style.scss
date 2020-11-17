@@ -5,6 +5,7 @@ $shadow: 1px 1px 1px black,
 1px 5px 1px black,
 1px 8px 10px white;
 
+
 $mainFont: Alegreya,
 Arial,
 sans-serif;
@@ -233,9 +234,6 @@ section {
 }
 
 .aboutMe {
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
   background-image: url('../img/omnie.jpg');
   background-attachment: fixed;
   background-size: cover;
@@ -243,7 +241,7 @@ section {
 
   &__title {
     height: 20vh;
-    font-size: 2.2vmax;
+    font-size: 3vmax;
     padding-top: 5vh;
     text-shadow: 1px 1px 1px white,
       1px 2px 1px black;
@@ -259,7 +257,7 @@ section {
     padding: 4rem;
     text-align: center;
     color: aliceblue;
-    font-size: 2vmax;
+    font-size: 2.5vmax;
     text-shadow: 1px 1px 1px black;
   }
 }
@@ -286,7 +284,7 @@ section {
     font-size: 3vmax;
     text-shadow: 1px 1px 1px white,
       1px 2px 1px grey;
-      margin-bottom: 3rem;
+    margin-bottom: 3rem;
   }
 
   &__contentList {
@@ -307,7 +305,8 @@ section {
       1px 2px 1px grey;
     text-align: center;
   }
-  &__icon{
+
+  &__icon {
     width: 96px;
     height: 96px;
   }
@@ -320,7 +319,7 @@ section {
 
   &__title {
     padding: 5vh;
-    font-size: 2.2vmax;
+    font-size: 3vmax;
     text-align: center;
     text-shadow: 1px 1px 1px white,
       1px 2px 1px grey;
@@ -344,7 +343,7 @@ section {
 }
 
 .project {
-  width: 300px;
+  flex-basis: 300px;
   height: 300px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -365,13 +364,23 @@ section {
     color: white;
     font-family: $secondFont;
     font-size: 2rem;
-  }
-
-  &__onHover {
-    background-color: rgba(0, 0, 0, 0.8);
+    transition: 0.4s;
     border-radius: 5%;
+    text-shadow: $shadow;
+    box-shadow: 3px 9px 23px -2px rgba(15, 13, 15, 0.65);
 
+    &:hover {
+      background-color: rgba(0, 0, 0, 1);
+      transform: scale(1.05);
+
+    }
   }
+
+  // &__onHover {
+  //   background-color: rgba(0, 0, 0, 0.8);
+  //   border-radius: 5%;
+
+  // }
 
 
   &__one {
