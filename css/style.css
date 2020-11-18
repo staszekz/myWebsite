@@ -74,11 +74,10 @@ section {
   top: 0;
   z-index: 99;
   width: 100vw;
-  height: 60px;
+  height: 80px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-content: center;
   background-color: #000;
 }
 
@@ -125,19 +124,21 @@ section {
 
 .menu {
   position: fixed;
-  background: #000;
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   clip-path: circle(100px at 80% -40%);
   -webkit-clip-path: circle(100px at 80% -40%);
-  transition: all 0.5s ease-out;
+  transition: height 0.3s ease-out;
   pointer-events: none;
+  list-style: none;
+  background-color: #000;
 }
 
 .menu__item {
   opacity: 0;
+  transition: all 0.3s ease-out;
 }
 
 .menu__item:nth-child(1) {
@@ -166,7 +167,6 @@ section {
   text-decoration: none;
   display: grid;
   place-content: center;
-  z-index: 2;
   border-right: 1px dotted gray;
   color: white;
   text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 3px 4px white;
@@ -510,10 +510,10 @@ section {
     align-items: center;
     padding-right: 2rem;
     width: 80%;
-    height: 60px;
+    height: 80px;
     clip-path: none;
-    transition: none;
     pointer-events: all;
+    background-color: transparent;
   }
   .menu__item {
     opacity: 1;
@@ -539,4 +539,16 @@ section {
     padding-right: 0;
     align-self: inherit;
   }
+  .aboutMe__content {
+    font-size: 2.7vmax;
+    padding: 6rem;
+  }
+  .hero__title {
+    font-size: 10vmin;
+  }
+}
+
+.shortMenu {
+  height: 50px;
+  transition: all 0.3s ease;
 }

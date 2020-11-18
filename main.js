@@ -2,6 +2,7 @@ const hamburger = document.querySelector('.hamburger');
 const lines = document.querySelectorAll('.line');
 const menuLinks = document.querySelector('.menu');
 const links = document.querySelectorAll('.menu__item');
+const navBar = document.querySelector('.navigation');
 
 //włączanie i wyłączanie menu po kliknięciu w hamburger
 
@@ -37,3 +38,21 @@ hamburger.addEventListener('click', toggleHamburgerClasses);
 links.forEach(link => {
 	link.addEventListener('click', closeMenu);
 });
+
+const shrinkMenu = () => {
+	if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+		// navBar.style.transform = 'scale(0.8)';
+		navBar.classList.add('shortMenu');
+		if (window.innerWidth > 768) {
+			menuLinks.classList.add('shortMenu');
+		}
+	} else {
+		navBar.classList.remove('shortMenu');
+		if (window.innerWidth > 768) {
+			menuLinks.classList.remove('shortMenu');
+		}
+		// navBar.style.height = '80px';
+	}
+};
+
+window.onscroll = () => shrinkMenu();
