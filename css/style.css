@@ -210,7 +210,23 @@ section {
   text-align: center;
 }
 
+.aboutMe__wrapper {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutMe__picture {
+  max-width: 20vw;
+  height: auto;
+  display: none;
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+
 .aboutMe__content {
+  display: block;
   padding: 4rem 1rem;
   text-align: center;
   color: aliceblue;
@@ -499,6 +515,15 @@ section {
   }
 }
 
+@media (min-width: 530px) {
+  .aboutMe__wrapper {
+    flex-direction: row;
+  }
+  .aboutMe__picture {
+    display: flex;
+  }
+}
+
 @media (min-width: 769px) {
   .hamburger {
     display: none;
@@ -513,7 +538,6 @@ section {
     height: 80px;
     clip-path: none;
     pointer-events: all;
-    background-color: transparent;
   }
   .menu__item {
     opacity: 1;
