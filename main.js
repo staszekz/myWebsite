@@ -8,7 +8,13 @@ const navBar = document.querySelector('.navigation');
 
 const toggleHamburgerClasses = () => {
 	menuLinks.classList.toggle('open');
-
+	menuLinks.classList.toggle('shortMenu');
+	if (
+		(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) &&
+		window.innerWidth < 769
+	) {
+		menuLinks.classList.remove('shortMenu');
+	}
 	links.forEach(link => {
 		link.classList.toggle('fade');
 	});
@@ -17,7 +23,6 @@ const toggleHamburgerClasses = () => {
 	});
 };
 
-console.log('szeroosć', window.innerWidth);
 //zamykanie menu po kliknięciu w link - obsługa
 const closeMenu = () => {
 	if (window.innerWidth < 769) {
@@ -41,7 +46,6 @@ links.forEach(link => {
 
 const shrinkMenu = () => {
 	if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-		// navBar.style.transform = 'scale(0.8)';
 		navBar.classList.add('shortMenu');
 		if (window.innerWidth > 768) {
 			menuLinks.classList.add('shortMenu');
@@ -51,7 +55,6 @@ const shrinkMenu = () => {
 		if (window.innerWidth > 768) {
 			menuLinks.classList.remove('shortMenu');
 		}
-		// navBar.style.height = '80px';
 	}
 };
 
