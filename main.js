@@ -11,9 +11,9 @@ const toggleHamburgerClasses = () => {
 	menuLinks.classList.toggle('shortMenu');
 	if (
 		(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) &&
-		window.innerWidth < 769
+		window.innerWidth > 769
 	) {
-		menuLinks.classList.remove('shortMenu');
+		menuLinks.classList.add('shortMenu');
 	}
 	links.forEach(link => {
 		link.classList.toggle('fade');
