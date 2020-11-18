@@ -1,5 +1,7 @@
 $shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black,
 	1px 5px 1px black, 1px 8px 10px white;
+$titleShadow: 1px 1px 1px white, 1px 2px 1px black;
+$box-shadow: 3px 9px 23px -2px rgba(15, 13, 15, 0.65);
 
 $mainFont: Alegreya, Arial, sans-serif;
 $secondFont: Roboto, Arial, sans-serif;
@@ -33,10 +35,10 @@ section {
 		background-color: rgb(0, 0, 0);
 		/* Fallback color */
 		background-color: rgba(0, 0, 0, 0.7);
-		border: 3px solid #f1f1f1;
+		// border: 3px solid #f1f1f1;
 		position: relative;
 		border-radius: 50px;
-
+		box-shadow: $box-shadow;
 		width: 100%;
 		padding: 1rem;
 		text-align: center;
@@ -70,8 +72,7 @@ section {
 		font-family: $mainFont;
 		font-style: italic;
 		text-transform: lowercase;
-		text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black,
-			1px 5px 1px black, 1px 8px 10px white;
+		text-shadow: $shadow;
 	}
 }
 
@@ -135,6 +136,7 @@ section {
 	background: #000;
 	height: 100vh;
 	width: 100%;
+	display: flex;
 	flex-direction: column;
 	clip-path: circle(100px at 90% -10%);
 	-webkit-clip-path: circle(100px at 90% -10%);
@@ -178,7 +180,6 @@ section {
 	}
 }
 
-/* dodac do menu__item lub menu__link */
 .fade {
 	opacity: 1;
 }
@@ -195,7 +196,6 @@ section {
 	padding-top: 0.5rem;
 	font-size: 2rem;
 	color: whitesmoke;
-	text-shadow: 1px 1px 1px black, 1px 2px 1px black;
 }
 
 .aboutMe {
@@ -209,7 +209,7 @@ section {
 		height: 20vh;
 		font-size: 3vmax;
 		padding-top: 5vh;
-		text-shadow: 1px 1px 1px white, 1px 2px 1px black;
+		text-shadow: $titleShadow;
 	}
 
 	&__bgr {
@@ -239,7 +239,7 @@ section {
 		font-size: 3vmax;
 		width: 100%;
 		text-align: center;
-		text-shadow: 1px 1px 1px white, 1px 2px 1px grey;
+		text-shadow: $titleShadow;
 		margin-bottom: 5rem;
 	}
 
@@ -351,7 +351,7 @@ section {
 		padding-bottom: 1vh;
 		font-size: 6vmin;
 		text-align: center;
-		text-shadow: 1px 1px 1px white, 1px 2px 1px grey;
+		text-shadow: $titleShadow;
 
 		&:after {
 			font-family: 'Font Awesome 5 Free';
@@ -406,7 +406,7 @@ section {
 		justify-content: center;
 		border-radius: 5%;
 		transition: 0.3s;
-		box-shadow: 3px 9px 23px -2px rgba(15, 13, 15, 0.65);
+		box-shadow: $box-shadow;
 
 		&:hover {
 			background-color: rgba(0, 0, 0, 0.9);
@@ -506,5 +506,28 @@ section {
 		border-radius: 60% 40% 60% 70%/40% 50% 60% 70%;
 		background: radial-gradient(circle at 100px 100px, #5cabef, #000);
 		transform: scale(0.8);
+	}
+}
+
+//up to iPad
+@media (min-width: 769px) {
+	.hamburger {
+		display: none;
+	}
+}
+
+//over iPad pro
+@media (min-width: 1024px) {
+	.footer {
+		flex-direction: row;
+		justify-content: space-between;
+		&__description,
+		&__link {
+			font-size: 1.5vmax;
+		}
+		&__iconLink {
+			padding-right: 0;
+			align-self: inherit;
+		}
 	}
 }
