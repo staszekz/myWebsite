@@ -1,3 +1,3 @@
 # aboutMe
 
-My personal website. Builed in Vanilla JS.
+My personal websitewith all my portfolio. You can find it under the link: www.staszek.ovh
