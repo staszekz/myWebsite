@@ -8,7 +8,8 @@ const navBar = document.querySelector('.navigation');
 
 const toggleHamburgerClasses = () => {
 	menuLinks.classList.toggle('open');
-	menuLinks.classList.toggle('shortMenu');
+	menuLinks.classList.add('shortMenu');
+	shrinkMenu();
 	if (
 		(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) &&
 		window.innerWidth > 769
@@ -44,16 +45,24 @@ links.forEach(link => {
 	link.addEventListener('click', closeMenu);
 });
 
+// if (window.innerWidth > 768) {
+// 	menuLinks.classList.add('shortMenu');
+// }
+
 const shrinkMenu = () => {
 	if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
 		navBar.classList.add('shortMenu');
 		if (window.innerWidth > 768) {
 			menuLinks.classList.add('shortMenu');
+		} else {
+			menuLinks.classList.remove('shortMenu');
 		}
 	} else {
 		navBar.classList.remove('shortMenu');
+		menuLinks.classList.remove('shortMenu');
+
 		if (window.innerWidth > 768) {
-			menuLinks.classList.remove('shortMenu');
+			menuLinks.classList.add('shortMenu');
 		}
 	}
 };
