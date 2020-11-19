@@ -488,14 +488,36 @@ section {
   left: 0;
   width: 30vmax;
   z-index: -1;
-  animation: move 30s ease-in-out infinite;
+  animation: move 40s ease-in-out infinite;
   transform-origin: 50% 30%;
+}
+
+.blob2 {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 30vmax;
+  z-index: -2;
+  animation: move2 50s ease-in-out infinite;
+  transform-origin: 50% 30%;
+  border: 1px solid darkcyan;
+}
+
+.blob3 {
+  position: absolute;
+  top: 30px;
+  right: 300px;
+  width: 38vmax;
+  height: 42vmax;
+  z-index: -1;
+  animation: move3 50s ease-in infinite;
+  transform-origin: 30% 30%;
 }
 
 @keyframes move {
   0% {
     border-radius: 60% 40% 60% 70%/ 40% 50% 60% 70%;
-    background: radial-gradient(circle at 100px 100px, #5cabfc, #000);
+    background: radial-gradient(circle at 100px 100px, rgba(92, 171, 252, 0.71), rgba(0, 0, 0, 0.4));
     transform: scale(0.8);
   }
   48% {
@@ -503,14 +525,66 @@ section {
   }
   50% {
     border-radius: 50% 70% 60% 40% / 70% 40% 50% 60%;
-    background: radial-gradient(circle at 100px 100px, #5cabff, #000);
+    background: radial-gradient(circle at 100px 100px, rgba(92, 171, 255, 0.71), rgba(0, 0, 0, 0.4));
   }
   80% {
-    transform: scale(1.3) translate(10vw, 30vh) rotate(-120deg);
+    transform: scale(1.3) translate(10vw, 30vh) rotate(-140deg);
   }
   100% {
     border-radius: 60% 40% 60% 70%/40% 50% 60% 70%;
-    background: radial-gradient(circle at 100px 100px, #5cabef, #000);
+    background: radial-gradient(circle at 100px 100px, rgba(92, 171, 239, 0.71), rgba(0, 0, 0, 0.4));
+    transform: scale(0.8);
+  }
+}
+
+@keyframes move2 {
+  0% {
+    border-radius: 60% 40% 60% 70%/ 40% 50% 60% 70%;
+    background: radial-gradient(circle at 100px 100px, #3797a4, rgba(0, 0, 0, 0.4));
+    transform: scale(0.8);
+  }
+  38% {
+    transform: scale(0.8, 1) translate(-90vw, 40vh) rotate(180deg);
+    background: radial-gradient(circle at 100px 100px, #3797a7, rgba(0, 0, 0, 0.4));
+  }
+  50% {
+    border-radius: 50% 70% 60% 40% / 70% 40% 50% 60%;
+    background: radial-gradient(circle at 100px 100px, #3797aa, rgba(0, 0, 0, 0.4));
+    width: 40vw;
+  }
+  70% {
+    transform: scale(1.2) translate(-40vw, -20vh) rotate(-120deg);
+    background: radial-gradient(circle at 100px 100px, #3797a7, rgba(0, 0, 0, 0.4));
+  }
+  100% {
+    border-radius: 60% 40% 60% 70%/40% 50% 60% 70%;
+    background: radial-gradient(circle at 100px 100px, #3797a4, rgba(0, 0, 0, 0.4));
+    transform: scale(0.8);
+  }
+}
+
+@keyframes move3 {
+  0% {
+    border-radius: 80% 50% 60% 70%/ 40% 50% 60% 70%;
+    background: radial-gradient(circle at 100px 100px, rgba(72, 151, 252, 0.71), rgba(0, 0, 0, 0.4));
+    transform: scale(0.8);
+  }
+  18% {
+    transform: scale(0.8, 1) translate(-10vw, -60vh) rotate(10deg);
+  }
+  48% {
+    transform: scale(0.8, 1) translate(-40vw, -20vh) rotate(180deg);
+  }
+  50% {
+    border-radius: 50% 70% 60% 70% / 70% 40% 70% 60%;
+    background: radial-gradient(circle at 100px 100px, rgba(72, 151, 255, 0.7), rgba(0, 0, 0, 0.4));
+  }
+  80% {
+    transform: scale(1.3) translate(30vw, 30vh) rotate(-140deg);
+  }
+  100% {
+    border-radius: 80% 50% 60% 70%/40% 50% 60% 70%;
+    background: radial-gradient(circle at 100px 100px, rgba(72, 151, 239, 0.71), rgba(0, 0, 0, 0.4));
     transform: scale(0.8);
   }
 }
