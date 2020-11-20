@@ -8,8 +8,6 @@ const navBar = document.querySelector('.navigation');
 
 const toggleHamburgerClasses = () => {
 	menuLinks.classList.toggle('open');
-	menuLinks.classList.add('shortMenu');
-	shrinkMenu();
 	if (
 		(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) &&
 		window.innerWidth > 769
@@ -22,6 +20,8 @@ const toggleHamburgerClasses = () => {
 	lines.forEach(line => {
 		line.classList.toggle('makeCross');
 	});
+	// menuLinks.classList.add('shortMenu');
+	shrinkMenu();
 };
 
 //zamykanie menu po kliknięciu w link - obsługa
@@ -56,10 +56,12 @@ const shrinkMenu = () => {
 	} else {
 		navBar.classList.remove('shortMenu');
 		menuLinks.classList.remove('shortMenu');
+	}
+};
 
-		if (window.innerWidth > 768) {
-			menuLinks.classList.add('shortMenu');
-		}
+window.onresize = () => {
+	if (window.innerWidth > 769) {
+		menuLinks.classList.add('shortMenu');
 	}
 };
 
