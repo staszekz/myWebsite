@@ -228,12 +228,44 @@ section {
 }
 
 .aboutMe__content {
-  display: block;
+  display: none;
   padding: 4rem 1rem;
   text-align: center;
   color: aliceblue;
   font-size: 3vmax;
   text-shadow: 1px 1px 1px black;
+}
+
+.fromLeft {
+  animation: slideLeft 0.8s;
+  display: flex;
+}
+
+.fromRight {
+  animation: slideRight 0.8s;
+  display: flex;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(-400px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(800px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
 
 .skills {
@@ -593,9 +625,6 @@ section {
 @media (min-width: 530px) {
   .aboutMe__wrapper {
     flex-direction: row;
-  }
-  .aboutMe__picture {
-    display: flex;
   }
 }
 
