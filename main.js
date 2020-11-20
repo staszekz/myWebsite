@@ -45,10 +45,6 @@ links.forEach(link => {
 	link.addEventListener('click', closeMenu);
 });
 
-// if (window.innerWidth > 768) {
-// 	menuLinks.classList.add('shortMenu');
-// }
-
 const shrinkMenu = () => {
 	if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
 		navBar.classList.add('shortMenu');
@@ -68,3 +64,19 @@ const shrinkMenu = () => {
 };
 
 window.onscroll = () => shrinkMenu();
+
+//ładowanie w seksji aboutMe
+const hero = document.querySelector('.hero');
+const heroHeight = parseFloat(getComputedStyle(hero, null).height.replace('px', ''));
+const myImage = document.querySelector('.aboutMe__picture');
+const aboutMeContent = document.querySelector('.aboutMe__content');
+
+const slide = () => {
+	if (window.scrollY > heroHeight / 2) {
+		myImage.classList.add('fromLeft');
+		aboutMeContent.classList.add('fromRight');
+		// console.log(`ss`, aboutMeSection);
+	}
+};
+
+window.addEventListener('scroll', slide);
