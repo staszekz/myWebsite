@@ -81,4 +81,21 @@ const slide = () => {
 	}
 };
 
-window.addEventListener('scroll', slide);
+//////////////////////
+const skillsEl = document.querySelectorAll('.skills__listElement');
+const skills = document.querySelector('.skills');
+
+const slideSkills = () => {
+	if (window.scrollY > heroHeight) {
+		skillsEl.forEach(el => {
+			el.classList.add('show');
+		});
+	}
+};
+
+const allOnScroll = () => {
+	slide();
+	slideSkills();
+};
+
+window.addEventListener('scroll', allOnScroll);
