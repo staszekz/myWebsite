@@ -278,7 +278,7 @@ section {
 
 .skills {
 	background-color: #81a594;
-	min-height: 80vh;
+	min-height: 70vh;
 
 	&__h2 {
 		width: 100%;
@@ -295,7 +295,7 @@ section {
 		list-style: none;
 		display: flex;
 		flex-wrap: wrap;
-		min-height: 60vh;
+		min-height: 50vh;
 		gap: 1rem;
 		align-items: center;
 		justify-content: center;
@@ -306,12 +306,11 @@ section {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		transition: 0.4s;
+		transition: 0.5s;
 		opacity: 0;
-		transform: translateX(1000px);
 		transition-duration: 0.5s;
 		transition-timing-function: ease-in-out;
-		transition-property: opacity, trnsform;
+		transition-property: opacity;
 
 		&:hover {
 			transform: scale(1.3);
