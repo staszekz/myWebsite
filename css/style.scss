@@ -312,7 +312,6 @@ section {
 		transition-duration: 0.5s;
 		transition-timing-function: ease-in-out;
 		transition-property: opacity, trnsform;
-		// animation: show 0.5s ease;
 
 		&:hover {
 			transform: scale(1.3);
@@ -321,7 +320,6 @@ section {
 	}
 
 	&__icon {
-		// display: none;
 		width: 96px;
 		height: 96px;
 	}
@@ -332,27 +330,6 @@ section {
 	transform: translateX(0);
 	transition-delay: calc(1s * var(--index));
 }
-// @for $i from 1 through 11 {
-// 	.skills__contentList li:nth-child(#{$i}) {
-// 		animation-delay: #{$i * 0.5}s;
-// 	}
-// }
-
-// @keyframes show {
-// 	0% {
-// 		transform: translateX(-800px);
-// 		// opacity: 0;
-// 	}
-// 	100% {
-// 		transform: translateX(0px);
-// 		// display: flex;
-// 		opacity: 1;
-// 	}
-// }
-
-// .show {
-// 	display: flex;
-// }
 
 @keyframes shake {
 	0% {

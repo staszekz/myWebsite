@@ -77,16 +77,15 @@ const slide = () => {
 	if (window.scrollY > heroHeight / 2) {
 		myImage.classList.add('fromLeft');
 		aboutMeContent.classList.add('fromRight');
-		// console.log(`ss`, aboutMeSection);
 	}
 };
 
-//////////////////////
+//loading of skills icons
 const skillsEl = document.querySelectorAll('.skills__listElement');
 const skills = document.querySelector('.skills');
 
 const slideSkills = () => {
-	if (window.scrollY > heroHeight) {
+	if (window.scrollY > heroHeight + 200) {
 		skillsEl.forEach(el => {
 			el.classList.add('show');
 		});
