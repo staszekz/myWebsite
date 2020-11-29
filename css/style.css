@@ -238,7 +238,7 @@ section {
 
 .fromLeft {
   animation: slideLeft 0.8s;
-  display: flex;
+  display: none;
 }
 
 .fromRight {
@@ -414,7 +414,7 @@ section {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(5, 1fr);
-  grid-template-areas: 'one' 'two' 'three' 'four' 'five';
+  grid-template-areas: 'one' 'two' 'three' 'four' 'five';
   width: 90%;
   min-height: 80vh;
   margin: 0 auto;
@@ -637,10 +637,17 @@ section {
   .aboutMe__wrapper {
     flex-direction: row;
   }
+  .aboutMe__picture {
+    display: flex;
+  }
+  .skills__icon {
+    width: 144px;
+    height: 144px;
+  }
   .projects__wrapper {
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-template-areas: 'one one one one two two two' 'three three three five five five five' 'four four four four four four four';
+    grid-template-areas: 'one one one one two two two' 'three three three five five five five' 'four four four four four four four';
   }
 }
 
@@ -693,7 +700,7 @@ section {
   .projects__wrapper {
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-template-areas: 'one one two two three three three' 'four four four five five five five';
+    grid-template-areas: 'one one two two three three three' 'four four four five five five five';
   }
 }
 

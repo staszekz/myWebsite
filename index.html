@@ -2,23 +2,24 @@
 <html lang="en">
 
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C4V68M76J2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C4V68M76J2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-C4V68M76J2');
-</script>
-<!-- ///////////////////////////// -->
+    gtag('config', 'G-C4V68M76J2');
+  </script>
+  <!-- ///////////////////////////// -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,400&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,400&family=Roboto&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
-  
+
   <link rel='shortcut icon' type='image/x-icon' href='./img/icons/favicon.ico' />
   <title>Staszek Zajaczkowski</title>
 </head>
@@ -49,41 +50,36 @@
         </li>
       </ul>
       <ul class="social">
-         <li class="social__item">
-           <a class="social__link" 
-              href="https://github.com/StaszekZ"
-              target="_blank"
-              rel="noopener noreferrer">
-              <i class="fab fa-github"></i>
+        <li class="social__item">
+          <a class="social__link" href="https://github.com/StaszekZ" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i>
           </a>
         </li>
         <li class="social__item">
-          <a class="social__link" 
-             href="https://www.linkedin.com/in/s-zajaczkowski/" 
-             target="_blank"
-             rel="noopener noreferrer">
-              <i class="fab fa-linkedin"></i>
+          <a class="social__link" href="https://www.linkedin.com/in/s-zajaczkowski/" target="_blank"
+            rel="noopener noreferrer">
+            <i class="fab fa-linkedin"></i>
           </a>
         </li>
       </ul>
     </nav>
     <section id='home' class="hero">
-      <header class="hero__header">    
-      <div class="hero__name">
-        <h1 class="hero__title">Stanislaw Zajaczkowski</h1>
-        <hr class="hero__hr">
-        <p class="hero__latin">Front-end Developer
-        </p>
-      </div>
-      <div class="blob" >
-        <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"></svg>
-     </div>
-     <div class="blob2" >
-       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"></svg>
-     </div>
-      <div class="blob3" >
-       <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"></svg>
-     </div>
+      <header class="hero__header">
+        <div class="hero__name">
+          <h1 class="hero__title">Stanislaw Zajaczkowski</h1>
+          <hr class="hero__hr">
+          <p class="hero__latin"> { Front-end Developer }
+          </p>
+        </div>
+        <div class="blob">
+          <svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+        <div class="blob2">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+        <div class="blob3">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
       </header>
     </section>
     <section id="aboutMe" class="aboutMe">
@@ -93,53 +89,55 @@
         </h2>
       </div>
       <div class="aboutMe__wrapper">
-        <picture >
+        <picture>
           <source media="(min-width: 1024px)" srcset="./img/me.jpg">
           <source media="(max-width: 1023px)" srcset="./img/meSmall.jpg">
-          <img class="aboutMe__picture"  src="./img/meSmall.jpg"/>
+          <img class="aboutMe__picture" src="./img/meSmall.jpg" />
         </picture>
-        
+
         <p class="aboutMe__content">
-          Hi! I am a front-end developer. I have successfully completed a programming course and I have knowledge at a junior  level. I'm eager to learn and I'm coding at every possible moment to enhance my skills. My current goal is to start working as a developer as soon as possible in full-fledged projects and learn new issues.
+          Hi! I am a front-end developer. I have successfully completed a programming course and I have knowledge at a
+          junior level. I'm eager to learn and I'm coding at every possible moment to enhance my skills. My current goal
+          is to start working as a developer as soon as possible in full-fledged projects and learn new issues.
         </p>
       </div>
-   
+
     </section>
     <section id="skills" class="skills">
-        <h2 class="skills__h2">Skills</h2>
-          
-        <ul class="skills__contentList">
-          <li class="skills__listElement tooltip" style="--index : 1"  title="HTML5" >
-            <img src="./img/icons/icons8-html-5.svg"class="skills__icon" alt="html5 icon"title="HTML5"/></li>
-          <li class="skills__listElement tooltip" style="--index : 1.7" title="CSS3">
-            <img src="./img/icons/icons8-css3.svg"  class="skills__icon" title="CSS3"/></li>
-          <li class="skills__listElement tooltip" style="--index : 2" title="JavaScript" >
-            <img src="./img/icons/icons8-javascript.svg"  class="skills__icon" title="JavaScript"/></li>
-          <li class="skills__listElement tooltip" style="--index : 1.1"title="React" >
-            <img src="./img/icons/icons8-react.svg" class="skills__icon" title="React"/></li>
-          <li class="skills__listElement tooltip" style="--index : 1.5"title="Redux" >
-            <img src="./img/icons/icons8-redux.svg" class="skills__icon" title="Redux"/></li>
-          <li class="skills__listElement tooltip" style="--index : 2.2" title="REST API" >
-            <img src="./img/icons/rest-api.svg" class="skills__icon" title="REST API"/></li>
-          <li class="skills__listElement tooltip" style="--index :1.9"title="Google Firebase">
-            <img src="./img/icons/icons8-firebase.svg" class="skills__icon" title="Firebase"/></li>
-          <li class="skills__listElement tooltip" style="--index : 2.1" title="Styled Components">
-            <img src="./img/icons/styled-components.png" class="skills__icon styled" title="Styled Components"/></li>
-          <li class="skills__listElement tooltip" style="--index : 0.8" title="GIT">
-            <img src="./img/icons/icons8-git.svg"  class="skills__icon" title="GIT"></li>
-          <li class="skills__listElement tooltip"  style="--index : 1.4" title="jira Agile">
-            <img src="./img/icons/icons8-jira.svg"class="skills__icon"  title="jira"></li>
-          <li class="skills__listElement tooltip" style="--index : 2.3" title="Scrum">
-            <img src="./img/icons/icons8-sprint-iteration-96.png" class="skills__icon"  title="Scrum"></li>
-        </ul>
-        
-   
+      <h2 class="skills__h2">Skills</h2>
+
+      <ul class="skills__contentList">
+        <li class="skills__listElement tooltip" style="--index : 1" title="HTML5">
+          <img src="./img/icons/icons8-html-5.svg" class="skills__icon" alt="html5 icon" title="HTML5" /></li>
+        <li class="skills__listElement tooltip" style="--index : 1.7" title="CSS3">
+          <img src="./img/icons/icons8-css3.svg" class="skills__icon" title="CSS3" /></li>
+        <li class="skills__listElement tooltip" style="--index : 2" title="JavaScript">
+          <img src="./img/icons/icons8-javascript.svg" class="skills__icon" title="JavaScript" /></li>
+        <li class="skills__listElement tooltip" style="--index : 1.1" title="React">
+          <img src="./img/icons/icons8-react.svg" class="skills__icon" title="React" /></li>
+        <li class="skills__listElement tooltip" style="--index : 1.5" title="Redux">
+          <img src="./img/icons/icons8-redux.svg" class="skills__icon" title="Redux" /></li>
+        <li class="skills__listElement tooltip" style="--index : 2.2" title="REST API">
+          <img src="./img/icons/rest-api.svg" class="skills__icon" title="REST API" /></li>
+        <li class="skills__listElement tooltip" style="--index :1.9" title="Google Firebase">
+          <img src="./img/icons/icons8-firebase.svg" class="skills__icon" title="Firebase" /></li>
+        <li class="skills__listElement tooltip" style="--index : 2.1" title="Styled Components">
+          <img src="./img/icons/styled-components.png" class="skills__icon styled" title="Styled Components" /></li>
+        <li class="skills__listElement tooltip" style="--index : 0.8" title="GIT">
+          <img src="./img/icons/icons8-git.svg" class="skills__icon" title="GIT"></li>
+        <li class="skills__listElement tooltip" style="--index : 1.4" title="jira Agile">
+          <img src="./img/icons/icons8-jira.svg" class="skills__icon" title="jira"></li>
+        <li class="skills__listElement tooltip" style="--index : 2.3" title="Scrum">
+          <img src="./img/icons/icons8-sprint-iteration-96.png" class="skills__icon" title="Scrum"></li>
+      </ul>
+
+
     </section>
     <section id="projects" class="projects">
       <h2 class="projects__title">
-       My Projects
+        My Projects
       </h2>
-       <div class="projects__wrapper">
+      <div class="projects__wrapper">
         <div class="project project__one">
           <a class="project__link" target="_blank" rel="noopener" href="https://infallible-brown-27d243.netlify.app/">
             <div class="project__wrapper">
@@ -147,18 +145,19 @@
               <p class="project__description">Simple game build in pure JS, enjoy!</p>
             </div>
           </a>
-        </div>      
+        </div>
         <div class="project project__two">
-          <a class="project__link" target="_blank" rel="noopener" href="http://app.popeyeweather.jfdz14.is-academy.pl/">  
-            <div class="project__wrapper">     
+          <a class="project__link" target="_blank" rel="noopener" href="http://app.popeyeweather.jfdz14.is-academy.pl/">
+            <div class="project__wrapper">
               <h2 class="project__title">Weather App</h2>
-              <p class="project__description">A team project. Build in React. Best app for checking weather in main cities around Baltic Sea area</p>
+              <p class="project__description">A team project. Build in React. Best app for checking weather in main
+                cities around Baltic Sea area</p>
             </div>
           </a>
-        </div>     
+        </div>
         <div class="project project__three">
           <a class="project__link" target="_blank" rel="noopener" href="http://popeyeweather.jfdz14.is-academy.pl/">
-            <div class="project__wrapper">  
+            <div class="project__wrapper">
               <h2 class="project__title">Landing Page for weather App</h2>
               <p class="project__description">Team builded landing page for our weather app. </p>
             </div>
@@ -166,33 +165,37 @@
         </div>
         <div class="project project__four">
           <a class="project__link" target="_blank" rel="noopener" href="https://staszekz.github.io/notes.github.io/">
-            <div class="project__wrapper">  
-             <h2 class="project__title">Notes & Todos</h2> 
-             <p class="project__description">Advanced todos and notes list build in React and Google firebase. Feel free to use it!</p>
+            <div class="project__wrapper">
+              <h2 class="project__title">Notes & Todos</h2>
+              <p class="project__description">Advanced todos and notes list build in React and Google firebase. Feel
+                free to use it!</p>
             </div>
           </a>
         </div>
         <div class="project project__five">
           <a class="project__link" target="_blank" rel="noopener" href="https://staszekz.github.io/landingPageOne/">
-            <div class="project__wrapper"> 
-              <h2 class="project__title">Landing Page</h2> 
+            <div class="project__wrapper">
+              <h2 class="project__title">Landing Page</h2>
               <p class="project__description">Simple page with only HTML and CSS.</p>
             </div>
           </a>
         </div>
-      </div>     
+      </div>
     </section>
   </main>
   <footer class="footer" id="contact">
-   
-      <p class="footer__description">&copy Stanislaw Zajaczkowski 2020 </p>
-      <p class="footer__description">Location: Gdansk, Poland</p>
-      
-   
-      <a class="footer__link" href="mailto:staszek.zajaczkowski@gmail.com"><i class="far fa-envelope"></i> staszek.zajaczkowski@gmail.com </a>
-      <p class="footer__link footer__iconLink ">Icons by <a class="footer__link footer__iconLink"target="_blank" rel="noopener" href="https://icons8.com">Icons8</a></pclas>
-   
+
+    <p class="footer__description">&copy Stanislaw Zajaczkowski 2020 </p>
+    <p class="footer__description">Location: Gdansk, Poland</p>
+
+
+    <a class="footer__link" href="mailto:staszek.zajaczkowski@gmail.com"><i class="far fa-envelope"></i>
+      staszek.zajaczkowski@gmail.com </a>
+    <p class="footer__link footer__iconLink ">Icons by <a class="footer__link footer__iconLink" target="_blank"
+        rel="noopener" href="https://icons8.com">Icons8</a></pclas>
+
   </footer>
 </body>
 <script src=./main.js></script>
+
 </html>
