@@ -36,17 +36,26 @@ section {
 
 .hero {
   height: 80vh;
-  overflow: hidden;
-  position: relative;
-  background-color: #3797a4;
-  z-index: -1;
+  background-color: rgb(0, 0, 0);
+
+  &__bgr {
+    background-image: url('../img/heroBgr.png');
+    background-size: cover;
+    filter: blur(5px);
+    height: 100%;
+    z-index: -1;
+    background-position: center;
+    background-repeat: no-repeat;
+
+  }
 
   &__name {
     background-color: rgb(0, 0, 0);
     /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     // border: 3px solid #f1f1f1;
-    position: relative;
+    position: absolute;
+    top: 0;
     border-radius: 50px;
     box-shadow: $box-shadow;
     width: 100%;
@@ -61,6 +70,7 @@ section {
     margin: 12rem auto 2rem;
     left: 0;
     right: 0;
+    top: 0;
     text-align: center;
   }
 
@@ -73,6 +83,7 @@ section {
     font-size: 12vmin;
     text-shadow: $shadow;
   }
+
 
   &__latin {
     color: white;
@@ -295,6 +306,10 @@ section {
 .skills {
   background-color: #81a594;
   min-height: 70vh;
+  position: relative;
+  z-index: -1;
+  overflow: hidden;
+
 
   &__h2 {
     width: 100%;
@@ -587,10 +602,10 @@ section {
 //blobs in header
 .blob {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 30vmax;
-  z-index: -1;
+  top: 500px;
+  left: 200px;
+  width: 23vmax;
+  z-index: -3;
   animation: move 40s ease-in-out infinite;
   transform-origin: 50% 30%;
 }
@@ -599,19 +614,20 @@ section {
   position: absolute;
   top: 30px;
   right: 30px;
-  width: 30vmax;
+  width: 25vmax;
   z-index: -2;
   animation: move2 50s ease-in-out infinite;
   transform-origin: 50% 30%;
-  border: 1px solid darkcyan;
+  box-shadow: 1px 1px -8px black;
+  // border: 1px solid darkcyan;
 }
 
 .blob3 {
   position: absolute;
   top: 30px;
   left: 300px;
-  width: 38vmax;
-  height: 42vmax;
+  width: 28vmax;
+  height: 30vmax;
   z-index: -1;
   animation: move3 50s ease-in infinite;
   transform-origin: 30% 30%;
@@ -621,61 +637,61 @@ section {
   0% {
     border-radius: 60% 40% 60% 70%/ 40% 50% 60% 70%;
     background: radial-gradient(circle at 100px 100px,
-        rgba(92, 171, 252, 0.71),
+        rgba(92, 171, 252, 0.31),
         rgba(0, 0, 0, 0.4));
     transform: scale(0.8);
   }
 
   48% {
-    transform: scale(0.8, 1) translate(80vw, 20vh) rotate(180deg);
+    transform: scale(0.8, 1) translate(60vw, 20vh) rotate(180deg);
   }
 
   50% {
     border-radius: 50% 70% 60% 40% / 70% 40% 50% 60%;
     background: radial-gradient(circle at 100px 100px,
-        rgba(92, 171, 255, 0.71),
+        rgba(92, 171, 255, 0.31),
         rgba(0, 0, 0, 0.4));
   }
 
   80% {
-    transform: scale(1.3) translate(10vw, 30vh) rotate(-140deg);
+    transform: scale(1.1, 1.1) translate(10vw, -5vh) rotate(-140deg);
   }
 
   100% {
     border-radius: 60% 40% 60% 70%/40% 50% 60% 70%;
     background: radial-gradient(circle at 100px 100px,
-        rgba(92, 171, 239, 0.71),
+        rgba(92, 171, 239, 0.31),
         rgba(0, 0, 0, 0.4));
-    transform: scale(0.8);
+    transform: scale(0.8, 1);
   }
 }
 
 @keyframes move2 {
   0% {
     border-radius: 60% 40% 60% 70%/ 40% 50% 60% 70%;
-    background: radial-gradient(circle at 100px 100px, rgba(55, 151, 164, 1), rgba(0, 0, 0, 0.4));
+    background: radial-gradient(circle at 100px 100px, rgba(55, 151, 164, 0.4), rgba(0, 0, 0, 0.4));
     transform: scale(0.8);
   }
 
   38% {
-    transform: scale(0.8, 1) translate(-90vw, 40vh) rotate(180deg);
-    background: radial-gradient(circle at 100px 100px, rgba(55, 151, 167, 1), rgba(0, 0, 0, 0.4));
+    transform: scale(0.8, 1) translate(-10vw, 40vh) rotate(180deg);
+    background: radial-gradient(circle at 100px 100px, rgba(55, 151, 167, 0.4), rgba(0, 0, 0, 0.4));
   }
 
   50% {
     border-radius: 50% 70% 60% 40% / 70% 40% 50% 60%;
-    background: radial-gradient(circle at 100px 100px, rgba(55, 151, 170, 1), rgba(0, 0, 0, 0.4));
+    background: radial-gradient(circle at 100px 100px, rgba(55, 151, 170, .4), rgba(0, 0, 0, 0.4));
     width: 40vw;
   }
 
   70% {
-    transform: scale(1.2) translate(-40vw, -20vh) rotate(-120deg);
-    background: radial-gradient(circle at 100px 100px, rgba(55, 151, 167, 1), rgba(0, 0, 0, 0.4));
+    transform: scale(1.1) translate(20vw, -10vh) rotate(-120deg);
+    background: radial-gradient(circle at 100px 100px, rgba(55, 151, 167, .4), rgba(0, 0, 0, 0.4));
   }
 
   100% {
     border-radius: 60% 40% 60% 70%/40% 50% 60% 70%;
-    background: radial-gradient(circle at 100px 100px, rgba(55, 151, 164, 1), rgba(0, 0, 0, 0.4));
+    background: radial-gradient(circle at 100px 100px, rgba(55, 151, 164, .4), rgba(0, 0, 0, 0.4));
     transform: scale(0.8);
   }
 }
@@ -684,32 +700,32 @@ section {
   0% {
     border-radius: 80% 50% 60% 70%/ 40% 50% 60% 70%;
     background: radial-gradient(circle at 100px 100px,
-        rgba(72, 151, 252, 0.71),
+        rgba(72, 151, 252, 0.41),
         rgba(0, 0, 0, 0.4));
     transform: scale(0.8);
   }
 
   18% {
-    transform: scale(0.8, 1) translate(-10vw, -60vh) rotate(10deg);
+    transform: scale(0.8, 1) translate(10vw, 10vh) rotate(10deg);
   }
 
   48% {
-    transform: scale(0.8, 1) translate(-40vw, -20vh) rotate(180deg);
+    transform: scale(0.8, 1) translate(-10vw, 30vh) rotate(180deg);
   }
 
   50% {
     border-radius: 50% 70% 60% 70% / 70% 40% 70% 60%;
-    background: radial-gradient(circle at 100px 100px, rgba(72, 151, 255, 0.7), rgba(0, 0, 0, 0.4));
+    background: radial-gradient(circle at 100px 100px, rgba(72, 151, 255, 0.4), rgba(0, 0, 0, 0.4));
   }
 
   80% {
-    transform: scale(1.3) translate(30vw, 30vh) rotate(-140deg);
+    transform: scale(1.3) translate(30vw, -10vh) rotate(-140deg);
   }
 
   100% {
     border-radius: 80% 50% 60% 70%/40% 50% 60% 70%;
     background: radial-gradient(circle at 100px 100px,
-        rgba(72, 151, 239, 0.71),
+        rgba(72, 151, 239, 0.41),
         rgba(0, 0, 0, 0.4));
     transform: scale(0.8);
   }
@@ -777,6 +793,10 @@ section {
       border: none;
       font-size: 1.8vmax;
     }
+  }
+
+  .hero__name {
+    top: 8vh;
   }
 
 }
