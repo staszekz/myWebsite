@@ -417,7 +417,7 @@ section {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(5, 1fr);
-  grid-template-areas: 'one' 'two' 'three' 'four' 'five';
+  grid-template-areas: 'one' 'two' 'three' 'four' 'five' 'six';
   width: 90%;
   min-height: 80vh;
   margin: 0 auto;
@@ -488,17 +488,22 @@ section {
 
 .project__three {
   grid-area: three;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/popeyeWeb.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/notes.png");
 }
 
 .project__four {
   grid-area: four;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/notes.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/popeyeWeb.png");
 }
 
 .project__five {
   grid-area: five;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/landing.png");
+}
+
+.project__six {
+  grid-area: six;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/asiaStrona.JPG");
 }
 
 .footer {
@@ -636,6 +641,12 @@ section {
   }
 }
 
+@media (max-width: 375px) {
+  .fromLeft {
+    display: none !important;
+  }
+}
+
 @media (min-width: 530px) {
   .aboutMe__wrapper {
     flex-direction: row;
@@ -650,7 +661,7 @@ section {
   .projects__wrapper {
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-template-areas: 'one one one one two two two' 'three three three five five five five' 'four four four four four four four';
+    grid-template-areas: 'one one one one two two two' 'three three three five five five five' 'six six six six four four four';
   }
 }
 
@@ -684,7 +695,7 @@ section {
 @media (min-width: 1024px) {
   .footer {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
   }
   .footer__description, .footer__link {
     font-size: 1.5vmax;
@@ -703,7 +714,7 @@ section {
   .projects__wrapper {
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    grid-template-areas: 'one one two two three three three' 'four four four five five five five';
+    grid-template-areas: 'one one two two three three three' 'six six six four four five five';
   }
 }
 

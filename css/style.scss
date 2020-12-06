@@ -458,7 +458,8 @@ section {
     'two'
     'three'
     'four'
-    'five';
+    'five'
+    'six';
   width: 90%;
   min-height: 80vh;
   margin: 0 auto;
@@ -531,19 +532,26 @@ section {
   &__three {
     grid-area: three;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url('../img/popeyeWeb.png');
+      url('../img/notes.png');
   }
 
   &__four {
     grid-area: four;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url('../img/notes.png');
+      url('../img/popeyeWeb.png');
   }
+
 
   &__five {
     grid-area: five;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
       url('../img/landing.png');
+  }
+
+  &__six {
+    grid-area: six;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url('../img/asiaStrona.JPG');
   }
 }
 
@@ -707,11 +715,11 @@ section {
   }
 }
 
-// @media(min-width: 375px) {
-//   .aboutme__picture {
-//     display: none;
-//   }
-// }
+@media(max-width: 375px) {
+  .fromLeft {
+    display: none !important;
+  }
+}
 
 @media (min-width: 530px) {
   .aboutMe {
@@ -737,7 +745,7 @@ section {
     grid-template-areas:
       'one one one one two two two'
       'three three three five five five five'
-      'four four four four four four four';
+      'six six six six four four four';
   }
 }
 
@@ -777,7 +785,7 @@ section {
 @media (min-width: 1024px) {
   .footer {
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 
     &__description,
     &__link {
@@ -804,7 +812,7 @@ section {
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas:
       'one one two two three three three'
-      'four four four five five five five';
+      'six six six four four five five';
   }
 }
 
