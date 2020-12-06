@@ -118,6 +118,13 @@ section {
   align-self: center;
   justify-content: space-evenly;
   list-style: none;
+
+  &__icon:hover {
+    transform: translateY(-7px);
+    transition: all 0.3s ease;
+    color: #2EE59D;
+    text-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  }
 }
 
 .hamburger {
@@ -168,7 +175,8 @@ section {
 
   &__item {
     opacity: 0;
-    transition: all 0.3s ease-out;
+    transition: opacity 0.3s ease-out;
+
 
     &:nth-child(1) {
       transition: all 0.3s ease 0.1s;
@@ -189,17 +197,52 @@ section {
     &:nth-child(5) {
       transition: all 0.3s ease 0.5s;
     }
+
+    &:nth-child(6) {
+      transition: all 0.3s ease 0.6s;
+    }
   }
 
   &__link {
     padding: 1.5rem;
-    font-size: 3vmax;
+    font-size: clamp(1.4vmax, 1.7rem, 3vmax);
     text-decoration: none;
     display: grid;
     place-content: center;
-    // border-right: 1px dotted gray;
     color: white;
     text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 3px 4px white;
+
+    &:hover {
+      transform: translateY(-7px);
+      transition: all 0.3s ease;
+      color: #2EE59D;
+      text-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    }
+  }
+
+  &__button {
+    height: 45px;
+    font-family: $mainFont;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    outline: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-family: $mainFont;
+
+
+    &:hover {
+      background-color: #2EE59D;
+      box-shadow: 0px 5px 10px rgba(46, 229, 157, 0.4);
+      color: #fff;
+      transform: translateY(-7px);
+    }
   }
 }
 
@@ -409,36 +452,36 @@ section {
   }
 }
 
-.tooltip:before {
-  position: absolute;
-  display: none;
-  max-width: 200px;
-  padding: 10px;
-  font-size: 1rem;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.8);
-  font-family: $secondFont;
-  text-align: center;
-  color: white;
-  top: calc(100% + 5px);
-  left: 50%;
-  transform: translateX(-50%);
-  content: attr(title);
-}
+// .tooltip:before {
+//   position: absolute;
+//   display: none;
+//   max-width: 200px;
+//   padding: 10px;
+//   font-size: 1rem;
+//   border-radius: 5px;
+//   background-color: rgba(0, 0, 0, 0.8);
+//   font-family: $secondFont;
+//   text-align: center;
+//   color: white;
+//   top: calc(100% + 5px);
+//   left: 50%;
+//   transform: translateX(-50%);
+//   content: attr(title);
+// }
 
-.tooltip:after {
-  position: absolute;
-  display: none;
-  width: 0;
-  height: 0;
-  border: 5px solid transparent;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-top-width: 0;
-  border-bottom-color: rgba(0, 0, 0, 0.8);
-  content: '';
-}
+// .tooltip:after {
+//   position: absolute;
+//   display: none;
+//   width: 0;
+//   height: 0;
+//   border: 5px solid transparent;
+//   top: 100%;
+//   left: 50%;
+//   transform: translateX(-50%);
+//   border-top-width: 0;
+//   border-bottom-color: rgba(0, 0, 0, 0.8);
+//   content: '';
+// }
 
 // .tooltip:hover:before,
 // .tooltip:hover:after {
@@ -573,7 +616,7 @@ section {
 }
 
 .footer {
-  height: 15vh;
+  min-height: 15vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -587,6 +630,7 @@ section {
     font-size: clamp(3vmin, 22px, 4.5vmin);
     text-shadow: 1px 1px 1px grey, 1px 2px 1px black;
     text-decoration: none;
+    padding-top: 1rem;
 
     &:visited {
       text-shadow: 1px 1px 1px grey, 1px 2px 1px black;
@@ -597,7 +641,7 @@ section {
   &__iconLink {
     align-self: flex-end;
     padding-right: 2rem;
-    font-size: clamp(0.7vmax, 16px, 1.5vmax);
+    font-size: clamp(0.7vmax, 6px, 1.4vmax);
   }
 }
 
@@ -779,16 +823,19 @@ section {
     height: 80px;
     clip-path: none;
     pointer-events: all;
+    background: transparent;
+
 
     &__item {
       opacity: 1;
       cursor: pointer;
       z-index: inherit;
+      background: transparent;
     }
 
     &__link {
       padding: 0 1rem;
-      font-size: max(1.4vmax, 1.6vmax);
+      background: transparent;
     }
   }
 
@@ -833,7 +880,7 @@ section {
   }
 }
 
-.shortMenu {
-  height: 50px;
-  transition: all 0.3s ease;
-}
+// .shortMenu {
+//   height: 50px;
+//   transition: all 0.3s ease;
+// }

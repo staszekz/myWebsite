@@ -37,28 +37,33 @@
           <a class="menu__link" href="#home">Home</a>
         </li>
         <li class="menu__item">
-          <a class="menu__link" href="#aboutMe">About me</a>
+          <a class="menu__link" href="#aboutMe">About</a>
         </li>
         <li class="menu__item">
           <a class="menu__link" href="#skills">Skills</a>
         </li>
         <li class="menu__item">
-          <a class="menu__link" href="#projects">My Projects</a>
+          <a class="menu__link" href="#projects">Projects</a>
         </li>
         <li class="menu__item">
           <a class="menu__link" href="#contact">Contact</a>
+        </li>
+        <li class="menu__item">
+          <button class="menu__button" type="submit"
+            onclick="window.open('./pdf/Stanislaw_Zajaczkowski_CV.pdf')">Download
+            CV</button>
         </li>
       </ul>
       <ul class="social">
         <li class="social__item">
           <a class="social__link" href="https://github.com/StaszekZ" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i>
+            <i class="fab fa-github social__icon"></i>
           </a>
         </li>
         <li class="social__item">
           <a class="social__link" href="https://www.linkedin.com/in/s-zajaczkowski/" target="_blank"
             rel="noopener noreferrer">
-            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-linkedin social__icon"></i>
           </a>
         </li>
       </ul>
@@ -66,14 +71,11 @@
     <section id='home' class="hero ">
       <div class="hero__bgr"></div>
       <header class="hero__header">
-
         <div class="hero__name">
           <h1 class="hero__title">Stanislaw Zajaczkowski</h1>
           <hr class="hero__hr">
           <p class="hero__latin"> { Front-end Developer }
           </p>
-
-
         </div>
       </header>
 
@@ -88,7 +90,7 @@
         <picture class="aboutMe__pictureWrapper">
           <source media="(min-width: 1024px)" srcset="./img/me.jpg">
           <source media="(max-width: 1023px)" srcset="./img/meSmall.jpg">
-          <img class="aboutMe__picture" src="./img/meSmall.jpg" />
+          <img class="aboutMe__picture" src="./img/meSmall.jpg" alt="stanislaw zajaczkowski photo" />
         </picture>
 
         <p class="aboutMe__content">
