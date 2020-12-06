@@ -45,27 +45,27 @@ links.forEach(link => {
 	link.addEventListener('click', closeMenu);
 });
 
-const shrinkMenu = () => {
-	if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-		navBar.classList.add('shortMenu');
-		if (window.innerWidth > 768) {
-			menuLinks.classList.add('shortMenu');
-		} else {
-			menuLinks.classList.remove('shortMenu');
-		}
-	} else {
-		navBar.classList.remove('shortMenu');
-		menuLinks.classList.remove('shortMenu');
-	}
-};
+// const shrinkMenu = () => {
+// 	if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+// 		navBar.classList.add('shortMenu');
+// 		if (window.innerWidth > 768) {
+// 			menuLinks.classList.add('shortMenu');
+// 		} else {
+// 			menuLinks.classList.remove('shortMenu');
+// 		}
+// 	} else {
+// 		navBar.classList.remove('shortMenu');
+// 		menuLinks.classList.remove('shortMenu');
+// 	}
+// };
 
-window.onresize = () => {
-	if (window.innerWidth > 769) {
-		menuLinks.classList.add('shortMenu');
-	}
-};
+// window.onresize = () => {
+// 	if (window.innerWidth > 769) {
+// 		menuLinks.classList.add('shortMenu');
+// 	}
+// };
 
-window.onscroll = () => shrinkMenu();
+// window.onscroll = () => shrinkMenu();
 
 //ładowanie w seksji aboutMe
 const hero = document.querySelector('.hero');

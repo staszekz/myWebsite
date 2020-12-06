@@ -158,6 +158,7 @@ section {
   width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   clip-path: circle(100px at 80% -40%);
   -webkit-clip-path: circle(100px at 80% -40%);
   transition: height 0.3s ease-out;
@@ -195,8 +196,8 @@ section {
     font-size: 3vmax;
     text-decoration: none;
     display: grid;
-    place-content: center;
-    border-right: 1px dotted gray;
+   place-content: center;
+    // border-right: 1px dotted gray;
     color: white;
     text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 3px 4px white;
   }
@@ -790,8 +791,7 @@ section {
 
     &__link {
       padding: 0 1rem;
-      border: none;
-      font-size: 1.8vmax;
+      font-size: max(1.4vmax, 1.6vmax);
     }
   }
 
