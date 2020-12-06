@@ -70,7 +70,7 @@ window.onscroll = () => shrinkMenu();
 //ładowanie w seksji aboutMe
 const hero = document.querySelector('.hero');
 const heroHeight = parseFloat(getComputedStyle(hero, null).height.replace('px', ''));
-const myImage = document.querySelector('.aboutMe__picture');
+const myImage = document.querySelector('.aboutMe__pictureWrapper');
 const aboutMeContent = document.querySelector('.aboutMe__content');
 
 const slide = () => {

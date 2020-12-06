@@ -220,10 +220,13 @@ section {
   justify-content: center;
 }
 
+.aboutMe__pictureWrapper {
+  display: none;
+}
+
 .aboutMe__picture {
   max-width: 20vw;
   height: auto;
-  display: none;
   clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
 }
 
@@ -238,7 +241,7 @@ section {
 
 .fromLeft {
   animation: slideLeft 0.8s;
-  display: none;
+  display: flex;
 }
 
 .fromRight {
@@ -674,7 +677,7 @@ section {
   .menu__link {
     padding: 0 1rem;
     border: none;
-    font-size: 2vmax;
+    font-size: 1.8vmax;
   }
 }
 
