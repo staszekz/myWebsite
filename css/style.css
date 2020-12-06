@@ -284,7 +284,6 @@ section {
   background-color: #81a594;
   min-height: 70vh;
   position: relative;
-  z-index: -1;
   overflow: hidden;
 }
 
@@ -551,7 +550,6 @@ section {
   top: 500px;
   left: 200px;
   width: 23vmax;
-  z-index: -3;
   animation: move 40s ease-in-out infinite;
   transform-origin: 50% 30%;
 }
@@ -561,7 +559,6 @@ section {
   top: 30px;
   right: 30px;
   width: 25vmax;
-  z-index: -2;
   animation: move2 50s ease-in-out infinite;
   transform-origin: 50% 30%;
   box-shadow: 1px 1px -8px black;
@@ -573,7 +570,6 @@ section {
   left: 300px;
   width: 28vmax;
   height: 30vmax;
-  z-index: -1;
   animation: move3 50s ease-in infinite;
   transform-origin: 30% 30%;
 }
