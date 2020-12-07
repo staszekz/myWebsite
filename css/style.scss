@@ -627,7 +627,7 @@ section {
   &__description,
   &__link {
     color: white;
-    font-size: clamp(3vmin, 22px, 4.5vmin);
+    font-size: clamp(3vmin, 16px, 4vmin);
     text-shadow: 1px 1px 1px grey, 1px 2px 1px black;
     text-decoration: none;
     padding-top: 1rem;
@@ -638,10 +638,40 @@ section {
     }
   }
 
+  &__link:hover {
+    transform: translateY(-7px);
+    transition: all 0.3s ease;
+    color: #2EE59D;
+    text-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  }
+
   &__iconLink {
     align-self: flex-end;
     padding-right: 2rem;
     font-size: clamp(0.7vmax, 6px, 1.4vmax);
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__list {
+    list-style-type: none;
+  }
+
+  &__socialLink {
+    text-decoration: none;
+    color: white;
+    font-size: clamp(2.5vmin, 16px, 3vmin);
+
+    &:hover {
+      transform: translateY(-7px);
+      transition: all 0.3s ease;
+      color: #2EE59D;
+      text-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    }
   }
 }
 
@@ -852,7 +882,8 @@ section {
     justify-content: space-around;
 
     &__description,
-    &__link {
+    &__link,
+    &__socialLink {
       font-size: 1.5vmax;
     }
 
