@@ -561,7 +561,7 @@ section {
 .footer__iconLink {
   align-self: flex-end;
   padding-right: 2rem;
-  font-size: clamp(0.7vmax, 6px, 1.4vmax);
+  font-size: clamp(3vmin, 16px, 4vmin);
 }
 
 .footer__info {
@@ -577,7 +577,7 @@ section {
 .footer__socialLink {
   text-decoration: none;
   color: white;
-  font-size: clamp(2.5vmin, 16px, 3vmin);
+  font-size: clamp(3vmin, 16px, 4vmin);
 }
 
 .footer__socialLink:hover {
@@ -585,6 +585,10 @@ section {
   transition: all 0.3s ease;
   color: #2EE59D;
   text-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+}
+
+.footer__envelope {
+  visibility: hidden;
 }
 
 .blob {
@@ -708,6 +712,9 @@ section {
     width: 144px;
     height: 144px;
   }
+  .footer__envelope {
+    visibility: visible;
+  }
   .projects__wrapper {
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -752,7 +759,7 @@ section {
     justify-content: space-around;
   }
   .footer__description, .footer__link, .footer__socialLink {
-    font-size: 1.5vmax;
+    font-size: 1.5rem;
   }
   .footer__iconLink {
     padding-right: 0;
