@@ -1,8 +1,8 @@
-const hamburger = document.querySelector('.hamburger');
-const lines = document.querySelectorAll('.line');
-const menuLinks = document.querySelector('.menu');
-const links = document.querySelectorAll('.menu__item');
-const navBar = document.querySelector('.navigation');
+const hamburger = document.querySelector('.hamburger')!;
+const lines = document.querySelectorAll('.line')!;
+const menuLinks = document.querySelector('.menu')!;
+const links = document.querySelectorAll('.menu__item')!;
+const navBar = document.querySelector('.navigation')!;
 
 //włączanie i wyłączanie menu po kliknięciu w hamburger
 
@@ -21,7 +21,7 @@ const toggleHamburgerClasses = () => {
 		line.classList.toggle('makeCross');
 	});
 	// menuLinks.classList.add('shortMenu');
-	shrinkMenu();
+	// shrinkMenu();
 };
 
 //zamykanie menu po kliknięciu w link - obsługa
@@ -68,10 +68,10 @@ links.forEach(link => {
 // window.onscroll = () => shrinkMenu();
 
 //ładowanie w seksji aboutMe
-const hero = document.querySelector('.hero');
+const hero = document.querySelector('.hero')!;
 const heroHeight = parseFloat(getComputedStyle(hero, null).height.replace('px', ''));
-const myImage = document.querySelector('.aboutMe__pictureWrapper');
-const aboutMeContent = document.querySelector('.aboutMe__content');
+const myImage = document.querySelector('.aboutMe__pictureWrapper')!;
+const aboutMeContent = document.querySelector('.aboutMe__content')!;
 
 const slide = () => {
 	if (window.scrollY > heroHeight / 2) {
