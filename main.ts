@@ -1,8 +1,8 @@
-const hamburger = document.querySelector('.hamburger')!;
-const lines = document.querySelectorAll('.line')!;
-const menuLinks = document.querySelector('.menu')!;
-const links = document.querySelectorAll('.menu__item')!;
-const navBar = document.querySelector('.navigation')!;
+const hamburger = document.querySelector('.hamburger') as HTMLElement;
+const lines: NodeListOf<Element> = document.querySelectorAll('.line');
+const menuLinks = document.querySelector('.menu') as HTMLUListElement;
+const links: NodeListOf<Element> = document.querySelectorAll('.menu__item');
+const navBar = document.querySelector('.navigation') as HTMLElement;
 
 //włączanie i wyłączanie menu po kliknięciu w hamburger
 
@@ -68,10 +68,10 @@ links.forEach(link => {
 // window.onscroll = () => shrinkMenu();
 
 //ładowanie w seksji aboutMe
-const hero = document.querySelector('.hero')!;
-const heroHeight = parseFloat(getComputedStyle(hero, null).height.replace('px', ''));
-const myImage = document.querySelector('.aboutMe__pictureWrapper')!;
-const aboutMeContent = document.querySelector('.aboutMe__content')!;
+const hero = document.querySelector('.hero') as HTMLElement;
+const heroHeight: number = parseFloat(getComputedStyle(hero, null).height.replace('px', ''));
+const myImage = document.querySelector('.aboutMe__pictureWrapper') as HTMLImageElement;
+const aboutMeContent = document.querySelector('.aboutMe__content') as HTMLParagraphElement;
 
 const slide = () => {
 	if (window.scrollY > heroHeight / 2) {
@@ -81,8 +81,8 @@ const slide = () => {
 };
 
 //loading of skills icons
-const skillsEl = document.querySelectorAll('.skills__listElement');
-const skills = document.querySelector('.skills');
+const skillsEl: NodeListOf<Element> = document.querySelectorAll('.skills__listElement');
+const skills = document.querySelector('.skills') as HTMLElement;
 
 const slideSkills = () => {
 	if (window.scrollY > heroHeight + 200) {
