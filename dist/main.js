@@ -84,3 +84,6 @@ const allOnScroll = () => {
     slideSkills();
 };
 window.addEventListener('scroll', allOnScroll);
+const date = new Date().getFullYear();
+const footerDate = document.querySelector('.footer__date');
+footerDate.innerText = date.toString();

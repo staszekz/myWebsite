@@ -98,3 +98,8 @@ const allOnScroll = () => {
 };
 
 window.addEventListener('scroll', allOnScroll);
+
+
+const date: number = new Date().getFullYear()
+const footerDate = document.querySelector('.footer__date') as HTMLDataElement;
+footerDate.innerText = date.toString();
