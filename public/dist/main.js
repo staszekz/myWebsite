@@ -91,4 +91,22 @@ const renderFlake = (snowContainer) => {
     setTimeout(renderFlake, 500, snowContainer);
 };
 const snowContainer = renderSnow();
-renderFlake(snowContainer);
+// renderFlake(snowContainer);
+//////////////////////// **contact form** /////////////////////////////
+const form = document.querySelector('.form');
+const submitBtn = document.querySelector('.form__btn');
+const closeBtn = document.querySelector('.form__close');
+const openForm = document.querySelector('#openForm');
+const sendMessage = (e) => {
+    e.preventDefault();
+    console.log('submited', e);
+};
+const closeForm = (e) => {
+    e.preventDefault();
+    console.log('closed', e);
+    form.classList.toggle('form__hide');
+    form.classList.toggle('form__show');
+};
+submitBtn.addEventListener('click', sendMessage);
+closeBtn.addEventListener('click', closeForm);
+openForm.addEventListener('click', closeForm);

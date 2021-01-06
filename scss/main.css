@@ -200,7 +200,7 @@ section {
   text-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
 }
 
-.menu__button {
+.button {
   height: 45px;
   font-family: Alegreya, Arial, sans-serif;
   font-size: 11px;
@@ -217,7 +217,7 @@ section {
   font-family: Alegreya, Arial, sans-serif;
 }
 
-.menu__button:hover {
+.button:hover {
   background-color: #2ee59d;
   box-shadow: 0px 5px 10px rgba(46, 229, 157, 0.4);
   color: #fff;

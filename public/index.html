@@ -46,10 +46,10 @@
           <a class="menu__link" href="#projects">Projects</a>
         </li>
         <li class="menu__item">
-          <a class="menu__link" href="#contact">Contact</a>
+          <a class="menu__link" id="openForm" href="#contact">Contact</a>
         </li>
         <li class="menu__item">
-          <button class="menu__button" type="submit"
+          <button class="menu__button button" type="submit"
             onclick="window.open('./pdf/Stanislaw_Zajaczkowski_CV.pdf')">Download
             CV</button>
         </li>
@@ -68,6 +68,24 @@
         </li>
       </ul>
     </nav>
+
+
+    <aside>
+      <form class="form form__hide">
+        <label for="name">Name *:</label>
+        <input class="form__input" type="text" id="name" name="name" required><br>
+        <label for="company">Company:</label>
+        <input class="form__input" type="text" id="company" name="company"><br>
+        <label for="location">Location:</label>
+        <input class="form__input"  type="text" id="location" name="location"><br>
+        <label for="msg">Message *:</label>
+        <textarea class="form__input"  rows="7" type="text" id="msg" name="msg"></textarea><br>
+        <input class="button form__btn" type="submit" value="Submit" required>
+      <button class="button form__close">close</button>
+      </form>
+    </aside>
+
+
     <section id='home' class="hero ">
       <div class="hero__bgr"></div>
       <header class="hero__header">
@@ -114,29 +132,41 @@
       <h2 class="skills__h2">Skills</h2>
       <ul class="skills__contentList">
         <li class="skills__listElement tooltip" style="--index : 1" title="HTML5">
-          <img src="./img/icons/icons8-html-5.svg" class="skills__icon" alt="html5 icon" title="HTML5" /></li>
+          <img src="./img/icons/icons8-html-5.svg" class="skills__icon" alt="html5 icon" title="HTML5" />
+        </li>
         <li class="skills__listElement tooltip" style="--index : 0.7" title="CSS3">
-          <img src="./img/icons/icons8-css3.svg" class="skills__icon" title="CSS3" /></li>
+          <img src="./img/icons/icons8-css3.svg" class="skills__icon" title="CSS3" />
+        </li>
         <li class="skills__listElement tooltip" style="--index : 1.4" title="CSS3">
-          <img src="./img/icons/icons8-bootstrap.svg" class="skills__icon" title="Bootstrap 4" /></li>
+          <img src="./img/icons/icons8-bootstrap.svg" class="skills__icon" title="Bootstrap 4" />
+        </li>
         <li class="skills__listElement tooltip" style="--index : 0.5" title="JavaScript">
-          <img src="./img/icons/icons8-javascript.svg" class="skills__icon" title="JavaScript" /></li>
+          <img src="./img/icons/icons8-javascript.svg" class="skills__icon" title="JavaScript" />
+        </li>
         <li class="skills__listElement tooltip" style="--index : 1.1" title="React">
-          <img src="./img/icons/icons8-react.svg" class="skills__icon" title="React" /></li>
+          <img src="./img/icons/icons8-react.svg" class="skills__icon" title="React" />
+        </li>
         <li class="skills__listElement tooltip" style="--index : 1.5" title="Redux">
-          <img src="./img/icons/icons8-redux.svg" class="skills__icon" title="Redux" /></li>
+          <img src="./img/icons/icons8-redux.svg" class="skills__icon" title="Redux" />
+        </li>
         <li class="skills__listElement tooltip" style="--index : 1.7" title="REST API">
-          <img src="./img/icons/rest-api.svg" class="skills__icon" title="REST API" /></li>
+          <img src="./img/icons/rest-api.svg" class="skills__icon" title="REST API" />
+        </li>
         <li class="skills__listElement tooltip" style="--index :1.6" title="Google Firebase">
-          <img src="./img/icons/icons8-firebase.svg" class="skills__icon" title="Firebase" /></li>
+          <img src="./img/icons/icons8-firebase.svg" class="skills__icon" title="Firebase" />
+        </li>
         <li class="skills__listElement tooltip" style="--index : 0.8" title="Styled Components">
-          <img src="./img/icons/styled-components.png" class="skills__icon styled" title="Styled Components" /></li>
+          <img src="./img/icons/styled-components.png" class="skills__icon styled" title="Styled Components" />
+        </li>
         <li class="skills__listElement tooltip" style="--index : 0.8" title="GIT">
-          <img src="./img/icons/icons8-git.svg" class="skills__icon" title="GIT"></li>
+          <img src="./img/icons/icons8-git.svg" class="skills__icon" title="GIT">
+        </li>
         <li class="skills__listElement tooltip" style="--index : 1.4" title="jira Agile">
-          <img src="./img/icons/icons8-jira.svg" class="skills__icon" title="jira"></li>
+          <img src="./img/icons/icons8-jira.svg" class="skills__icon" title="jira">
+        </li>
         <li class="skills__listElement tooltip" style="--index : 0.9" title="Scrum">
-          <img src="./img/icons/icons8-sprint-iteration-96.png" class="skills__icon" title="Scrum"></li>
+          <img src="./img/icons/icons8-sprint-iteration-96.png" class="skills__icon" title="Scrum">
+        </li>
       </ul>
 
 
@@ -193,7 +223,8 @@
           <a class="project__link" target="_blank" rel="noopener" href="https://www.joanna.science/">
             <div class="project__wrapper">
               <h2 class="project__title">Joanna Miklosz website</h2>
-              <p class="project__description">Landing page for Joanna Miklosz PhD, build with use of Bootstrap 4.5, Cloud Functions and SendGrid</p>
+              <p class="project__description">Landing page for Joanna Miklosz PhD, build with use of Bootstrap 4.5,
+                Cloud Functions and SendGrid</p>
             </div>
           </a>
         </div>
@@ -202,14 +233,15 @@
   </main>
   <footer class="footer" id="contact">
     <div class="footer__info">
-      <p class="footer__description">&copy; Stanislaw Zajaczkowski <span class="footer__date footer__description"></span></p>
+      <p class="footer__description">&copy; Stanislaw Zajaczkowski <span
+          class="footer__date footer__description"></span></p>
       <p class="footer__description">Location: Gdansk, Poland</p>
     </div>
     <ul class="footer__list">
       <li><a class="footer__socialLink footer__github" href="https://github.com/StaszekZ" target="_blank"
           rel="noopener noreferrer">GitHub</a></li>
-      <li><a class="footer__socialLink footer__linkedin" href="https://www.linkedin.com/in/s-zajaczkowski/" target="_blank"
-          rel="noopener noreferrer">LinkedIn</a></li>
+      <li><a class="footer__socialLink footer__linkedin" href="https://www.linkedin.com/in/s-zajaczkowski/"
+          target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
     </ul>
 
 
@@ -218,9 +250,9 @@
       staszek.zajaczkowski@gmail.com </a>
 
     <p class="footer__link footer__small">Icons by <a class="footer__iconLink footer__small" target="_blank"
-          rel="noopener" href="https://icons8.com">Icons8
-          </a>
-      </p>
+        rel="noopener" href="https://icons8.com">Icons8
+      </a>
+    </p>
   </footer>
 </body>
 <script src=./dist/main.js></script>

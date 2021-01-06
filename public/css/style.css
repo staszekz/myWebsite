@@ -200,7 +200,7 @@ section {
   text-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
 }
 
-.menu__button {
+.button {
   height: 45px;
   font-family: Alegreya, Arial, sans-serif;
   font-size: 11px;
@@ -217,7 +217,7 @@ section {
   font-family: Alegreya, Arial, sans-serif;
 }
 
-.menu__button:hover {
+.button:hover {
   background-color: #2ee59d;
   box-shadow: 0px 5px 10px rgba(46, 229, 157, 0.4);
   color: #fff;
@@ -774,6 +774,65 @@ section {
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(2, 1fr);
     grid-template-areas: 'one one two two three three three' 'six six six four four five five';
+  }
+}
+
+.form {
+  position: fixed;
+  top: 80px;
+  right: 0;
+  height: calc(100vh - 80px);
+  width: 100%;
+  z-index: 99999;
+  background-color: black;
+  border-left: 8px solid #ffe600;
+  border-top: 1px solid #ffe600;
+  border-top-left-radius: 1%;
+  border-bottom-left-radius: 1%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form__input {
+  width: 50%;
+  border-radius: 5px;
+  line-height: 1.5;
+}
+
+.form__btn {
+  width: 50%;
+  height: initial;
+  z-index: 99999999;
+}
+
+.form__show {
+  transform: translate(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.form__hide {
+  transform: translate(100%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.form__close {
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+}
+
+@media (min-width: 769px) {
+  .form {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .form {
+    width: 50%;
   }
 }
 

@@ -118,4 +118,29 @@ const renderFlake = (snowContainer:HTMLElement) => {
 }
 
 const snowContainer = renderSnow();
-renderFlake(snowContainer);
+// renderFlake(snowContainer);
+
+//////////////////////// **contact form** /////////////////////////////
+
+const form = document.querySelector('.form') as HTMLFormElement;
+const submitBtn = document.querySelector('.form__btn') as HTMLInputElement;
+const closeBtn = document.querySelector('.form__close') as HTMLInputElement;
+const openForm = document.querySelector('#openForm') as HTMLElement;
+
+const sendMessage = (e: MouseEvent) =>{
+	e.preventDefault();
+	console.log('submited', e)
+}
+
+const closeForm = (e:MouseEvent)=>{
+	e.preventDefault();
+	console.log('closed', e)
+	form.classList.toggle('form__hide')
+	form.classList.toggle('form__show')
+	
+}
+
+
+submitBtn.addEventListener('click', sendMessage)
+closeBtn.addEventListener('click', closeForm);
+openForm.addEventListener('click', closeForm)
