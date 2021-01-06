@@ -20,8 +20,7 @@ const toggleHamburgerClasses = () => {
 	lines.forEach(line => {
 		line.classList.toggle('makeCross');
 	});
-	// menuLinks.classList.add('shortMenu');
-	// shrinkMenu();
+
 };
 
 //zamykanie menu po kliknięciu w link - obsługa
@@ -45,29 +44,8 @@ links.forEach(link => {
 	link.addEventListener('click', closeMenu);
 });
 
-// const shrinkMenu = () => {
-// 	if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-// 		navBar.classList.add('shortMenu');
-// 		if (window.innerWidth > 768) {
-// 			menuLinks.classList.add('shortMenu');
-// 		} else {
-// 			menuLinks.classList.remove('shortMenu');
-// 		}
-// 	} else {
-// 		navBar.classList.remove('shortMenu');
-// 		menuLinks.classList.remove('shortMenu');
-// 	}
-// };
 
-// window.onresize = () => {
-// 	if (window.innerWidth > 769) {
-// 		menuLinks.classList.add('shortMenu');
-// 	}
-// };
-
-// window.onscroll = () => shrinkMenu();
-
-//ładowanie w seksji aboutMe
+//ładowanie w seksji aboutMe 
 const hero = document.querySelector('.hero') as HTMLElement;
 const heroHeight: number = parseFloat(getComputedStyle(hero, null).height.replace('px', ''));
 const myImage = document.querySelector('.aboutMe__pictureWrapper') as HTMLImageElement;
