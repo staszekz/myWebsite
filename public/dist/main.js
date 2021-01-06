@@ -37,7 +37,7 @@ hamburger.addEventListener('click', toggleHamburgerClasses);
 links.forEach(link => {
     link.addEventListener('click', closeMenu);
 });
-//ładowanie w seksji aboutMe eeeeeeee
+//ładowanie w seksji aboutMe 
 const hero = document.querySelector('.hero');
 const heroHeight = parseFloat(getComputedStyle(hero, null).height.replace('px', ''));
 const myImage = document.querySelector('.aboutMe__pictureWrapper');
@@ -66,3 +66,29 @@ window.addEventListener('scroll', allOnScroll);
 const date = new Date().getFullYear();
 const footerDate = document.querySelector('.footer__date');
 footerDate.innerText = date.toString();
+///////////////////////////////// SNOW /////////////////////////////////////
+const flakes = [
+    './img/flakes/flake1.svg',
+    './img/flakes/flake2.svg',
+    './img/flakes/flake3.svg',
+    './img/flakes/flake4.svg'
+];
+const renderSnow = () => {
+    const snowContainer = document.createElement('div');
+    snowContainer.id = 'snow-container';
+    document.body.appendChild(snowContainer);
+    return snowContainer;
+};
+const renderFlake = (snowContainer) => {
+    const flakeContainer = document.createElement('div');
+    flakeContainer.classList.add('flake-container');
+    flakeContainer.style.left = `${Math.random() * 100}%`;
+    flakeContainer.style.transform = `scale(${Math.random()})`;
+    const img = document.createElement('img');
+    img.src = flakes[Math.floor(Math.random() * flakes.length)];
+    flakeContainer.appendChild(img);
+    snowContainer.appendChild(flakeContainer);
+    setTimeout(renderFlake, 500, snowContainer);
+};
+const snowContainer = renderSnow();
+renderFlake(snowContainer);

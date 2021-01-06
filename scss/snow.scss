@@ -1,0 +1,43 @@
+#snow-container {
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@keyframes fall {
+	from {
+		top: 0%;
+	}
+
+	to {
+		top: 100%;
+	}
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.flake-container {
+	position: absolute;
+	padding: 0 50px;
+	top: 0;
+	animation: fall 10s 0s 1 linear forwards;
+}
+
+.flake-container img {
+	position: absolute;
+	animation: rotate 6s 0s infinite linear forwards;
+}
