@@ -852,8 +852,19 @@ section {
   opacity: 0.9;
 }
 
+.form__sent {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: #2ee59d;
+  visibility: hidden;
+}
+
 .redBorder {
   border: 2px solid red;
+}
+
+.showMsgSent {
+  visibility: visible;
 }
 
 @media (min-width: 769px) {

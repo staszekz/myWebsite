@@ -112,20 +112,24 @@ const formToReset = document.querySelector('#form');
 const nameInput = document.querySelector('#name');
 const emailInput = document.querySelector('#email');
 const messageInput = document.querySelector('#msg');
+const confirmation = document.querySelector('.form__sent');
 const nameWarning = document.querySelector('.form__warning--name');
 const emailWarning = document.querySelector('.form__warning--email');
 const msgWarning = document.querySelector('.form__warning--message');
-const closeForm = (e) => {
-    e.preventDefault();
-    form.classList.toggle('form__hide');
-    form.classList.toggle('form__show');
-    formToReset.reset();
+const clearFormWarnings = () => {
     nameInput.classList.remove('redBorder');
     emailInput.classList.remove('redBorder');
     messageInput.classList.remove('redBorder');
     nameWarning.innerText = '';
     emailWarning.innerText = '';
     msgWarning.innerText = '';
+};
+const closeForm = (e) => {
+    e.preventDefault();
+    form.classList.toggle('form__hide');
+    form.classList.toggle('form__show');
+    formToReset.reset();
+    clearFormWarnings();
 };
 const checkValidity = (name, email, message) => {
     if (!name.length) {
@@ -151,6 +155,12 @@ const checkValidity = (name, email, message) => {
     msgWarning.innerText = '';
     return true;
 };
+const showConfirmation = () => {
+    confirmation.classList.add('showMsgSent');
+    setTimeout(() => {
+        confirmation.classList.remove('showMsgSent');
+    }, 3000);
+};
 //save message to firebase
 function saveMessage(name, email, location, message) {
     if (checkValidity(name, email, message)) {
@@ -162,7 +172,8 @@ function saveMessage(name, email, location, message) {
             location: location,
             message: message,
         })
-            .then(() => alert('SENT'))
+            .then(() => showConfirmation())
+            .then(() => clearFormWarnings())
             .then(() => formToReset.reset());
     }
     ;

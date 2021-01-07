@@ -66,10 +66,19 @@
 		font-size: 0.8rem;
 		opacity: 0.9;
 	}
+	&__sent {
+		margin-top: 1rem;
+		font-size: 1.4rem;
+		color: $greenColor;
+		visibility: hidden;
+	}
 }
 
 .redBorder {
 	border: 2px solid red;
+}
+.showMsgSent {
+	visibility: visible;
 }
 
 @media (min-width: 769px) {

@@ -146,16 +146,13 @@ const formToReset = document.querySelector('#form') as HTMLFormElement;
 const nameInput = document.querySelector('#name') as HTMLInputElement;
 const emailInput = document.querySelector('#email') as HTMLInputElement;
 const messageInput = document.querySelector('#msg') as HTMLInputElement;
+const confirmation = document.querySelector('.form__sent') as HTMLElement;
 
 const nameWarning = document.querySelector('.form__warning--name') as HTMLElement;
 const emailWarning = document.querySelector('.form__warning--email') as HTMLElement;
 const msgWarning = document.querySelector('.form__warning--message') as HTMLElement;
 
-const closeForm = (e: MouseEvent):void => {
-	e.preventDefault();
-	form.classList.toggle('form__hide')
-	form.classList.toggle('form__show')
-	formToReset.reset()
+const clearFormWarnings = ():void =>{
 	nameInput.classList.remove('redBorder');
 	emailInput.classList.remove('redBorder');
 	messageInput.classList.remove('redBorder');
@@ -163,6 +160,16 @@ const closeForm = (e: MouseEvent):void => {
 	emailWarning.innerText = ''
 	msgWarning.innerText = ''
 }
+
+const closeForm = (e: MouseEvent):void => {
+	e.preventDefault();
+	form.classList.toggle('form__hide');
+	form.classList.toggle('form__show');
+	formToReset.reset();
+	clearFormWarnings();
+}
+
+
 
 const checkValidity = (name: string, email: string, message: string): boolean => {
 	if (!name.length) {
@@ -189,6 +196,12 @@ const checkValidity = (name: string, email: string, message: string): boolean =>
 	return true;
 }
 
+const showConfirmation = ():void =>{
+	confirmation.classList.add('showMsgSent');
+	setTimeout(()=>{
+		confirmation.classList.remove('showMsgSent');
+	}, 3000)
+}
 //save message to firebase
 function saveMessage(name: string, email: string, location: string, message: string) {
 	if (checkValidity(name, email, message)) {
@@ -200,7 +213,8 @@ function saveMessage(name: string, email: string, location: string, message: str
 				location: location,
 				message: message,
 			})
-			.then(() => alert('SENT'))
+			.then(() => showConfirmation())
+			.then(() => clearFormWarnings())
 			.then(() => formToReset.reset())
 		};
 
