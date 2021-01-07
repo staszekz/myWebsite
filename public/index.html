@@ -70,20 +70,21 @@
     </nav>
 
 
-    <aside>
-      <form class="form form__hide">
-        <label for="name">Name *:</label>
-        <input class="form__input" type="text" id="name" name="name" required><br>
-        <label for="company">Company:</label>
-        <input class="form__input" type="text" id="company" name="company"><br>
-        <label for="location">Location:</label>
-        <input class="form__input"  type="text" id="location" name="location"><br>
-        <label for="msg">Message *:</label>
-        <textarea class="form__input"  rows="7" type="text" id="msg" name="msg"></textarea><br>
-        <input class="button form__btn" type="submit" value="Submit" required>
-      <button class="button form__close">close</button>
-      </form>
-    </aside>
+    <form id="form" type="submit">
+      <fieldset class="form form__hide ">
+        <h1 class="form__header">Contact Me:</h1>
+        <input class="form__input" type="text" id="name" name="name" placeholder="name" required >
+        <span class="form__warning form__warning--name"></span>
+        <input class="form__input" type="text" id="email" name="email" placeholder="email" required>
+         <span class="form__warning form__warning--email"></span>
+        <input class="form__input" type="text" id="location" name="location" placeholder="Location">
+         <span class="form__warning form__warning--location"></span>
+        <textarea required class="form__input" rows="7"  id="msg" name="msg" placeholder="message" ></textarea>
+         <span class="form__warning form__warning--message"></span>
+        <input class="button form__btn" type="button" value="submit">
+        <button class="button form__close">close</button>
+      </fieldset>
+    </form>
 
 
     <section id='home' class="hero ">
@@ -254,7 +255,10 @@
       </a>
     </p>
   </footer>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-functions.js"></script>
+  <script src=./dist/main.js></script>
 </body>
-<script src=./dist/main.js></script>
 
 </html>

@@ -8,8 +8,8 @@
 	width: 100%;
 	z-index: 99999;
 	background-color: black;
-	border-left: 8px solid $yellowColor;
-	border-top: 1px solid $yellowColor;
+	border-left: 8px solid $greenColor;
+	border-top: 1px solid $greenColor;
 	border-top-left-radius: 1%;
 	border-bottom-left-radius: 1%;
 	color: white;
@@ -17,16 +17,34 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	&__header {
+		color: white;
+	}
 
 	&__input {
-		width: 50%;
-		border-radius: 5px;
-		line-height: 1.5;
+		width: 80%;
+		border-radius: 8px;
+		line-height: 1.2;
+		padding: 10px;
+		padding-left: 30px;
+		border: none;
+		// margin-bottom: 2rem;
+		background-color: gainsboro;
+		&:focus {
+			background-color: $greenColor;
+		}
+		&::placeholder {
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			color: gray;
+			font-family: $mainFont;
+		}
 	}
 	&__btn {
 		width: 50%;
 		height: initial;
 		z-index: 99999999;
+		font-size: 1rem;
 	}
 	&__show {
 		transform: translate(0);
@@ -41,15 +59,30 @@
 		bottom: 5%;
 		right: 5%;
 	}
-}
-@media (min-width: 769px) {
-	.form {
-		width: 70%;
+	&__warning {
+		margin-bottom: 1rem;
+		color: red;
+		font-family: $secondFont;
+		font-size: 0.8rem;
+		opacity: 0.9;
 	}
 }
 
-@media (min-width: 1025px) {
+.redBorder {
+	border: 2px solid red;
+}
+
+@media (min-width: 769px) {
 	.form {
-		width: 50%;
+		width: 70%;
+		&__input {
+			width: 50%;
+		}
+	}
+
+	@media (min-width: 1025px) {
+		.form {
+			width: 50%;
+		}
 	}
 }

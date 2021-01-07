@@ -1,3 +1,4 @@
+
 const hamburger = document.querySelector('.hamburger') as HTMLElement;
 const lines: NodeListOf<Element> = document.querySelectorAll('.line');
 const menuLinks = document.querySelector('.menu') as HTMLUListElement;
@@ -84,63 +85,145 @@ footerDate.innerText = date.toString();
 
 
 ///////////////////////////////// SNOW /////////////////////////////////////
-const flakes:string[] = [
+const flakes: string[] = [
 	'./img/flakes/flake1.svg',
 	'./img/flakes/flake2.svg',
 	'./img/flakes/flake3.svg',
 	'./img/flakes/flake4.svg'
 ]
 
-const renderSnow = () =>{
+const renderSnow = () => {
 	const snowContainer = document.createElement('div');
-  snowContainer.id = 'snow-container';
-  document.body.appendChild(snowContainer);
-  return snowContainer;
+	snowContainer.id = 'snow-container';
+	document.body.appendChild(snowContainer);
+	return snowContainer;
 }
 
 
 
-const renderFlake = (snowContainer:HTMLElement) => {
-  const flakeContainer = document.createElement('div');
-  flakeContainer.classList.add('flake-container');
+const renderFlake = (snowContainer: HTMLElement) => {
+	const flakeContainer = document.createElement('div');
+	flakeContainer.classList.add('flake-container');
 
-  flakeContainer.style.left = `${Math.random() * 100}%`;
-  flakeContainer.style.transform = `scale(${Math.random()})`;
+	flakeContainer.style.left = `${Math.random() * 100}%`;
+	flakeContainer.style.transform = `scale(${Math.random()})`;
 
-  const img = document.createElement('img');
-  img.src = flakes[Math.floor(Math.random() * flakes.length)];
+	const img = document.createElement('img');
+	img.src = flakes[Math.floor(Math.random() * flakes.length)];
 
-  flakeContainer.appendChild(img);
+	flakeContainer.appendChild(img);
 
-  snowContainer.appendChild(flakeContainer);
+	snowContainer.appendChild(flakeContainer);
 
-  setTimeout(renderFlake, 500, snowContainer);
+	setTimeout(renderFlake, 500, snowContainer);
 }
+
 
 const snowContainer = renderSnow();
-// renderFlake(snowContainer);
+// renderFlake(snowContainer);🔭 
 
-//////////////////////// **contact form** /////////////////////////////
 
-const form = document.querySelector('.form') as HTMLFormElement;
+
+//////////////////////// **contact form** ////////////////////////////
+const config = {
+	apiKey: "AIzaSyBi7I2rU9W1lrLwmQaJBilOn9X0IowDpK0",
+	authDomain: "mywebsite-19aa3.firebaseapp.com",
+	projectId: "mywebsite-19aa3",
+	storageBucket: "mywebsite-19aa3.appspot.com",
+	messagingSenderId: "998446798549",
+	appId: "1:998446798549:web:939e8a7cb7b110b8e1b45c",
+	measurementId: "G-7QLBHHESBS"
+}
+
+firebase.initializeApp(config);
+const db = firebase.firestore()
+
+const form = document.querySelector('.form') as HTMLElement;
 const submitBtn = document.querySelector('.form__btn') as HTMLInputElement;
 const closeBtn = document.querySelector('.form__close') as HTMLInputElement;
 const openForm = document.querySelector('#openForm') as HTMLElement;
+const formToReset = document.querySelector('#form') as HTMLFormElement;
+const nameInput = document.querySelector('#name') as HTMLInputElement;
+const emailInput = document.querySelector('#email') as HTMLInputElement;
+const messageInput = document.querySelector('#msg') as HTMLInputElement;
 
-const sendMessage = (e: MouseEvent) =>{
-	e.preventDefault();
-	console.log('submited', e)
-}
+const nameWarning = document.querySelector('.form__warning--name') as HTMLElement;
+const emailWarning = document.querySelector('.form__warning--email') as HTMLElement;
+const msgWarning = document.querySelector('.form__warning--message') as HTMLElement;
 
-const closeForm = (e:MouseEvent)=>{
+const closeForm = (e: MouseEvent):void => {
 	e.preventDefault();
-	console.log('closed', e)
 	form.classList.toggle('form__hide')
 	form.classList.toggle('form__show')
-	
+	formToReset.reset()
+	nameInput.classList.remove('redBorder');
+	emailInput.classList.remove('redBorder');
+	messageInput.classList.remove('redBorder');
+	nameWarning.innerText = '';
+	emailWarning.innerText = ''
+	msgWarning.innerText = ''
+}
+
+const checkValidity = (name: string, email: string, message: string): boolean => {
+	if (!name.length) {
+		nameWarning.innerText = 'please enter a valid name'
+		nameInput.classList.add('redBorder')
+		return false
+	}
+	if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email)) {
+		nameInput.classList.remove('redBorder')
+		nameWarning.innerText = ''
+		emailWarning.innerText = 'please enter a valid email address';
+		emailInput.classList.add('redBorder');
+		return false
+	}
+	if (!message) {
+		emailInput.classList.remove('redBorder');
+		emailWarning.innerText = '';
+		msgWarning.innerText = 'please write something nice';
+		messageInput.classList.add('redBorder');
+		return false;
+	}
+	messageInput.classList.remove('redBorder');
+	msgWarning.innerText = '';
+	return true;
+}
+
+//save message to firebase
+function saveMessage(name: string, email: string, location: string, message: string) {
+	if (checkValidity(name, email, message)) {
+		db
+			.collection('mails')
+			.add({
+				name: name,
+				email: email,
+				location: location,
+				message: message,
+			})
+			.then(() => alert('SENT'))
+			.then(() => formToReset.reset())
+		};
+
 }
 
 
-submitBtn.addEventListener('click', sendMessage)
+//to get form values
+const getInputVal = (id: string) => {
+	return <HTMLInputElement>document.querySelector(id);
+};
+
+//sending form
+const submitForm = (e: MouseEvent) => {
+	e.preventDefault();
+
+	const name = getInputVal('#name').value;
+	const email = getInputVal('#email').value;
+	const location = getInputVal('#location').value;
+	const message = getInputVal('#msg').value;
+	saveMessage(name, email, location, message);
+};
+
+// form.addEventListener('keydown', checkValidity);
+submitBtn.addEventListener('click', submitForm);
 closeBtn.addEventListener('click', closeForm);
-openForm.addEventListener('click', closeForm)
+openForm.addEventListener('click', closeForm);

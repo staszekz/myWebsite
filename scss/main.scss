@@ -197,7 +197,7 @@ section {
 		&:hover {
 			transform: translateY(-7px);
 			transition: all 0.3s ease;
-			color: #2ee59d;
+			color: $greenColor;
 			text-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
 		}
 	}
@@ -220,7 +220,7 @@ section {
 	font-family: $mainFont;
 
 	&:hover {
-		background-color: #2ee59d;
+		background-color: $greenColor;
 		box-shadow: 0px 5px 10px rgba(46, 229, 157, 0.4);
 		color: #fff;
 		transform: translateY(-7px);

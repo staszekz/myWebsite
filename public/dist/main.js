@@ -91,22 +91,96 @@ const renderFlake = (snowContainer) => {
     setTimeout(renderFlake, 500, snowContainer);
 };
 const snowContainer = renderSnow();
-// renderFlake(snowContainer);
-//////////////////////// **contact form** /////////////////////////////
+// renderFlake(snowContainer);🔭 
+//////////////////////// **contact form** ////////////////////////////
+const config = {
+    apiKey: "AIzaSyBi7I2rU9W1lrLwmQaJBilOn9X0IowDpK0",
+    authDomain: "mywebsite-19aa3.firebaseapp.com",
+    projectId: "mywebsite-19aa3",
+    storageBucket: "mywebsite-19aa3.appspot.com",
+    messagingSenderId: "998446798549",
+    appId: "1:998446798549:web:939e8a7cb7b110b8e1b45c",
+    measurementId: "G-7QLBHHESBS"
+};
+firebase.initializeApp(config);
+const db = firebase.firestore();
 const form = document.querySelector('.form');
 const submitBtn = document.querySelector('.form__btn');
 const closeBtn = document.querySelector('.form__close');
 const openForm = document.querySelector('#openForm');
-const sendMessage = (e) => {
-    e.preventDefault();
-    console.log('submited', e);
-};
+const formToReset = document.querySelector('#form');
+const nameInput = document.querySelector('#name');
+const emailInput = document.querySelector('#email');
+const messageInput = document.querySelector('#msg');
+const nameWarning = document.querySelector('.form__warning--name');
+const emailWarning = document.querySelector('.form__warning--email');
+const msgWarning = document.querySelector('.form__warning--message');
 const closeForm = (e) => {
     e.preventDefault();
-    console.log('closed', e);
     form.classList.toggle('form__hide');
     form.classList.toggle('form__show');
+    formToReset.reset();
+    nameInput.classList.remove('redBorder');
+    emailInput.classList.remove('redBorder');
+    messageInput.classList.remove('redBorder');
+    nameWarning.innerText = '';
+    emailWarning.innerText = '';
+    msgWarning.innerText = '';
 };
-submitBtn.addEventListener('click', sendMessage);
+const checkValidity = (name, email, message) => {
+    if (!name.length) {
+        nameWarning.innerText = 'please enter a valid name';
+        nameInput.classList.add('redBorder');
+        return false;
+    }
+    if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email)) {
+        nameInput.classList.remove('redBorder');
+        nameWarning.innerText = '';
+        emailWarning.innerText = 'please enter a valid email address';
+        emailInput.classList.add('redBorder');
+        return false;
+    }
+    if (!message) {
+        emailInput.classList.remove('redBorder');
+        emailWarning.innerText = '';
+        msgWarning.innerText = 'please write something nice';
+        messageInput.classList.add('redBorder');
+        return false;
+    }
+    messageInput.classList.remove('redBorder');
+    msgWarning.innerText = '';
+    return true;
+};
+//save message to firebase
+function saveMessage(name, email, location, message) {
+    if (checkValidity(name, email, message)) {
+        db
+            .collection('mails')
+            .add({
+            name: name,
+            email: email,
+            location: location,
+            message: message,
+        })
+            .then(() => alert('SENT'))
+            .then(() => formToReset.reset());
+    }
+    ;
+}
+//to get form values
+const getInputVal = (id) => {
+    return document.querySelector(id);
+};
+//sending form
+const submitForm = (e) => {
+    e.preventDefault();
+    const name = getInputVal('#name').value;
+    const email = getInputVal('#email').value;
+    const location = getInputVal('#location').value;
+    const message = getInputVal('#msg').value;
+    saveMessage(name, email, location, message);
+};
+// form.addEventListener('keydown', checkValidity);
+submitBtn.addEventListener('click', submitForm);
 closeBtn.addEventListener('click', closeForm);
 openForm.addEventListener('click', closeForm);
