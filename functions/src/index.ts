@@ -1,12 +1,12 @@
 import * as functions from 'firebase-functions';
+import sendGridEmail = require('@sendgrid/mail');
+import admin = require('firebase-admin');
 
-const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 
 const SENDGRID_API_KEY = functions.config().sendgrid.key;
 const TEMPLATE_ID = functions.config().sendgrid.template
 const TEMPLATE_TO_SENDER = functions.config().sendgrid.templatetosender;
-const sendGridEmail = require('@sendgrid/mail');
 
 sendGridEmail.setApiKey(SENDGRID_API_KEY);
 exports.staszek_ovh_form = functions.firestore.document('/mails/{mailsId}').onCreate((snap:any) => {

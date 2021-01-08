@@ -162,7 +162,7 @@ const showConfirmation = () => {
     }, 3000);
 };
 //save message to firebase
-function saveMessage(name, email, location, message) {
+function saveMessage(name, email, location, message, e) {
     if (checkValidity(name, email, message)) {
         db
             .collection('mails')
@@ -173,8 +173,7 @@ function saveMessage(name, email, location, message) {
             message: message,
         })
             .then(() => showConfirmation())
-            .then(() => clearFormWarnings())
-            .then(() => formToReset.reset());
+            .then(() => setTimeout(() => closeForm(e), 2000));
     }
     ;
 }
@@ -189,7 +188,7 @@ const submitForm = (e) => {
     const email = getInputVal('#email').value;
     const location = getInputVal('#location').value;
     const message = getInputVal('#msg').value;
-    saveMessage(name, email, location, message);
+    saveMessage(name, email, location, message, e);
 };
 // form.addEventListener('keydown', checkValidity);
 submitBtn.addEventListener('click', submitForm);

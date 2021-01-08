@@ -203,7 +203,7 @@ const showConfirmation = ():void =>{
 	}, 3000)
 }
 //save message to firebase
-function saveMessage(name: string, email: string, location: string, message: string) {
+function saveMessage(name: string, email: string, location: string, message: string, e: MouseEvent) {
 	if (checkValidity(name, email, message)) {
 		db
 			.collection('mails')
@@ -214,8 +214,7 @@ function saveMessage(name: string, email: string, location: string, message: str
 				message: message,
 			})
 			.then(() => showConfirmation())
-			.then(() => clearFormWarnings())
-			.then(() => formToReset.reset())
+			.then(() => setTimeout(()=> closeForm(e), 2000))
 		};
 
 }
@@ -234,7 +233,7 @@ const submitForm = (e: MouseEvent) => {
 	const email = getInputVal('#email').value;
 	const location = getInputVal('#location').value;
 	const message = getInputVal('#msg').value;
-	saveMessage(name, email, location, message);
+	saveMessage(name, email, location, message, e);
 };
 
 // form.addEventListener('keydown', checkValidity);

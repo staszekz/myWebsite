@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const functions = require("firebase-functions");
-const admin = require('firebase-admin');
+const sendGridEmail = require("@sendgrid/mail");
+const admin = require("firebase-admin");
 admin.initializeApp(functions.config().firebase);
 const SENDGRID_API_KEY = functions.config().sendgrid.key;
 const TEMPLATE_ID = functions.config().sendgrid.template;
 const TEMPLATE_TO_SENDER = functions.config().sendgrid.templatetosender;
-const sendGridEmail = require('@sendgrid/mail');
 sendGridEmail.setApiKey(SENDGRID_API_KEY);
 exports.staszek_ovh_form = functions.firestore.document('/mails/{mailsId}').onCreate((snap) => {
     const messageData = snap.data();
