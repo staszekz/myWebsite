@@ -1,5 +1,6 @@
 "use strict";
-// import * as functions from 'firebase-functions';
+Object.defineProperty(exports, "__esModule", { value: true });
+const functions = require("firebase-functions");
 // // Start writing Firebase Functions
 // // https://firebase.google.com/docs/functions/typescript
 //
@@ -7,27 +8,28 @@
 //   functions.logger.info("Hello logs!", {structuredData: true});
 //   response.send("Hello from Firebase!");
 // });
-const functions = require('firebase-functions');
+// const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 const SENDGRID_API_KEY = functions.config().sendgrid.key;
+const TEMPLATE_ID = functions.config().sendgrid.template;
 const sendGridEmail = require('@sendgrid/mail');
 sendGridEmail.setApiKey(SENDGRID_API_KEY);
-exports.AsiaForm = functions.firestore.document('/mails/{mailsId}').onCreate((snap) => {
+exports.staszek_ovh_form = functions.firestore.document('/mails/{mailsId}').onCreate((snap) => {
     const messageData = snap.data();
     const msg = {
         to: 'staszek.zajaczkowski@gmail.com',
         from: 'ktulu.inc@gmail.com',
-        templateId: 'd-699e4e9b498f43c0afb8837277a3d283',
+        templateId: TEMPLATE_ID,
         dynamic_template_data: {
-            fromName: messageData.name,
-            fromEmail: messageData.email,
-            fromInstitution: messageData.institution,
+            name: messageData.name,
+            email: messageData.email,
+            location: messageData.location,
             message: messageData.message,
         },
     };
     return sendGridEmail
         .send(msg)
         .then(() => console.log('email sent'))
-        .catch((error) => console.error(error.toString()));
+        .catch((error) => { throw new Error(error.toString()); });
 });
