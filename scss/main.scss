@@ -492,13 +492,7 @@ section {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: repeat(5, 1fr);
-	grid-template-areas:
-		'one'
-		'two'
-		'three'
-		'four'
-		'five'
-		'six';
+	grid-template-areas: 'one' 'two' 'three' 'four' 'five' 'six', 'seven';
 	width: 90%;
 	min-height: 80vh;
 	margin: 0 auto;
@@ -590,6 +584,11 @@ section {
 		grid-area: six;
 		background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
 			url('../img/asiaStrona.JPG');
+	}
+	&__seven {
+		grid-area: seven;
+		background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+			url('../img/shopping-list.png');
 	}
 }
 
@@ -823,11 +822,12 @@ section {
 
 	.projects__wrapper {
 		grid-template-columns: repeat(7, 1fr);
-		grid-template-rows: repeat(3, 1fr);
+		grid-template-rows: repeat(4, 1fr);
 		grid-template-areas:
 			'one one one one two two two'
 			'three three three five five five five'
-			'six six six six four four four';
+			'six six six six four four four'
+			'seven seven seven seven seven seven seven';
 	}
 }
 
@@ -899,10 +899,11 @@ section {
 
 	.projects__wrapper {
 		grid-template-columns: repeat(7, 1fr);
-		grid-template-rows: repeat(2, 1fr);
+		grid-template-rows: repeat(3, 1fr);
 		grid-template-areas:
 			'one one two two three three three'
-			'six six six four four five five';
+			'six six six four four four four'
+			'five five seven seven seven seven seven';
 	}
 }
 
