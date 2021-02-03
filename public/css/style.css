@@ -11,7 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
-  font-family: Alegreya, Arial, sans-serif;
+  font-family: Ubuntu, Arial, sans-serif;
 }
 
 section {
@@ -72,7 +72,7 @@ section {
   position: relative;
   padding-top: 1.5rem;
   font-size: 3vmax;
-  font-family: Alegreya, Arial, sans-serif;
+  font-family: Ubuntu, Arial, sans-serif;
   font-style: italic;
   text-transform: lowercase;
   text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 8px 10px white;
@@ -202,7 +202,7 @@ section {
 
 .button {
   height: 45px;
-  font-family: Alegreya, Arial, sans-serif;
+  font-family: Ubuntu, Arial, sans-serif;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -214,7 +214,7 @@ section {
   outline: none;
   padding: 0.5rem;
   cursor: pointer;
-  font-family: Alegreya, Arial, sans-serif;
+  font-family: Ubuntu, Arial, sans-serif;
 }
 
 .button:hover {
@@ -493,7 +493,7 @@ section {
 .project__title {
   text-align: center;
   color: white;
-  font-family: Roboto, Arial, sans-serif;
+  font-family: Ubuntu, Arial, sans-serif;
   font-size: 2rem;
   text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 8px 10px white;
 }
@@ -823,7 +823,7 @@ section {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: gray;
-  font-family: Alegreya, Arial, sans-serif;
+  font-family: Ubuntu, Arial, sans-serif;
 }
 
 .form__btn {
@@ -852,7 +852,7 @@ section {
 .form__warning {
   margin-bottom: 1rem;
   color: red;
-  font-family: Roboto, Arial, sans-serif;
+  font-family: Ubuntu, Arial, sans-serif;
   font-size: 0.8rem;
   opacity: 0.9;
 }

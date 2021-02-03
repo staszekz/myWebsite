@@ -7,7 +7,7 @@ const navBar = document.querySelector('.navigation') as HTMLElement;
 
 //włączanie i wyłączanie menu po kliknięciu w hamburger
 
-const toggleHamburgerClasses = () => {
+const toggleHamburgerClasses = ():void => {
 	menuLinks.classList.toggle('open');
 	if (
 		(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) &&
@@ -25,7 +25,7 @@ const toggleHamburgerClasses = () => {
 };
 
 //zamykanie menu po kliknięciu w link - obsługa
-const closeMenu = () => {
+const closeMenu = (): void => {
 	if (window.innerWidth < 769) {
 		//żeby nie właczało się po kliknięciu w link na szerokim oknie
 		menuLinks.classList.toggle('open');
