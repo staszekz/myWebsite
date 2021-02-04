@@ -436,12 +436,7 @@ section {
 }
 
 .projects__wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(7, 1fr);
-  grid-template-areas: 'one' 'two' 'three' 'four' 'five' 'six' 'seven';
   width: 90%;
-  min-height: 80vh;
   margin: 0 auto;
   padding: 1rem;
 }
@@ -453,8 +448,8 @@ section {
   margin: 0.5rem;
 }
 
-.project:hover {
-  transform: scale(1.1);
+.project-left, .project-right {
+  min-height: 50vh;
 }
 
 .project__link {
