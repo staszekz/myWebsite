@@ -11,7 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
-  font-family: Alegreya, Arial, sans-serif;
+  font-family: Ubuntu, Arial, sans-serif;
 }
 
 section {
@@ -72,7 +72,7 @@ section {
   position: relative;
   padding-top: 1.5rem;
   font-size: 3vmax;
-  font-family: Alegreya, Arial, sans-serif;
+  font-family: Ubuntu, Arial, sans-serif;
   font-style: italic;
   text-transform: lowercase;
   text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 8px 10px white;
@@ -202,7 +202,7 @@ section {
 
 .button {
   height: 45px;
-  font-family: Alegreya, Arial, sans-serif;
+  font-family: Ubuntu, Arial, sans-serif;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -214,7 +214,7 @@ section {
   outline: none;
   padding: 0.5rem;
   cursor: pointer;
-  font-family: Alegreya, Arial, sans-serif;
+  font-family: Ubuntu, Arial, sans-serif;
 }
 
 .button:hover {
@@ -438,8 +438,8 @@ section {
 .projects__wrapper {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: repeat(5, 1fr);
-  grid-template-areas: 'one' 'two' 'three' 'four' 'five' 'six', 'seven';
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-areas: 'one' 'two' 'three' 'four' 'five' 'six' 'seven';
   width: 90%;
   min-height: 80vh;
   margin: 0 auto;
@@ -493,7 +493,7 @@ section {
 .project__title {
   text-align: center;
   color: white;
-  font-family: Roboto, Arial, sans-serif;
+  font-family: Ubuntu, Arial, sans-serif;
   font-size: 2rem;
   text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 8px 10px white;
 }
@@ -539,13 +539,14 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background-color: #00628b;
+  background-color: #343a40;
   padding: 1rem;
 }
 
 .footer__description, .footer__link, .footer__iconLink {
   color: white;
-  font-size: clamp(3vmin, 16px, 4vmin);
+  font-size: clamp(3vmin, 14px, 3.5vmin);
+  font-weight: lighter;
   text-shadow: 1px 1px 1px grey, 1px 2px 1px black;
   text-decoration: none;
   padding-top: 1rem;
@@ -759,7 +760,7 @@ section {
     justify-content: space-around;
   }
   .footer__description, .footer__link, .footer__socialLink {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   .footer__iconLink {
     padding-right: 0;
