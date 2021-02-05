@@ -500,14 +500,44 @@ section {
 }
 
 .project {
+	position: relative;
 	background-size: cover;
 	background-repeat: no-repeat;
 	transition: 0.3s;
-	margin: 0.5rem;
+	margin: 0.5rem 0.5rem 2rem;
+	background-color: rgba(72, 151, 252, 0.41);
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	transition: 0.3s;
+	box-shadow: $box-shadow;
+	min-height: 50vh;
 
-	&-left,
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.9);
+	}
+
+	&:hover > .project__description {
+		opacity: 1;
+	}
+
+	&__about {
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__btns {
+		display: flex;
+		flex-direction: row;
+	}
+
 	&-right {
-		min-height: 50vh;
+		order: 1;
 	}
 
 	&:hover {
@@ -517,34 +547,27 @@ section {
 	&__link {
 		text-decoration: none;
 	}
-
-	&__description {
-		color: lightcyan;
+	&__image--wrapper {
+		position: relative;
+		height: auto;
+		width: 30%;
+	}
+	&__image {
+		width: 100%;
 		padding: 1rem;
-		opacity: 0;
+		&:hover {
+			transition: scale(1.4);
+		}
+	}
+	&__description {
+		color: black;
+		padding: 1rem;
+		opacity: 1;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		text-align: center;
 		transition: 0.3s;
-	}
-
-	&__wrapper {
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		transition: 0.3s;
-		box-shadow: $box-shadow;
-
-		&:hover {
-			background-color: rgba(0, 0, 0, 0.9);
-		}
-
-		&:hover > .project__description {
-			opacity: 1;
-		}
 	}
 
 	&__title {
@@ -555,45 +578,65 @@ section {
 		text-shadow: $shadow;
 	}
 
-	&__one {
-		grid-area: one;
-		background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-			url('../img/mygame.png');
-	}
+	// &__one {
+	// 	grid-area: one;
+	// 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+	// 		url('../img/mygame.png');
+	// }
 
-	&__two {
-		grid-area: two;
-		background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-			url('../img/popeyeApp.png');
-	}
+	// &__two {
+	// 	grid-area: two;
+	// 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+	// 		url('../img/popeyeApp.png');
+	// }
 
-	&__three {
-		grid-area: three;
-		background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-			url('../img/notes.png');
-	}
+	// &__three {
+	// 	grid-area: three;
+	// 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+	// 		url('../img/notes.png');
+	// }
 
-	&__four {
-		grid-area: four;
-		background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-			url('../img/popeyeWeb.png');
-	}
+	// &__four {
+	// 	grid-area: four;
+	// 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+	// 		url('../img/popeyeWeb.png');
+	// }
 
-	&__five {
-		grid-area: five;
-		background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-			url('../img/landing.png');
-	}
+	// &__five {
+	// 	grid-area: five;
+	// 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+	// 		url('../img/landing.png');
+	// }
 
-	&__six {
-		grid-area: six;
-		background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-			url('../img/asiaStrona.JPG');
+	// &__six {
+	// 	grid-area: six;
+	// 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+	// 		url('../img/asiaStrona.JPG');
+	// }
+	// &__seven {
+	// 	grid-area: seven;
+	// 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+	// 		url('../img/shopping-list.png');
+	// }
+}
+
+.btn {
+	// padding: 1rem;
+}
+
+.link {
+	cursor: pointer;
+	background-color: lemonchiffon;
+	padding: 1rem;
+	border: 1px solid red;
+	&:hover {
+		background-color: lightblue;
+		transition: 0.3s ease-out all;
 	}
-	&__seven {
-		grid-area: seven;
-		background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-			url('../img/shopping-list.png');
+	&__border {
+		margin-right: 1rem;
+		padding: 1.5rem 0.5rem;
+		border: 1px solid blue;
 	}
 }
 
