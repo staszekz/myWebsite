@@ -416,7 +416,7 @@ section {
 
 .projects {
   width: 100%;
-  background-color: #e6e6dc;
+  background: linear-gradient(to right top, #01668d 0%, #00d4ff 100%);
 }
 
 .projects__title {
@@ -443,24 +443,17 @@ section {
 
 .project {
   position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: 0.3s;
   margin: 0.5rem 0.5rem 2rem;
-  background-color: rgba(72, 151, 252, 0.41);
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  border-radius: 2rem;
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  transition: 0.3s;
   box-shadow: 3px 9px 23px -2px rgba(15, 13, 15, 0.65);
   min-height: 50vh;
-}
-
-.project:hover {
-  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .project:hover > .project__description {
@@ -490,16 +483,20 @@ section {
 .project__image--wrapper {
   position: relative;
   height: auto;
-  width: 30%;
+  width: 36%;
+  margin: 2rem;
+  border-radius: 2rem;
+  overflow: hidden;
+  transition: transform 0.85s;
+}
+
+.project__image--wrapper:hover {
+  transform: scale(1.1);
 }
 
 .project__image {
   width: 100%;
-  padding: 1rem;
-}
-
-.project__image:hover {
-  transition: scale(1.4);
+  border-radius: 2rem;
 }
 
 .project__description {
