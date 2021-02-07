@@ -549,33 +549,35 @@ section {
 	&__link {
 		text-decoration: none;
 	}
-	&__image--wrapper {
-		// position: relative;
-		height: auto;
-		width: 36%;
+	// &__image--wrapper {
+	// 	height: auto;
+	// 	width: 36%;
+	// 	margin: 2rem;
+	// 	border-radius: 2rem;
+	// 	box-shadow: 0 0 30px #ccc, 0 0 30px #ddd;
+	// 	overflow: hidden;
+	// 	transition: transform 0.85s;
+	// 	&:hover {
+	// 		transform: scale(1.1);
+	// 		opacity: 1;
+	// 	}
+	// }
+	&__image {
 		margin: 2rem;
 		border-radius: 2rem;
 		box-shadow: 0 0 30px #ccc, 0 0 30px #ddd;
 		overflow: hidden;
-		transition: transform 0.85s;
+		transition: all 0.85s;
+		background-image: url('../img/mygame.png');
+		background-size: contain;
+		width: 36%;
+		height: 300px;
+		opacity: 0.5;
 		&:hover {
 			transform: scale(1.1);
-			opacity: 1;
+			opacity: 0.9;
 		}
 	}
-	&__image {
-		background-image: url('../img/mygame.png');
-		width: 100%;
-		height: 50%;
-	}
-	// &__image {
-	// 	border-radius: 2rem;
-	// 	opacity: 0.6;
-	// 	transition: opacity 0.85s;
-
-	// 	&:hover {
-	// 	}
-	// }
 
 	&__description {
 		color: black;
@@ -596,50 +598,32 @@ section {
 		text-shadow: $shadow;
 	}
 
-	// &__one {
-	// 	grid-area: one;
-	// 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-	// 		url('../img/mygame.png');
-	// }
+	&__one {
+		background-image: url('../img/mygame.png');
+	}
 
-	// &__two {
-	// 	grid-area: two;
-	// 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-	// 		url('../img/popeyeApp.png');
-	// }
+	&__two {
+		background-image: url('../img/popeyeApp.png');
+	}
 
-	// &__three {
-	// 	grid-area: three;
-	// 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-	// 		url('../img/notes.png');
-	// }
+	&__three {
+		background-image: url('../img/notes.png');
+	}
 
-	// &__four {
-	// 	grid-area: four;
-	// 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-	// 		url('../img/popeyeWeb.png');
-	// }
+	&__four {
+		background-image: url('../img/popeyeWeb.png');
+	}
 
-	// &__five {
-	// 	grid-area: five;
-	// 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-	// 		url('../img/landing.png');
-	// }
+	&__five {
+		background-image: url('../img/landing.png');
+	}
 
-	// &__six {
-	// 	grid-area: six;
-	// 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-	// 		url('../img/asiaStrona.JPG');
-	// }
-	// &__seven {
-	// 	grid-area: seven;
-	// 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-	// 		url('../img/shopping-list.png');
-	// }
-}
-
-.btn {
-	// padding: 1rem;
+	&__six {
+		background-image: url('../img/asiaStrona.JPG');
+	}
+	&__seven {
+		background-image: url('../img/shopping-list.png');
+	}
 }
 
 .link {

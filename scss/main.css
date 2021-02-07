@@ -480,25 +480,22 @@ section {
   text-decoration: none;
 }
 
-.project__image--wrapper {
-  height: auto;
-  width: 36%;
+.project__image {
   margin: 2rem;
   border-radius: 2rem;
   box-shadow: 0 0 30px #ccc, 0 0 30px #ddd;
   overflow: hidden;
-  transition: transform 0.85s;
-}
-
-.project__image--wrapper:hover {
-  transform: scale(1.1);
-  opacity: 1;
-}
-
-.project__image {
+  transition: all 0.85s;
   background-image: url("../img/mygame.png");
-  width: 100%;
-  height: 50%;
+  background-size: contain;
+  width: 36%;
+  height: 300px;
+  opacity: 0.5;
+}
+
+.project__image:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
 }
 
 .project__description {
@@ -518,6 +515,34 @@ section {
   font-family: Ubuntu, Arial, sans-serif;
   font-size: 2rem;
   text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 8px 10px white;
+}
+
+.project__one {
+  background-image: url("../img/mygame.png");
+}
+
+.project__two {
+  background-image: url("../img/popeyeApp.png");
+}
+
+.project__three {
+  background-image: url("../img/notes.png");
+}
+
+.project__four {
+  background-image: url("../img/popeyeWeb.png");
+}
+
+.project__five {
+  background-image: url("../img/landing.png");
+}
+
+.project__six {
+  background-image: url("../img/asiaStrona.JPG");
+}
+
+.project__seven {
+  background-image: url("../img/shopping-list.png");
 }
 
 .link {
