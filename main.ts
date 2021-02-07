@@ -52,7 +52,7 @@ const heroHeight: number = parseFloat(getComputedStyle(hero, null).height.replac
 const myImage = document.querySelector('.aboutMe__pictureWrapper') as HTMLImageElement;
 const aboutMeContent = document.querySelector('.aboutMe__content') as HTMLParagraphElement;
 
-const slide = () => {
+const slide = (): void => {
 	if (window.scrollY > heroHeight / 2) {
 		myImage.classList.add('fromLeft');
 		aboutMeContent.classList.add('fromRight');
@@ -63,7 +63,7 @@ const slide = () => {
 const skillsEl: NodeListOf<Element> = document.querySelectorAll('.skills__listElement');
 const skills = document.querySelector('.skills') as HTMLElement;
 
-const slideSkills = () => {
+const slideSkills = ():void => {
 	if (window.scrollY > heroHeight + 200) {
 		skillsEl.forEach(el => {
 			el.classList.add('show');
@@ -226,13 +226,13 @@ const getInputVal = (id: string) => {
 };
 
 //sending form
-const submitForm = (e: MouseEvent) => {
+const submitForm = (e: MouseEvent): void => {
 	e.preventDefault();
 
-	const name = getInputVal('#name').value;
-	const email = getInputVal('#email').value;
-	const location = getInputVal('#location').value;
-	const message = getInputVal('#msg').value;
+	const name:string = getInputVal('#name').value;
+	const email:string = getInputVal('#email').value;
+	const location:string = getInputVal('#location').value;
+	const message:string = getInputVal('#msg').value;
 	saveMessage(name, email, location, message, e);
 };
 
