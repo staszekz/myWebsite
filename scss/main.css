@@ -87,7 +87,7 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #000;
+  background-color: #343a40;
   box-shadow: 0px 4px 8px -3px rgba(0, 0, 0, 0.75);
 }
 
@@ -151,7 +151,7 @@ section {
   transition: height 0.3s ease-out;
   pointer-events: none;
   list-style: none;
-  background-color: #000;
+  background-color: #343a40;
 }
 
 .menu__item {
@@ -416,7 +416,7 @@ section {
 
 .projects {
   width: 100%;
-  background: linear-gradient(to right top, #01668d 0%, #00d4ff 100%);
+  background: linear-gradient(to right top, #343a40, #384042, #3e4545, #464948, #4d4e4d);
 }
 
 .projects__title {
@@ -444,7 +444,7 @@ section {
 .project {
   position: relative;
   margin: 0.5rem 0.5rem 2rem;
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
   border-radius: 2rem;
   height: 100%;
   width: 100%;
@@ -497,6 +497,12 @@ section {
 .project__image {
   width: 100%;
   border-radius: 2rem;
+  opacity: 0.6;
+  transition: opacity 0.85s;
+}
+
+.project__image:hover {
+  opacity: 1;
 }
 
 .project__description {
