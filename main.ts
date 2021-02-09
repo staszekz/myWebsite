@@ -64,7 +64,7 @@ const slide = (): void => {
 
 // const navBar = document.querySelector('.navigation') as HTMLElement;
 const showNavBar = ():void =>{
-		if(window.scrollY >= heroHeight){
+		if(window.scrollY >= heroHeight - 50){
 		navBar.classList.add('withOpacity');
 }
 }

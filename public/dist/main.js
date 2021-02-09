@@ -52,7 +52,7 @@ const slide = () => {
 //ładowanie navbar po scrollu do innej sekcji
 // const navBar = document.querySelector('.navigation') as HTMLElement;
 const showNavBar = () => {
-    if (window.scrollY >= heroHeight) {
+    if (window.scrollY >= heroHeight - 50) {
         navBar.classList.add('withOpacity');
     }
 };

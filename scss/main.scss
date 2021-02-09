@@ -104,9 +104,9 @@ section {
 	&__title {
 		position: relative;
 		line-height: 1.3;
-		padding-top: 1.5rem;
-		padding-bottom: 1.5rem;
 		font-size: 8vmin;
+		display: inline-block;
+		animation: showHeroText 2s ease;
 		&--red {
 			@extend .hero__title;
 			color: hotpink;
@@ -115,11 +115,14 @@ section {
 
 	&__latin {
 		color: white;
-		position: relative;
 		padding-top: 1.5rem;
 		font-size: 3vmax;
 		font-family: $mainFont;
 		font-style: italic;
+		visibility: hidden;
+		display: inline-block;
+		animation: showHeroText 2s ease 0.5s;
+		animation-fill-mode: forwards;
 	}
 	&__btn {
 		display: flex;
@@ -135,6 +138,21 @@ section {
 		display: inline-block;
 		padding: 8px;
 		animation: arrowDown 2s infinite;
+	}
+}
+
+.hide {
+	background: transparent;
+	overflow: hidden;
+}
+
+@keyframes showHeroText {
+	0% {
+		transform: translateY(100%);
+	}
+	100% {
+		transform: translateY(0);
+		visibility: visible;
 	}
 }
 
@@ -965,6 +983,18 @@ section {
 
 //up to iPad
 @media (min-width: 769px) {
+	.hero {
+		&__name {
+			width: 50%;
+		}
+		&__title {
+			padding-bottom: 1.5rem;
+			font-size: 6vmin;
+		}
+		&__latin {
+			font-size: 4vmin;
+		}
+	}
 	.hamburger {
 		display: none;
 	}
@@ -1019,9 +1049,5 @@ section {
 	.aboutMe__content {
 		font-size: 2.7vmax;
 		padding: 6rem;
-	}
-
-	.hero__title {
-		font-size: 8vmin;
 	}
 }
