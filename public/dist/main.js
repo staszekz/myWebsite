@@ -4,7 +4,8 @@ const lines = document.querySelectorAll('.line');
 const menuLinks = document.querySelector('.menu');
 const links = document.querySelectorAll('.menu__item');
 const navBar = document.querySelector('.navigation');
-console.log('nav', navBar);
+const aboutTitle = document.querySelector('.aboutMe__title');
+const projectsTitle = document.querySelector('.projects__title');
 //włączanie i wyłączanie menu po kliknięciu w hamburger
 const toggleHamburgerClasses = () => {
     menuLinks.classList.toggle('open');
@@ -38,19 +39,37 @@ hamburger.addEventListener('click', toggleHamburgerClasses);
 links.forEach(link => {
     link.addEventListener('click', closeMenu);
 });
-//ładowanie w seksji aboutMe 
+//ładowanie w seksji aboutMe
 const hero = document.querySelector('.hero');
 const heroHeight = parseFloat(getComputedStyle(hero, null).height.replace('px', ''));
 const myImage = document.querySelector('.aboutMe__pictureWrapper');
 const aboutMeContent = document.querySelector('.aboutMe__content');
 const slide = () => {
+    // console.log('dd', heroHeight)
     if (window.scrollY > heroHeight / 2) {
         myImage.classList.add('fromLeft');
         aboutMeContent.classList.add('fromRight');
     }
 };
+// dostosowanie szerokośći paska tytułu jesli nachodzi na niego nav bar
+const setTitlesPaddingTop = () => {
+    const navBarBottom = navBar.getBoundingClientRect().bottom;
+    const aboutTitlePosition = aboutTitle.getBoundingClientRect().top + 40;
+    const projectsTitlePosition = projectsTitle.getBoundingClientRect().top + 40;
+    if (navBarBottom <= aboutTitlePosition) {
+        aboutTitle.style.paddingTop = '0px';
+    }
+    if (navBarBottom > aboutTitlePosition) {
+        aboutTitle.style.paddingTop = '80px';
+    }
+    if (navBarBottom <= projectsTitlePosition) {
+        projectsTitle.style.paddingTop = '0px';
+    }
+    if (navBarBottom > projectsTitlePosition) {
+        projectsTitle.style.paddingTop = '80px';
+    }
+};
 //ładowanie navbar po scrollu do innej sekcji
-// const navBar = document.querySelector('.navigation') as HTMLElement;
 const showNavBar = () => {
     if (window.scrollY >= heroHeight - 50) {
         navBar.classList.add('withOpacity');
@@ -70,6 +89,7 @@ const allOnScroll = () => {
     slide();
     slideSkills();
     showNavBar();
+    setTitlesPaddingTop();
 };
 window.addEventListener('scroll', allOnScroll);
 const date = new Date().getFullYear();
@@ -100,16 +120,16 @@ footerDate.innerText = date.toString();
 // 	setTimeout(renderFlake, 500, snowContainer);
 // }
 // const snowContainer = renderSnow();
-// renderFlake(snowContainer);🔭 
+// renderFlake(snowContainer);🔭
 //////////////////////// **contact form** ////////////////////////////
 const config = {
-    apiKey: "AIzaSyBi7I2rU9W1lrLwmQaJBilOn9X0IowDpK0",
-    authDomain: "mywebsite-19aa3.firebaseapp.com",
-    projectId: "mywebsite-19aa3",
-    storageBucket: "mywebsite-19aa3.appspot.com",
-    messagingSenderId: "998446798549",
-    appId: "1:998446798549:web:939e8a7cb7b110b8e1b45c",
-    measurementId: "G-7QLBHHESBS"
+    apiKey: 'AIzaSyBi7I2rU9W1lrLwmQaJBilOn9X0IowDpK0',
+    authDomain: 'mywebsite-19aa3.firebaseapp.com',
+    projectId: 'mywebsite-19aa3',
+    storageBucket: 'mywebsite-19aa3.appspot.com',
+    messagingSenderId: '998446798549',
+    appId: '1:998446798549:web:939e8a7cb7b110b8e1b45c',
+    measurementId: 'G-7QLBHHESBS',
 };
 firebase.initializeApp(config);
 const db = firebase.firestore();
@@ -173,8 +193,7 @@ const showConfirmation = () => {
 //save message to firebase
 function saveMessage(name, email, location, message, e) {
     if (checkValidity(name, email, message)) {
-        db
-            .collection('mails')
+        db.collection('mails')
             .add({
             name: name,
             email: email,
@@ -184,7 +203,6 @@ function saveMessage(name, email, location, message, e) {
             .then(() => showConfirmation())
             .then(() => setTimeout(() => closeForm(e), 2000));
     }
-    ;
 }
 //to get form values
 const getInputVal = (id) => {

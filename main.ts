@@ -1,13 +1,14 @@
-
 const hamburger = document.querySelector('.hamburger') as HTMLElement;
 const lines: NodeListOf<Element> = document.querySelectorAll('.line');
 const menuLinks = document.querySelector('.menu') as HTMLUListElement;
 const links: NodeListOf<Element> = document.querySelectorAll('.menu__item');
 const navBar = document.querySelector('.navigation') as HTMLElement;
-console.log('nav',navBar)
+const aboutTitle = document.querySelector('.aboutMe__title') as HTMLElement;
+const projectsTitle = document.querySelector('.projects__title') as HTMLElement;
+
 //włączanie i wyłączanie menu po kliknięciu w hamburger
 
-const toggleHamburgerClasses = ():void => {
+const toggleHamburgerClasses = (): void => {
 	menuLinks.classList.toggle('open');
 	if (
 		(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) &&
@@ -21,7 +22,6 @@ const toggleHamburgerClasses = ():void => {
 	lines.forEach(line => {
 		line.classList.toggle('makeCross');
 	});
-
 };
 
 //zamykanie menu po kliknięciu w link - obsługa
@@ -45,36 +45,50 @@ links.forEach(link => {
 	link.addEventListener('click', closeMenu);
 });
 
-
-
-
-//ładowanie w seksji aboutMe 
+//ładowanie w seksji aboutMe
 const hero = document.querySelector('.hero') as HTMLElement;
 const heroHeight: number = parseFloat(getComputedStyle(hero, null).height.replace('px', ''));
 const myImage = document.querySelector('.aboutMe__pictureWrapper') as HTMLImageElement;
 const aboutMeContent = document.querySelector('.aboutMe__content') as HTMLParagraphElement;
 
 const slide = (): void => {
+	// console.log('dd', heroHeight)
 	if (window.scrollY > heroHeight / 2) {
 		myImage.classList.add('fromLeft');
 		aboutMeContent.classList.add('fromRight');
 	}
 };
+// dostosowanie szerokośći paska tytułu jesli nachodzi na niego nav bar
+const setTitlesPaddingTop = (): void => {
+	const navBarBottom: number = navBar.getBoundingClientRect().bottom;
+	const aboutTitlePosition: number = aboutTitle.getBoundingClientRect().top + 40;
+	const projectsTitlePosition: number = projectsTitle.getBoundingClientRect().top + 40;
+	if (navBarBottom <= aboutTitlePosition) {
+		aboutTitle.style.paddingTop = '0px';
+	}
+	if (navBarBottom > aboutTitlePosition) {
+		aboutTitle.style.paddingTop = '80px';
+	}
+	if (navBarBottom <= projectsTitlePosition) {
+		projectsTitle.style.paddingTop = '0px';
+	}
+	if (navBarBottom > projectsTitlePosition) {
+		projectsTitle.style.paddingTop = '80px';
+	}
+};
+
 //ładowanie navbar po scrollu do innej sekcji
-
-// const navBar = document.querySelector('.navigation') as HTMLElement;
-const showNavBar = ():void =>{
-		if(window.scrollY >= heroHeight - 50){
+const showNavBar = (): void => {
+	if (window.scrollY >= heroHeight - 50) {
 		navBar.classList.add('withOpacity');
-}
-}
-
+	}
+};
 
 //loading of skills icons
 const skillsEl: NodeListOf<Element> = document.querySelectorAll('.skills__listElement');
 const skills = document.querySelector('.skills') as HTMLElement;
 
-const slideSkills = ():void => {
+const slideSkills = (): void => {
 	if (window.scrollY > heroHeight + 200) {
 		skillsEl.forEach(el => {
 			el.classList.add('show');
@@ -82,19 +96,18 @@ const slideSkills = ():void => {
 	}
 };
 
-const allOnScroll = ():void => {
+const allOnScroll = (): void => {
 	slide();
 	slideSkills();
-	showNavBar()
-		;};
+	showNavBar();
+	setTitlesPaddingTop();
+};
 
 window.addEventListener('scroll', allOnScroll);
 
-
-const date: number = new Date().getFullYear()
+const date: number = new Date().getFullYear();
 const footerDate = document.querySelector('.footer__date') as HTMLDataElement;
 footerDate.innerText = date.toString();
-
 
 ///////////////////////////////// SNOW /////////////////////////////////////
 // const flakes: string[] = [
@@ -110,8 +123,6 @@ footerDate.innerText = date.toString();
 // 	document.body.appendChild(snowContainer);
 // 	return snowContainer;
 // }
-
-
 
 // const renderFlake = (snowContainer: HTMLElement) => {
 // 	const flakeContainer = document.createElement('div');
@@ -130,25 +141,22 @@ footerDate.innerText = date.toString();
 // 	setTimeout(renderFlake, 500, snowContainer);
 // }
 
-
 // const snowContainer = renderSnow();
-// renderFlake(snowContainer);🔭 
-
-
+// renderFlake(snowContainer);🔭
 
 //////////////////////// **contact form** ////////////////////////////
 const config = {
-	apiKey: "AIzaSyBi7I2rU9W1lrLwmQaJBilOn9X0IowDpK0",
-	authDomain: "mywebsite-19aa3.firebaseapp.com",
-	projectId: "mywebsite-19aa3",
-	storageBucket: "mywebsite-19aa3.appspot.com",
-	messagingSenderId: "998446798549",
-	appId: "1:998446798549:web:939e8a7cb7b110b8e1b45c",
-	measurementId: "G-7QLBHHESBS"
-}
+	apiKey: 'AIzaSyBi7I2rU9W1lrLwmQaJBilOn9X0IowDpK0',
+	authDomain: 'mywebsite-19aa3.firebaseapp.com',
+	projectId: 'mywebsite-19aa3',
+	storageBucket: 'mywebsite-19aa3.appspot.com',
+	messagingSenderId: '998446798549',
+	appId: '1:998446798549:web:939e8a7cb7b110b8e1b45c',
+	measurementId: 'G-7QLBHHESBS',
+};
 
 firebase.initializeApp(config);
-const db = firebase.firestore()
+const db = firebase.firestore();
 
 const form = document.querySelector('.form') as HTMLElement;
 const submitBtn = document.querySelector('.form__btn') as HTMLInputElement;
@@ -164,37 +172,35 @@ const nameWarning = document.querySelector('.form__warning--name') as HTMLElemen
 const emailWarning = document.querySelector('.form__warning--email') as HTMLElement;
 const msgWarning = document.querySelector('.form__warning--message') as HTMLElement;
 
-const clearFormWarnings = ():void =>{
+const clearFormWarnings = (): void => {
 	nameInput.classList.remove('redBorder');
 	emailInput.classList.remove('redBorder');
 	messageInput.classList.remove('redBorder');
 	nameWarning.innerText = '';
-	emailWarning.innerText = ''
-	msgWarning.innerText = ''
-}
+	emailWarning.innerText = '';
+	msgWarning.innerText = '';
+};
 
-const closeForm = (e: MouseEvent):void => {
+const closeForm = (e: MouseEvent): void => {
 	e.preventDefault();
 	form.classList.toggle('form__hide');
 	form.classList.toggle('form__show');
 	formToReset.reset();
 	clearFormWarnings();
-}
-
-
+};
 
 const checkValidity = (name: string, email: string, message: string): boolean => {
 	if (!name.length) {
-		nameWarning.innerText = 'please enter a valid name'
-		nameInput.classList.add('redBorder')
-		return false
+		nameWarning.innerText = 'please enter a valid name';
+		nameInput.classList.add('redBorder');
+		return false;
 	}
 	if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email)) {
-		nameInput.classList.remove('redBorder')
-		nameWarning.innerText = ''
+		nameInput.classList.remove('redBorder');
+		nameWarning.innerText = '';
 		emailWarning.innerText = 'please enter a valid email address';
 		emailInput.classList.add('redBorder');
-		return false
+		return false;
 	}
 	if (!message) {
 		emailInput.classList.remove('redBorder');
@@ -206,19 +212,24 @@ const checkValidity = (name: string, email: string, message: string): boolean =>
 	messageInput.classList.remove('redBorder');
 	msgWarning.innerText = '';
 	return true;
-}
+};
 
-const showConfirmation = ():void =>{
+const showConfirmation = (): void => {
 	confirmation.classList.add('showMsgSent');
-	setTimeout(()=>{
+	setTimeout(() => {
 		confirmation.classList.remove('showMsgSent');
-	}, 3000)
-}
+	}, 3000);
+};
 //save message to firebase
-function saveMessage(name: string, email: string, location: string, message: string, e: MouseEvent) {
+function saveMessage(
+	name: string,
+	email: string,
+	location: string,
+	message: string,
+	e: MouseEvent,
+) {
 	if (checkValidity(name, email, message)) {
-		db
-			.collection('mails')
+		db.collection('mails')
 			.add({
 				name: name,
 				email: email,
@@ -226,11 +237,9 @@ function saveMessage(name: string, email: string, location: string, message: str
 				message: message,
 			})
 			.then(() => showConfirmation())
-			.then(() => setTimeout(()=> closeForm(e), 2000))
-		};
-
+			.then(() => setTimeout(() => closeForm(e), 2000));
+	}
 }
-
 
 //to get form values
 const getInputVal = (id: string) => {
@@ -241,10 +250,10 @@ const getInputVal = (id: string) => {
 const submitForm = (e: MouseEvent): void => {
 	e.preventDefault();
 
-	const name:string = getInputVal('#name').value;
-	const email:string = getInputVal('#email').value;
-	const location:string = getInputVal('#location').value;
-	const message:string = getInputVal('#msg').value;
+	const name: string = getInputVal('#name').value;
+	const email: string = getInputVal('#email').value;
+	const location: string = getInputVal('#location').value;
+	const message: string = getInputVal('#msg').value;
 	saveMessage(name, email, location, message, e);
 };
 
