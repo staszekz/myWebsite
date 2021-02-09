@@ -1,33 +1,31 @@
-"use strict";
-const hamburger = document.querySelector('.hamburger');
-const lines = document.querySelectorAll('.line');
-const menuLinks = document.querySelector('.menu');
-const links = document.querySelectorAll('.menu__item');
-const navBar = document.querySelector('.navigation');
-console.log('nav', navBar);
+var hamburger = document.querySelector('.hamburger');
+var lines = document.querySelectorAll('.line');
+var menuLinks = document.querySelector('.menu');
+var links = document.querySelectorAll('.menu__item');
+var navBar = document.querySelector('.navigation');
 //włączanie i wyłączanie menu po kliknięciu w hamburger
-const toggleHamburgerClasses = () => {
+var toggleHamburgerClasses = function () {
     menuLinks.classList.toggle('open');
     if ((document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) &&
         window.innerWidth > 769) {
         menuLinks.classList.add('shortMenu');
     }
-    links.forEach(link => {
+    links.forEach(function (link) {
         link.classList.toggle('fade');
     });
-    lines.forEach(line => {
+    lines.forEach(function (line) {
         line.classList.toggle('makeCross');
     });
 };
 //zamykanie menu po kliknięciu w link - obsługa
-const closeMenu = () => {
+var closeMenu = function () {
     if (window.innerWidth < 769) {
         //żeby nie właczało się po kliknięciu w link na szerokim oknie
         menuLinks.classList.toggle('open');
-        links.forEach(link => {
+        links.forEach(function (link) {
             link.classList.toggle('fade');
         });
-        lines.forEach(line => {
+        lines.forEach(function (line) {
             line.classList.toggle('makeCross');
         });
     }
@@ -35,15 +33,15 @@ const closeMenu = () => {
 //działający hamburger
 hamburger.addEventListener('click', toggleHamburgerClasses);
 //zamykanie menu po kliknięciu w link
-links.forEach(link => {
+links.forEach(function (link) {
     link.addEventListener('click', closeMenu);
 });
 //ładowanie w seksji aboutMe 
-const hero = document.querySelector('.hero');
-const heroHeight = parseFloat(getComputedStyle(hero, null).height.replace('px', ''));
-const myImage = document.querySelector('.aboutMe__pictureWrapper');
-const aboutMeContent = document.querySelector('.aboutMe__content');
-const slide = () => {
+var hero = document.querySelector('.hero');
+var heroHeight = parseFloat(getComputedStyle(hero, null).height.replace('px', ''));
+var myImage = document.querySelector('.aboutMe__pictureWrapper');
+var aboutMeContent = document.querySelector('.aboutMe__content');
+var slide = function () {
     if (window.scrollY > heroHeight / 2) {
         myImage.classList.add('fromLeft');
         aboutMeContent.classList.add('fromRight');
@@ -51,29 +49,26 @@ const slide = () => {
 };
 //ładowanie navbar po scrollu do innej sekcji
 // const navBar = document.querySelector('.navigation') as HTMLElement;
-const showNavBar = () => {
-    if (window.scrollY >= heroHeight) {
-        navBar.classList.add('withOpacity');
-    }
-};
+if (window.scrollY >= heroHeight) {
+    navBar.style.opacity = '1';
+}
 //loading of skills icons
-const skillsEl = document.querySelectorAll('.skills__listElement');
-const skills = document.querySelector('.skills');
-const slideSkills = () => {
+var skillsEl = document.querySelectorAll('.skills__listElement');
+var skills = document.querySelector('.skills');
+var slideSkills = function () {
     if (window.scrollY > heroHeight + 200) {
-        skillsEl.forEach(el => {
+        skillsEl.forEach(function (el) {
             el.classList.add('show');
         });
     }
 };
-const allOnScroll = () => {
+var allOnScroll = function () {
     slide();
     slideSkills();
-    showNavBar();
 };
 window.addEventListener('scroll', allOnScroll);
-const date = new Date().getFullYear();
-const footerDate = document.querySelector('.footer__date');
+var date = new Date().getFullYear();
+var footerDate = document.querySelector('.footer__date');
 footerDate.innerText = date.toString();
 ///////////////////////////////// SNOW /////////////////////////////////////
 // const flakes: string[] = [
@@ -102,7 +97,7 @@ footerDate.innerText = date.toString();
 // const snowContainer = renderSnow();
 // renderFlake(snowContainer);🔭 
 //////////////////////// **contact form** ////////////////////////////
-const config = {
+var config = {
     apiKey: "AIzaSyBi7I2rU9W1lrLwmQaJBilOn9X0IowDpK0",
     authDomain: "mywebsite-19aa3.firebaseapp.com",
     projectId: "mywebsite-19aa3",
@@ -112,20 +107,20 @@ const config = {
     measurementId: "G-7QLBHHESBS"
 };
 firebase.initializeApp(config);
-const db = firebase.firestore();
-const form = document.querySelector('.form');
-const submitBtn = document.querySelector('.form__btn');
-const closeBtn = document.querySelector('.form__close');
-const openForm = document.querySelector('#openForm');
-const formToReset = document.querySelector('#form');
-const nameInput = document.querySelector('#name');
-const emailInput = document.querySelector('#email');
-const messageInput = document.querySelector('#msg');
-const confirmation = document.querySelector('.form__sent');
-const nameWarning = document.querySelector('.form__warning--name');
-const emailWarning = document.querySelector('.form__warning--email');
-const msgWarning = document.querySelector('.form__warning--message');
-const clearFormWarnings = () => {
+var db = firebase.firestore();
+var form = document.querySelector('.form');
+var submitBtn = document.querySelector('.form__btn');
+var closeBtn = document.querySelector('.form__close');
+var openForm = document.querySelector('#openForm');
+var formToReset = document.querySelector('#form');
+var nameInput = document.querySelector('#name');
+var emailInput = document.querySelector('#email');
+var messageInput = document.querySelector('#msg');
+var confirmation = document.querySelector('.form__sent');
+var nameWarning = document.querySelector('.form__warning--name');
+var emailWarning = document.querySelector('.form__warning--email');
+var msgWarning = document.querySelector('.form__warning--message');
+var clearFormWarnings = function () {
     nameInput.classList.remove('redBorder');
     emailInput.classList.remove('redBorder');
     messageInput.classList.remove('redBorder');
@@ -133,14 +128,14 @@ const clearFormWarnings = () => {
     emailWarning.innerText = '';
     msgWarning.innerText = '';
 };
-const closeForm = (e) => {
+var closeForm = function (e) {
     e.preventDefault();
     form.classList.toggle('form__hide');
     form.classList.toggle('form__show');
     formToReset.reset();
     clearFormWarnings();
 };
-const checkValidity = (name, email, message) => {
+var checkValidity = function (name, email, message) {
     if (!name.length) {
         nameWarning.innerText = 'please enter a valid name';
         nameInput.classList.add('redBorder');
@@ -164,9 +159,9 @@ const checkValidity = (name, email, message) => {
     msgWarning.innerText = '';
     return true;
 };
-const showConfirmation = () => {
+var showConfirmation = function () {
     confirmation.classList.add('showMsgSent');
-    setTimeout(() => {
+    setTimeout(function () {
         confirmation.classList.remove('showMsgSent');
     }, 3000);
 };
@@ -179,24 +174,24 @@ function saveMessage(name, email, location, message, e) {
             name: name,
             email: email,
             location: location,
-            message: message,
+            message: message
         })
-            .then(() => showConfirmation())
-            .then(() => setTimeout(() => closeForm(e), 2000));
+            .then(function () { return showConfirmation(); })
+            .then(function () { return setTimeout(function () { return closeForm(e); }, 2000); });
     }
     ;
 }
 //to get form values
-const getInputVal = (id) => {
+var getInputVal = function (id) {
     return document.querySelector(id);
 };
 //sending form
-const submitForm = (e) => {
+var submitForm = function (e) {
     e.preventDefault();
-    const name = getInputVal('#name').value;
-    const email = getInputVal('#email').value;
-    const location = getInputVal('#location').value;
-    const message = getInputVal('#msg').value;
+    var name = getInputVal('#name').value;
+    var email = getInputVal('#email').value;
+    var location = getInputVal('#location').value;
+    var message = getInputVal('#msg').value;
     saveMessage(name, email, location, message, e);
 };
 // form.addEventListener('keydown', checkValidity);

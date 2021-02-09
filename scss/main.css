@@ -11,7 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   scroll-behavior: smooth;
-  font-family: Raleway, Arial, sans-serif;
+  font-family: Heebo, Arial, sans-serif;
 }
 
 section {
@@ -65,143 +65,143 @@ section {
 }
 
 .hero__star:nth-child(1) {
-  top: calc(10% - 387px);
-  left: calc(10% - 30px);
-  animation-delay: 9400ms;
+  top: calc(10% - -141px);
+  left: calc(10% - 473px);
+  animation-delay: 2198ms;
 }
 
 .hero__star:nth-child(1)::before, .hero__star:nth-child(1)::after {
-  animation-delay: 9400ms;
+  animation-delay: 2198ms;
 }
 
 .hero__star:nth-child(2) {
-  top: calc(10% - -194px);
-  left: calc(10% - 582px);
-  animation-delay: 649ms;
+  top: calc(10% - 54px);
+  left: calc(10% - 72px);
+  animation-delay: 6404ms;
 }
 
 .hero__star:nth-child(2)::before, .hero__star:nth-child(2)::after {
-  animation-delay: 649ms;
+  animation-delay: 6404ms;
 }
 
 .hero__star:nth-child(3) {
-  top: calc(10% - 560px);
-  left: calc(10% - 277px);
-  animation-delay: 8899ms;
+  top: calc(10% - -146px);
+  left: calc(10% - 410px);
+  animation-delay: 7233ms;
 }
 
 .hero__star:nth-child(3)::before, .hero__star:nth-child(3)::after {
-  animation-delay: 8899ms;
+  animation-delay: 7233ms;
 }
 
 .hero__star:nth-child(4) {
-  top: calc(10% - -22px);
-  left: calc(10% - 557px);
-  animation-delay: 5845ms;
+  top: calc(10% - -170px);
+  left: calc(10% - 88px);
+  animation-delay: 1911ms;
 }
 
 .hero__star:nth-child(4)::before, .hero__star:nth-child(4)::after {
-  animation-delay: 5845ms;
+  animation-delay: 1911ms;
 }
 
 .hero__star:nth-child(5) {
-  top: calc(10% - -26px);
-  left: calc(10% - 348px);
-  animation-delay: 3303ms;
+  top: calc(10% - 550px);
+  left: calc(10% - 110px);
+  animation-delay: 9421ms;
 }
 
 .hero__star:nth-child(5)::before, .hero__star:nth-child(5)::after {
-  animation-delay: 3303ms;
+  animation-delay: 9421ms;
 }
 
 .hero__star:nth-child(6) {
-  top: calc(10% - 110px);
-  left: calc(10% - 405px);
-  animation-delay: 7696ms;
+  top: calc(10% - -33px);
+  left: calc(10% - 509px);
+  animation-delay: 2871ms;
 }
 
 .hero__star:nth-child(6)::before, .hero__star:nth-child(6)::after {
-  animation-delay: 7696ms;
+  animation-delay: 2871ms;
 }
 
 .hero__star:nth-child(7) {
-  top: calc(10% - 413px);
-  left: calc(10% - 590px);
-  animation-delay: 9958ms;
+  top: calc(10% - 541px);
+  left: calc(10% - 489px);
+  animation-delay: 8878ms;
 }
 
 .hero__star:nth-child(7)::before, .hero__star:nth-child(7)::after {
-  animation-delay: 9958ms;
+  animation-delay: 8878ms;
 }
 
 .hero__star:nth-child(8) {
-  top: calc(10% - 218px);
-  left: calc(10% - 8px);
-  animation-delay: 3887ms;
+  top: calc(10% - 127px);
+  left: calc(10% - 207px);
+  animation-delay: 9340ms;
 }
 
 .hero__star:nth-child(8)::before, .hero__star:nth-child(8)::after {
-  animation-delay: 3887ms;
+  animation-delay: 9340ms;
 }
 
 .hero__star:nth-child(9) {
-  top: calc(10% - -181px);
-  left: calc(10% - 180px);
-  animation-delay: 855ms;
+  top: calc(10% - 579px);
+  left: calc(10% - 475px);
+  animation-delay: 5861ms;
 }
 
 .hero__star:nth-child(9)::before, .hero__star:nth-child(9)::after {
-  animation-delay: 855ms;
+  animation-delay: 5861ms;
 }
 
 .hero__star:nth-child(10) {
-  top: calc(10% - 267px);
-  left: calc(10% - 391px);
-  animation-delay: 3823ms;
+  top: calc(10% - 377px);
+  left: calc(10% - 73px);
+  animation-delay: 7258ms;
 }
 
 .hero__star:nth-child(10)::before, .hero__star:nth-child(10)::after {
-  animation-delay: 3823ms;
+  animation-delay: 7258ms;
 }
 
 .hero__star:nth-child(11) {
-  top: calc(10% - -139px);
-  left: calc(10% - 185px);
-  animation-delay: 9063ms;
+  top: calc(10% - 76px);
+  left: calc(10% - 214px);
+  animation-delay: 6219ms;
 }
 
 .hero__star:nth-child(11)::before, .hero__star:nth-child(11)::after {
-  animation-delay: 9063ms;
+  animation-delay: 6219ms;
 }
 
 .hero__star:nth-child(12) {
-  top: calc(10% - 112px);
-  left: calc(10% - 518px);
-  animation-delay: 9821ms;
+  top: calc(10% - 130px);
+  left: calc(10% - 495px);
+  animation-delay: 6810ms;
 }
 
 .hero__star:nth-child(12)::before, .hero__star:nth-child(12)::after {
-  animation-delay: 9821ms;
+  animation-delay: 6810ms;
 }
 
 .hero__star:nth-child(13) {
-  top: calc(10% - 217px);
-  left: calc(10% - 590px);
-  animation-delay: 4603ms;
+  top: calc(10% - 186px);
+  left: calc(10% - 223px);
+  animation-delay: 8492ms;
 }
 
 .hero__star:nth-child(13)::before, .hero__star:nth-child(13)::after {
-  animation-delay: 4603ms;
+  animation-delay: 8492ms;
 }
 
 .hero__star:nth-child(14) {
-  top: calc(10% - 357px);
-  left: calc(10% - 285px);
-  animation-delay: 8037ms;
+  top: calc(10% - -40px);
+  left: calc(10% - 103px);
+  animation-delay: 1444ms;
 }
 
 .hero__star:nth-child(14)::before, .hero__star:nth-child(14)::after {
-  animation-delay: 8037ms;
+  animation-delay: 1444ms;
 }
 
 .hero__header {
@@ -226,7 +226,6 @@ section {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   font-size: 8vmin;
-  text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 8px 10px white;
 }
 
 .hero__title--red {
@@ -238,9 +237,8 @@ section {
   position: relative;
   padding-top: 1.5rem;
   font-size: 3vmax;
-  font-family: Raleway, Arial, sans-serif;
+  font-family: Heebo, Arial, sans-serif;
   font-style: italic;
-  text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 8px 10px white;
 }
 
 .hero__btn {
@@ -263,8 +261,8 @@ section {
   0% {
     transform: rotate(45deg) translate(0, 0);
   }
-  20% {
-    transform: rotate(45deg) translate(10px, 10px);
+  40% {
+    transform: rotate(45deg) translate(15px, 15px);
   }
   100% {
     transform: rotate(45deg) translate(0, 0);
@@ -307,6 +305,7 @@ section {
 .navigation {
   position: fixed;
   top: 0;
+  opacity: 0;
   z-index: 99;
   width: 100vw;
   height: 80px;
@@ -315,6 +314,11 @@ section {
   justify-content: space-between;
   background-color: #252934;
   box-shadow: 0px 4px 8px -3px rgba(0, 0, 0, 0.75);
+  transition: opacity 0.7s;
+}
+
+.withOpacity {
+  opacity: 1;
 }
 
 .social {
@@ -416,7 +420,6 @@ section {
   display: grid;
   place-content: center;
   color: white;
-  text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 3px 4px white;
 }
 
 .menu__link:hover {
@@ -428,7 +431,7 @@ section {
 
 .button {
   height: 45px;
-  font-family: Raleway, Arial, sans-serif;
+  font-family: Heebo, Arial, sans-serif;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -440,7 +443,7 @@ section {
   outline: none;
   padding: 0.5rem;
   cursor: pointer;
-  font-family: Raleway, Arial, sans-serif;
+  font-family: Heebo, Arial, sans-serif;
 }
 
 .button:hover {
@@ -480,7 +483,6 @@ section {
   min-height: calc(20vh - 60px);
   font-size: 3vmax;
   line-height: calc(20vh - 50px);
-  text-shadow: 1px 1px 1px white, 1px 2px 1px black;
   box-shadow: 0px 4px 8px -3px rgba(0, 0, 0, 0.75);
 }
 
@@ -740,7 +742,7 @@ section {
 .project__title {
   text-align: center;
   color: white;
-  font-family: Ubuntu, Arial, sans-serif;
+  font-family: Heebo, Arial, sans-serif;
   font-size: 2rem;
   text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 8px 10px white;
 }

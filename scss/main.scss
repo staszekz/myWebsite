@@ -107,7 +107,6 @@ section {
 		padding-top: 1.5rem;
 		padding-bottom: 1.5rem;
 		font-size: 8vmin;
-		text-shadow: $shadow;
 		&--red {
 			@extend .hero__title;
 			color: hotpink;
@@ -121,8 +120,6 @@ section {
 		font-size: 3vmax;
 		font-family: $mainFont;
 		font-style: italic;
-		// text-transform: lowercase;
-		text-shadow: $shadow;
 	}
 	&__btn {
 		display: flex;
@@ -145,8 +142,8 @@ section {
 	0% {
 		transform: rotate(45deg) translate(0, 0);
 	}
-	20% {
-		transform: rotate(45deg) translate(10px, 10px);
+	40% {
+		transform: rotate(45deg) translate(15px, 15px);
 	}
 	100% {
 		transform: rotate(45deg) translate(0, 0);
@@ -194,6 +191,7 @@ section {
 .navigation {
 	position: fixed;
 	top: 0;
+	opacity: 0;
 	z-index: 99;
 	width: 100vw;
 	height: 80px;
@@ -202,8 +200,11 @@ section {
 	justify-content: space-between;
 	background-color: $bgColorNavFoot;
 	box-shadow: 0px 4px 8px -3px rgba(0, 0, 0, 0.75);
+	transition: opacity 0.7s;
 }
-
+.withOpacity {
+	opacity: 1;
+}
 .social {
 	display: flex;
 	order: -1;
@@ -302,7 +303,6 @@ section {
 		display: grid;
 		place-content: center;
 		color: white;
-		text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 3px 4px white;
 
 		&:hover {
 			transform: translateY(-7px);
@@ -366,7 +366,7 @@ section {
 		min-height: calc(20vh - 60px);
 		font-size: 3vmax;
 		line-height: calc(20vh - 50px);
-		text-shadow: $titleShadow;
+		// text-shadow: $titleShadow;
 		box-shadow: 0px 4px 8px -3px rgba(0, 0, 0, 0.75);
 	}
 

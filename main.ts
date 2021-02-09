@@ -4,7 +4,7 @@ const lines: NodeListOf<Element> = document.querySelectorAll('.line');
 const menuLinks = document.querySelector('.menu') as HTMLUListElement;
 const links: NodeListOf<Element> = document.querySelectorAll('.menu__item');
 const navBar = document.querySelector('.navigation') as HTMLElement;
-
+console.log('nav',navBar)
 //włączanie i wyłączanie menu po kliknięciu w hamburger
 
 const toggleHamburgerClasses = ():void => {
@@ -46,6 +46,8 @@ links.forEach(link => {
 });
 
 
+
+
 //ładowanie w seksji aboutMe 
 const hero = document.querySelector('.hero') as HTMLElement;
 const heroHeight: number = parseFloat(getComputedStyle(hero, null).height.replace('px', ''));
@@ -58,6 +60,15 @@ const slide = (): void => {
 		aboutMeContent.classList.add('fromRight');
 	}
 };
+//ładowanie navbar po scrollu do innej sekcji
+
+// const navBar = document.querySelector('.navigation') as HTMLElement;
+const showNavBar = ():void =>{
+		if(window.scrollY >= heroHeight){
+		navBar.classList.add('withOpacity');
+}
+}
+
 
 //loading of skills icons
 const skillsEl: NodeListOf<Element> = document.querySelectorAll('.skills__listElement');
@@ -71,10 +82,11 @@ const slideSkills = ():void => {
 	}
 };
 
-const allOnScroll = () => {
+const allOnScroll = ():void => {
 	slide();
 	slideSkills();
-};
+	showNavBar()
+		;};
 
 window.addEventListener('scroll', allOnScroll);
 
