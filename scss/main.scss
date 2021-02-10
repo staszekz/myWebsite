@@ -14,6 +14,8 @@ body {
 	flex-direction: column;
 	scroll-behavior: smooth;
 	font-family: $mainFont;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 section {
@@ -157,7 +159,7 @@ section {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-	background-color: $bgColorNavFoot;
+	background-color: $mainColor;
 	box-shadow: 0px 4px 8px -3px rgba(0, 0, 0, 0.75);
 	transition: opacity 0.7s;
 }
@@ -224,7 +226,7 @@ section {
 	transition: height 0.3s ease-out;
 	pointer-events: none;
 	list-style: none;
-	background-color: $bgColorNavFoot;
+	background-color: $mainColor;
 
 	&__item {
 		opacity: 0;
@@ -429,7 +431,11 @@ section {
 
 .projects {
 	width: 100%;
-	background: linear-gradient(to right top, #343a40, #384042, #3e4545, #464948, #4d4e4d);
+	height: 100%;
+	background-color: $mainColor;
+	background: rgba(37, 41, 52, 0.9);
+	// url('../img/heroBgr.png');
+	// background-blend-mode: darken;
 
 	&__title {
 		@extend .aboutMe__title;
@@ -443,7 +449,7 @@ section {
 }
 
 .projects__wrapper {
-	width: 90%;
+	width: 95%;
 	margin: 0 auto;
 	padding: 1rem;
 }
@@ -451,8 +457,7 @@ section {
 .project {
 	position: relative;
 	margin: 0.5rem 0.5rem 2rem;
-	background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
-	border-radius: 2rem;
+	background: rgba(230, 230, 220, 0.7);
 	height: 100%;
 	width: 100%;
 	display: flex;
@@ -473,11 +478,6 @@ section {
 		align-items: center;
 	}
 
-	&__btns {
-		display: flex;
-		flex-direction: row;
-	}
-
 	&-right {
 		order: 1;
 	}
@@ -487,24 +487,23 @@ section {
 	}
 	&__image {
 		margin: 2rem;
-		border-radius: 2rem;
-		box-shadow: 0 0 30px #ccc, 0 0 30px #ddd;
+		box-shadow: $box-shadow;
 		overflow: hidden;
 		transition: all 0.85s;
-		background-image: url('../img/mygame.png');
+		background-color: black;
 		background-size: contain;
 		width: 36%;
 		height: 300px;
-		opacity: 0.5;
+		opacity: 0.8;
 		&:hover {
 			transform: scale(1.1);
-			opacity: 0.9;
+			opacity: 1;
 		}
 	}
 
 	&__description {
-		color: black;
-		padding: 1rem;
+		color: $mainColor;
+		padding: 0.5rem 1rem;
 		opacity: 1;
 		display: flex;
 		align-items: center;
@@ -518,7 +517,6 @@ section {
 		color: white;
 		font-family: $secondFont;
 		font-size: 2rem;
-		text-shadow: $shadow;
 	}
 
 	&__one {
@@ -547,23 +545,71 @@ section {
 	&__seven {
 		background-image: url('../img/shopping-list.png');
 	}
+	&__btns {
+		display: flex;
+		flex-direction: row;
+		width: 50%;
+		justify-content: space-evenly;
+	}
+	&__btn {
+		position: relative;
+		display: inline-flex;
+		height: 50px;
+		width: 120px;
+		border: 1px solid $mainColor;
+		color: $secondColor;
+		text-transform: uppercase;
+		text-decoration: none;
+		font-size: 0.8em;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+		cursor: pointer;
+		transition: 0.3s ease-out all;
+		&:hover .slide {
+			left: 0;
+		}
+		&:hover .project__btn--text {
+			left: 150px;
+		}
+		&--text {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			left: 0;
+			color: $mainColor;
+			transition: 0.4s ease-out all;
+		}
+	}
+	&__tech {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		width: 80%;
+	}
 }
 
-.link {
-	cursor: pointer;
-	background-color: lemonchiffon;
-	padding: 1rem;
-	border: 1px solid red;
-	&:hover {
-		background-color: lightblue;
-		transition: 0.3s ease-out all;
-	}
-	&__border {
-		margin-right: 1rem;
-		padding: 1.5rem 0.5rem;
-		border: 1px solid blue;
-	}
+.slide {
+	width: 100%;
+	height: 100%;
+	left: -200px;
+	position: absolute;
+	transition: all 0.35s ease-Out;
+	bottom: 0;
+	background: $mainColor;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	color: $secondColor;
 }
+
+// .link__border:hover a {
+// 	color: white;
+// 	left: 150px;
+// }
 
 .footer {
 	min-height: 15vh;
@@ -571,8 +617,9 @@ section {
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-evenly;
-	background-color: $bgColorNavFoot;
+	background-color: $mainColor;
 	padding: 1rem;
+	box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.75);
 
 	&__description,
 	&__link,

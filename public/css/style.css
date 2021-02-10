@@ -200,6 +200,8 @@ body {
   flex-direction: column;
   scroll-behavior: smooth;
   font-family: Heebo, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 section {
@@ -253,143 +255,143 @@ section {
 }
 
 .hero__star:nth-child(1) {
-  top: calc(10% - 488px);
-  left: calc(10% - 489px);
-  animation-delay: 3065ms;
+  top: calc(10% - 344px);
+  left: calc(10% - 202px);
+  animation-delay: 9255ms;
 }
 
 .hero__star:nth-child(1)::before, .hero__star:nth-child(1)::after {
-  animation-delay: 3065ms;
+  animation-delay: 9255ms;
 }
 
 .hero__star:nth-child(2) {
-  top: calc(10% - 196px);
-  left: calc(10% - 100px);
-  animation-delay: 4824ms;
+  top: calc(10% - 332px);
+  left: calc(10% - 479px);
+  animation-delay: 791ms;
 }
 
 .hero__star:nth-child(2)::before, .hero__star:nth-child(2)::after {
-  animation-delay: 4824ms;
+  animation-delay: 791ms;
 }
 
 .hero__star:nth-child(3) {
-  top: calc(10% - -134px);
-  left: calc(10% - 238px);
-  animation-delay: 51ms;
+  top: calc(10% - 131px);
+  left: calc(10% - 104px);
+  animation-delay: 8854ms;
 }
 
 .hero__star:nth-child(3)::before, .hero__star:nth-child(3)::after {
-  animation-delay: 51ms;
+  animation-delay: 8854ms;
 }
 
 .hero__star:nth-child(4) {
-  top: calc(10% - 36px);
-  left: calc(10% - 140px);
-  animation-delay: 1465ms;
+  top: calc(10% - 20px);
+  left: calc(10% - 478px);
+  animation-delay: 1896ms;
 }
 
 .hero__star:nth-child(4)::before, .hero__star:nth-child(4)::after {
-  animation-delay: 1465ms;
+  animation-delay: 1896ms;
 }
 
 .hero__star:nth-child(5) {
-  top: calc(10% - -125px);
-  left: calc(10% - 427px);
-  animation-delay: 2070ms;
+  top: calc(10% - 64px);
+  left: calc(10% - 411px);
+  animation-delay: 3408ms;
 }
 
 .hero__star:nth-child(5)::before, .hero__star:nth-child(5)::after {
-  animation-delay: 2070ms;
+  animation-delay: 3408ms;
 }
 
 .hero__star:nth-child(6) {
-  top: calc(10% - 411px);
-  left: calc(10% - 57px);
-  animation-delay: 4243ms;
+  top: calc(10% - 549px);
+  left: calc(10% - 464px);
+  animation-delay: 1796ms;
 }
 
 .hero__star:nth-child(6)::before, .hero__star:nth-child(6)::after {
-  animation-delay: 4243ms;
+  animation-delay: 1796ms;
 }
 
 .hero__star:nth-child(7) {
-  top: calc(10% - -161px);
-  left: calc(10% - 416px);
-  animation-delay: 1906ms;
+  top: calc(10% - 237px);
+  left: calc(10% - 315px);
+  animation-delay: 8053ms;
 }
 
 .hero__star:nth-child(7)::before, .hero__star:nth-child(7)::after {
-  animation-delay: 1906ms;
+  animation-delay: 8053ms;
 }
 
 .hero__star:nth-child(8) {
-  top: calc(10% - -124px);
-  left: calc(10% - 482px);
-  animation-delay: 7726ms;
+  top: calc(10% - 381px);
+  left: calc(10% - 148px);
+  animation-delay: 4606ms;
 }
 
 .hero__star:nth-child(8)::before, .hero__star:nth-child(8)::after {
-  animation-delay: 7726ms;
+  animation-delay: 4606ms;
 }
 
 .hero__star:nth-child(9) {
-  top: calc(10% - -49px);
-  left: calc(10% - 308px);
-  animation-delay: 2440ms;
+  top: calc(10% - 449px);
+  left: calc(10% - 456px);
+  animation-delay: 3341ms;
 }
 
 .hero__star:nth-child(9)::before, .hero__star:nth-child(9)::after {
-  animation-delay: 2440ms;
+  animation-delay: 3341ms;
 }
 
 .hero__star:nth-child(10) {
-  top: calc(10% - 86px);
-  left: calc(10% - 137px);
-  animation-delay: 1003ms;
+  top: calc(10% - 311px);
+  left: calc(10% - 584px);
+  animation-delay: 2844ms;
 }
 
 .hero__star:nth-child(10)::before, .hero__star:nth-child(10)::after {
-  animation-delay: 1003ms;
+  animation-delay: 2844ms;
 }
 
 .hero__star:nth-child(11) {
-  top: calc(10% - 330px);
-  left: calc(10% - 281px);
-  animation-delay: 6033ms;
+  top: calc(10% - 307px);
+  left: calc(10% - 217px);
+  animation-delay: 5443ms;
 }
 
 .hero__star:nth-child(11)::before, .hero__star:nth-child(11)::after {
-  animation-delay: 6033ms;
+  animation-delay: 5443ms;
 }
 
 .hero__star:nth-child(12) {
-  top: calc(10% - 341px);
-  left: calc(10% - 160px);
-  animation-delay: 4802ms;
+  top: calc(10% - 552px);
+  left: calc(10% - 232px);
+  animation-delay: 684ms;
 }
 
 .hero__star:nth-child(12)::before, .hero__star:nth-child(12)::after {
-  animation-delay: 4802ms;
+  animation-delay: 684ms;
 }
 
 .hero__star:nth-child(13) {
-  top: calc(10% - 186px);
-  left: calc(10% - 534px);
-  animation-delay: 6840ms;
+  top: calc(10% - 328px);
+  left: calc(10% - 582px);
+  animation-delay: 2441ms;
 }
 
 .hero__star:nth-child(13)::before, .hero__star:nth-child(13)::after {
-  animation-delay: 6840ms;
+  animation-delay: 2441ms;
 }
 
 .hero__star:nth-child(14) {
-  top: calc(10% - 198px);
-  left: calc(10% - 86px);
-  animation-delay: 7440ms;
+  top: calc(10% - 241px);
+  left: calc(10% - 184px);
+  animation-delay: 4406ms;
 }
 
 .hero__star:nth-child(14)::before, .hero__star:nth-child(14)::after {
-  animation-delay: 7440ms;
+  animation-delay: 4406ms;
 }
 
 .hero__header {
@@ -738,7 +740,9 @@ section {
 
 .projects {
   width: 100%;
-  background: linear-gradient(to right top, #343a40, #384042, #3e4545, #464948, #4d4e4d);
+  height: 100%;
+  background-color: #252934;
+  background: rgba(37, 41, 52, 0.9);
 }
 
 .projects__title:after {
@@ -748,7 +752,7 @@ section {
 }
 
 .projects__wrapper {
-  width: 90%;
+  width: 95%;
   margin: 0 auto;
   padding: 1rem;
 }
@@ -756,8 +760,7 @@ section {
 .project {
   position: relative;
   margin: 0.5rem 0.5rem 2rem;
-  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
-  border-radius: 2rem;
+  background: rgba(230, 230, 220, 0.7);
   height: 100%;
   width: 100%;
   display: flex;
@@ -779,11 +782,6 @@ section {
   align-items: center;
 }
 
-.project__btns {
-  display: flex;
-  flex-direction: row;
-}
-
 .project-right {
   order: 1;
 }
@@ -794,25 +792,24 @@ section {
 
 .project__image {
   margin: 2rem;
-  border-radius: 2rem;
-  box-shadow: 0 0 30px #ccc, 0 0 30px #ddd;
+  box-shadow: 0px 9px 23px 0px rgba(15, 13, 15, 0.65);
   overflow: hidden;
   transition: all 0.85s;
-  background-image: url("../img/mygame.png");
+  background-color: black;
   background-size: contain;
   width: 36%;
   height: 300px;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .project__image:hover {
   transform: scale(1.1);
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .project__description {
-  color: black;
-  padding: 1rem;
+  color: #252934;
+  padding: 0.5rem 1rem;
   opacity: 1;
   display: flex;
   align-items: center;
@@ -826,7 +823,6 @@ section {
   color: white;
   font-family: Heebo, Arial, sans-serif;
   font-size: 2rem;
-  text-shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black, 1px 5px 1px black, 1px 8px 10px white;
 }
 
 .project__one {
@@ -857,22 +853,69 @@ section {
   background-image: url("../img/shopping-list.png");
 }
 
-.link {
-  cursor: pointer;
-  background-color: lemonchiffon;
-  padding: 1rem;
-  border: 1px solid red;
+.project__btns {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  justify-content: space-evenly;
 }
 
-.link:hover {
-  background-color: lightblue;
+.project__btn {
+  position: relative;
+  display: inline-flex;
+  height: 50px;
+  width: 120px;
+  border: 1px solid #252934;
+  color: #e6e6dc;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.8em;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
   transition: 0.3s ease-out all;
 }
 
-.link__border {
-  margin-right: 1rem;
-  padding: 1.5rem 0.5rem;
-  border: 1px solid blue;
+.project__btn:hover .slide {
+  left: 0;
+}
+
+.project__btn:hover .project__btn--text {
+  left: 150px;
+}
+
+.project__btn--text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  color: #252934;
+  transition: 0.4s ease-out all;
+}
+
+.project__tech {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 80%;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  left: -200px;
+  position: absolute;
+  transition: all 0.35s ease-Out;
+  bottom: 0;
+  background: #252934;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: #e6e6dc;
 }
 
 .footer {
@@ -883,6 +926,7 @@ section {
   justify-content: space-evenly;
   background-color: #252934;
   padding: 1rem;
+  box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.75);
 }
 
 .footer__description, .footer__link, .footer__iconLink {

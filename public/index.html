@@ -1,366 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async
-      src="https://www.googletagmanager.com/gtag/js?id=G-C4V68M76J2"></script>
-    <script>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C4V68M76J2"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'G-C4V68M76J2');
   </script>
-    <!-- ///////////////////////////// -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;600&display=swap"
-      rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
-      />
-    <link rel="stylesheet" href="css/style.css" />
+  <!-- ///////////////////////////// -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
 
-    <link rel='shortcut icon' type='image/x-icon' href='./img/icons/favicon.ico'
-      />
-    <title>Staszek Zajaczkowski</title>
-  </head>
+  <link rel='shortcut icon' type='image/x-icon' href='./img/icons/favicon.ico' />
+  <title>Staszek Zajaczkowski</title>
+</head>
 
-  <body>
-    <main>
-      <nav id="navigation" class="navigation">
-        <div class="hamburger">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-        </div>
-        <ul class="menu">
-          <li class="menu__item">
-            <a class="menu__link" href="#home">Home</a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link" href="#aboutMe">About</a>
-          </li>
-          <!-- <li class="menu__item">
-            <a class="menu__link" href="#skills">Skills</a>
-          </li> -->
-          <li class="menu__item">
-            <a class="menu__link" href="#projects">Projects</a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link" id="openForm" href="#contact">Contact</a>
-          </li>
-          <li class="menu__item">
-            <button class="menu__button button" type="submit"
-              onclick="window.open('./pdf/Staszek_Zajaczkowski_Poland.pdf')">Download
-              CV</button>
-          </li>
-        </ul>
-        <ul class="social">
-          <li class="social__item">
-            <a class="social__link" href="https://github.com/StaszekZ"
-              target="_blank" rel="noopener noreferrer">
-              <i class="fab fa-github social__icon"></i>
-            </a>
-          </li>
-          <li class="social__item">
-            <a class="social__link"
-              href="https://www.linkedin.com/in/s-zajaczkowski/" target="_blank"
-              rel="noopener noreferrer">
-              <i class="fab fa-linkedin social__icon"></i>
-            </a>
-          </li>
-        </ul>
-      </nav>
-
-
-      <form id="form" type="submit">
-        <fieldset class="form form__hide">
-          <h1 class="form__header">Contact Me:</h1>
-          <input class="form__input" type="text" id="name" name="name"
-            placeholder="name" required>
-          <span class="form__warning form__warning--name"></span>
-          <input class="form__input" type="text" id="email" name="email"
-            placeholder="email" required>
-          <span class="form__warning form__warning--email"></span>
-          <input class="form__input" type="text" id="location" name="location"
-            placeholder="Location">
-          <span class="form__warning form__warning--location"></span>
-          <textarea required class="form__input" rows="7" id="msg" name="msg"
-            placeholder="message"></textarea>
-          <span class="form__warning form__warning--message"></span>
-          <input class="button form__btn" type="button" value="submit">
-          <button class="button form__close">close</button>
-          <span class="form__sent">Message was sent!</span>
-        </fieldset>
-      </form>
-
-
-      <section id='home' class="hero">
-
-        <header class="hero__header">
-          <div class="hero__star--wrapper">
-            <div class="hero__star"></div>
-            <div class="hero__star"></div>
-            <div class="hero__star"></div>
-            <div class="hero__star"></div>
-            <div class="hero__star"></div>
-            <div class="hero__star"></div>
-            <div class="hero__star"></div>
-            <div class="hero__star"></div>
-            <div class="hero__star"></div>
-            <div class="hero__star"></div>
-            <div class="hero__star"></div>
-            <div class="hero__star"></div>
-            <div class="hero__star"></div>
-            <div class="hero__star"></div>
-          </div>
-          <div class="hero__name">
-            <div class="hide">
-              <span class="hero__title">Hi, I'm</span>
-              <span class="hero__title--red">
-                Stanislaw Zajaczkowski
-              </span>
-            </div>
-            <hr class="hero__hr">
-            <div class="hide">
-              <span class="hero__latin"> I'm Junior Front-end Developer
-              </span>
-            </div>
-          </div>
-          <a href="#aboutMe" class="hero__btn" role="button">
-            <i class="hero__arrow"></i>
-            <i class="hero__arrow"></i>
-            <i class="hero__arrow"></i>
-          </a>
-        </header>
-
-      </section>
-      <section id="aboutMe" class="aboutMe">
-            <h2 class="aboutMe__title">
-            About Me &#9759;
-          </h2>
-           <div class="aboutMe__wrapper">
-          <picture class="aboutMe__pictureWrapper">
-            <source media="(min-width: 1024px)" srcset="./img/me.jpg">
-            <source media="(max-width: 1023px)" srcset="./img/meSmall.jpg">
-            <img class="aboutMe__picture" src="./img/meSmall.jpg" alt="stanislaw
-              zajaczkowski photo" />
-          </picture>
-
-          <p class="aboutMe__content">
-            Hi! I am a front-end developer. I have successfully completed a
-            programming course and I have knowledge at a
-            junior level. I'm eager to learn and I'm coding at every possible
-            moment to enhance my skills. My current goal
-            is to start working as a developer as soon as possible in
-            full-fledged projects and learn new issues.
-          </p>
-        </div>
-
-      </section>
-      <section id="projects" class="projects">
-        <h2 class="projects__title">
-          My Projects
-        </h2>
-        <div class="projects__wrapper">
-
-          <div class="project">
-              <div class="project__image project__one project-left"></div>
-              <div class="project__about">
-              <h2 class="project__title">Game in JS</h2>
-              <p class="project__description">Simple game build in pure JS,
-                enjoy!</p>
-              <div class="project__btns">
-                <button class="link__border">
-                  <a class="project__link link" target="_blank" rel="noopener"
-                    href="https://infallible-brown-27d243.netlify.app/">
-                    <span class="text">Live Preview</span>
-                  </a>
-                </button>
-                <button class="btn btn__github">
-                  <a class="project__link" target="_blank" rel="noopener"
-                    href="https://github.com/StaszekZ/myFirstGame">GitHub
-                  </a>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="project">
-            <div class="project__image project__two project-right">
-            </div>
-            <div class="project__about">
-              <h2 class="project__title">Weather App</h2>
-              <p class="project__description">A team project. Build in React.
-                Best app for checking weather in main
-                cities around Baltic Sea area</p>
-              <div class="project__btns">
-                <button class="link__border">
-                  <a class="project__link link" target="_blank" rel="noopener"
-                    href="http://app.popeyeweather.jfdz14.is-academy.pl/">
-                    <span class="text">Live Preview</span>
-                  </a>
-                </button>
-                <button class="btn btn__github">
-                  <a class="project__link" target="_blank" rel="noopener"
-                    href="https://github.com/StaszekZ/jfdz14-popeye-weather-app">GitHub
-                  </a>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="project">
-            <div class="project__image project-left project__three">
-            </div>
-            <div class="project__about">
-              <h2 class="project__title">Notes & Todos</h2>
-              <p class="project__description">Advanced todos and notes list
-                build in React and Google firebase. Feel
-                free to use it!</p>
-              <div class="project__btns">
-                <button class="link__border">
-                  <a class="project__link link" target="_blank" rel="noopener"
-                    href="https://github.com/StaszekZ/notes.github.io">
-                    <span class="text">Live Preview</span>
-                  </a>
-                </button>
-                <button class="btn btn__github">
-                  <a class="project__link" target="_blank" rel="noopener"
-                    href="https://infallible-brown-27d243.netlify.app/">GitHub
-                  </a>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="project">
-            <div class="project__image project__four project-right">
-            </div>
-            <div class="project__about">
-              <h2 class="project__title">Landing Page for weather App</h2>
-              <p class="project__description">Team builded landing page for our
-                weather app.</p>
-              <div class="project__btns">
-                <button class="link__border">
-                  <a class="project__link link" target="_blank" rel="noopener"
-                    href="http://popeyeweather.jfdz14.is-academy.pl/">
-                    <span class="text">Live Preview</span>
-                  </a>
-                </button>
-                <button class="btn btn__github">
-                  <a class="project__link" target="_blank" rel="noopener"
-                    href="https://github.com/StaszekZ/jfdz14-popeye-weather">GitHub
-                  </a>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="project">
-            <div class="project__image project__five project-left">
-            </div>
-            <div class="project__about">
-              <h2 class="project__title">Landing Page</h2>
-              <p class="project__description">Simple page with only HTML and
-                CSS.</p>
-              <div class="project__btns">
-                <button class="link__border">
-                  <a class="project__link link" target="_blank" rel="noopener"
-                    href="https://staszekz.github.io/landingPageOne/">
-                    <span class="text">Live Preview</span>
-                  </a>
-                </button>
-                <button class="btn btn__github">
-                  <a class="project__link" target="_blank" rel="noopener"
-                    href="https://github.com/StaszekZ/landingPageOne">GitHub
-                  </a>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div class="project">
-            <div class="project__image project__six project-right">
-            </div>
-            <div class="project__about">
-              <h2 class="project__title">Joanna Miklosz website</h2>
-              <p class="project__description">Landing page for Joanna Miklosz
-                PhD, build with use of Bootstrap 4.5,
-                Cloud Functions and SendGrid</p>
-              <div class="project__btns">
-                <button class="link__border">
-                  <a class="project__link link" target="_blank" rel="noopener"
-                    href="https://www.joanna.science/">
-                    <span class="text">Live Preview</span>
-                  </a>
-                </button>
-                <button class="btn btn__github">
-                  <a class="project__link" target="_blank" rel="noopener"
-                    href="https://github.com/StaszekZ/joannaWebsite">GitHub
-                  </a>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="project">
-            <div class="project__image project__seven project-left">
-
-            </div>
-            <div class="project__about">
-              <h2 class="project__title">Shopping-List App</h2>
-              <p class="project__description">Shopping-List App build in Vanilla
-                JS with the use of Webpack 5, Bootstrap 5 and Google Firebase.
-                Feel free to use it!</p>
-              <div class="project__btns">
-                <button class="link__border">
-                  <a class="project__link link" target="_blank" rel="noopener"
-                    href="https://shopping-list-d75b7.web.app/">
-                    <span class="text">Live Preview</span>
-                  </a>
-                </button>
-                <button class="btn btn__github">
-                  <a class="project__link" target="_blank" rel="noopener"
-                    href="https://github.com/StaszekZ/ShoppingListJS">GitHub
-                  </a>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="footer" id="contact">
-      <div class="footer__info">
-        <p class="footer__description">&copy; Stanislaw Zajaczkowski <span
-            class="footer__date footer__description"></span></p>
-        <p class="footer__description">Location: Gdansk, Poland</p>
+<body>
+  <main>
+    <nav id="navigation" class="navigation">
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
       </div>
-      <ul class="footer__list">
-        <li><a class="footer__socialLink footer__github"
-            href="https://github.com/StaszekZ" target="_blank"
-            rel="noopener noreferrer">GitHub</a></li>
-        <li><a class="footer__socialLink footer__linkedin"
-            href="https://www.linkedin.com/in/s-zajaczkowski/"
-            target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+      <ul class="menu">
+        <li class="menu__item">
+          <a class="menu__link" href="#home">Home</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="#aboutMe">About</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="#projects">Projects</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" id="openForm" href="#contact">Contact</a>
+        </li>
+        <li class="menu__item">
+          <button class="menu__button button" type="submit"
+            onclick="window.open('./pdf/Staszek_Zajaczkowski_Poland.pdf')">Download
+            CV</button>
+        </li>
       </ul>
-      <a class="footer__link" href="mailto:staszek.zajaczkowski@gmail.com"><i
-          class="far fa-envelope footer__envelope"></i>
-        staszek.zajaczkowski@gmail.com </a>
+      <ul class="social">
+        <li class="social__item">
+          <a class="social__link" href="https://github.com/StaszekZ" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github social__icon"></i>
+          </a>
+        </li>
+        <li class="social__item">
+          <a class="social__link" href="https://www.linkedin.com/in/s-zajaczkowski/" target="_blank"
+            rel="noopener noreferrer">
+            <i class="fab fa-linkedin social__icon"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
 
-      <p class="footer__link footer__small">Icons by <a class="footer__iconLink
-          footer__small" target="_blank"
-          rel="noopener" href="https://icons8.com">Icons8
+
+    <form id="form" type="submit">
+      <fieldset class="form form__hide">
+        <h1 class="form__header">Contact Me:</h1>
+        <input class="form__input" type="text" id="name" name="name" placeholder="name" required>
+        <span class="form__warning form__warning--name"></span>
+        <input class="form__input" type="text" id="email" name="email" placeholder="email" required>
+        <span class="form__warning form__warning--email"></span>
+        <input class="form__input" type="text" id="location" name="location" placeholder="Location">
+        <span class="form__warning form__warning--location"></span>
+        <textarea required class="form__input" rows="7" id="msg" name="msg" placeholder="message"></textarea>
+        <span class="form__warning form__warning--message"></span>
+        <input class="button form__btn" type="button" value="submit">
+        <button class="button form__close">close</button>
+        <span class="form__sent">Message was sent!</span>
+      </fieldset>
+    </form>
+
+
+    <section id='home' class="hero">
+
+      <header class="hero__header">
+        <div class="hero__star--wrapper">
+          <div class="hero__star"></div>
+          <div class="hero__star"></div>
+          <div class="hero__star"></div>
+          <div class="hero__star"></div>
+          <div class="hero__star"></div>
+          <div class="hero__star"></div>
+          <div class="hero__star"></div>
+          <div class="hero__star"></div>
+          <div class="hero__star"></div>
+          <div class="hero__star"></div>
+          <div class="hero__star"></div>
+          <div class="hero__star"></div>
+          <div class="hero__star"></div>
+          <div class="hero__star"></div>
+        </div>
+        <div class="hero__name">
+          <div class="hide">
+            <span class="hero__title">Hi, I'm</span>
+            <span class="hero__title--red">
+              Stanislaw Zajaczkowski
+            </span>
+          </div>
+          <hr class="hero__hr">
+          <div class="hide">
+            <span class="hero__latin"> I'm Junior Front-end Developer
+            </span>
+          </div>
+        </div>
+        <a href="#aboutMe" class="hero__btn" role="button">
+          <i class="hero__arrow"></i>
+          <i class="hero__arrow"></i>
+          <i class="hero__arrow"></i>
         </a>
-      </p>
-    </footer>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-    <script
-      src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
-    <script
-      src="https://www.gstatic.com/firebasejs/8.2.1/firebase-functions.js"></script>
-    <script src=./dist/main.js></script>
-  </body>
+      </header>
+
+    </section>
+    <section id="aboutMe" class="aboutMe">
+    <header>
+      <h2 class="aboutMe__title">
+        About Me &#9759;
+      </h2>
+    </header>
+      <div class="aboutMe__wrapper">
+        <picture class="aboutMe__pictureWrapper">
+          <source media="(min-width: 1024px)" srcset="./img/me.jpg">
+          <source media="(max-width: 1023px)" srcset="./img/meSmall.jpg">
+          <img class="aboutMe__picture" src="./img/meSmall.jpg" alt="stanislaw
+              zajaczkowski photo" />
+        </picture>
+
+        <p class="aboutMe__content">
+          Hi! I am a front-end developer. I have successfully completed a
+          programming course and I have knowledge at a
+          junior level. I'm eager to learn and I'm coding at every possible
+          moment to enhance my skills. My current goal
+          is to start working as a developer as soon as possible in
+          full-fledged projects and learn new issues.
+        </p>
+      </div>
+
+    </section>
+    <section id="projects" class="projects">
+    <header>
+      <h2 class="projects__title">
+        My Projects
+      </h2>
+    </header>
+      <div class="projects__wrapper">
+
+        <div class="project">
+          <div class="project__image project__one project-left"></div>
+          <div class="project__about">
+            <span class="project__title">Game in JS</span>
+            <p class="project__description">Simple game build in pure JS. Game is based upon object oriented programming. I have used Google Firebase Firestore to keep list of winners. Enjoy!</p>
+            <span class="project__description" >Tech stack:</span>
+              <div class="project__tech">
+                 <img src="./img/icons/icons8-html-5.svg" alt="html5" title="html5">
+                 <img src="./img/icons/icons8-css3.svg" alt="css3" title="css3">
+                 <img src="./img/icons/icons8-javascript.svg" alt="javascript" title="javascript">
+                 <img src="./img/icons/icons8-firebase.svg" alt="google firebase firestore" title="firebase">
+              </div>
+              <hr>
+            <div class="project__btns">
+
+
+              <div class="project__btn" role="button">
+                <a class="project__link" target="_blank" rel="noopener"
+                  href="https://infallible-brown-27d243.netlify.app/">
+                  <div class="slide">
+                    <i class="fas fa-forward"></i>
+                  </div>
+                </a>
+
+                <span class="project__btn--text">Preview</span>
+              </div>
+
+
+              <div class="project__btn" role="button">
+                <a class="project__link" target="_blank" rel="noopener" href="https://github.com/StaszekZ/myFirstGame">
+                  <span class="project__btn--text">GitHub</span>
+                  <div class="slide">
+                    <i class="fab fa-github"></i>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project__image project__two project-right">
+          </div>
+          <div class="project__about">
+            <span class="project__title">Weather App</span>
+            <p class="project__description">A team project. Build in React.
+              Best app for checking weather in main
+              cities around Baltic Sea area</p>
+            <div class="project__btns">
+              <button class="link__border">
+                <a class="project__link link" target="_blank" rel="noopener"
+                  href="http://app.popeyeweather.jfdz14.is-academy.pl/">
+                  <span class="text">Live Preview</span>
+                </a>
+              </button>
+              <button class="btn btn__github">
+                <a class="project__link" target="_blank" rel="noopener"
+                  href="https://github.com/StaszekZ/jfdz14-popeye-weather-app">GitHub
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project__image project-left project__three">
+          </div>
+          <div class="project__about">
+            <span class="project__title">Notes & Todos</span>
+            <p class="project__description">Advanced todos and notes list
+              build in React and Google firebase. Feel
+              free to use it!</p>
+            <div class="project__btns">
+              <button class="link__border">
+                <a class="project__link link" target="_blank" rel="noopener"
+                  href="https://github.com/StaszekZ/notes.github.io">
+                  <span class="text">Live Preview</span>
+                </a>
+              </button>
+              <button class="btn btn__github">
+                <a class="project__link" target="_blank" rel="noopener"
+                  href="https://infallible-brown-27d243.netlify.app/">GitHub
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="project">
+          <div class="project__image project__four project-right">
+          </div>
+          <div class="project__about">
+            <span class="project__title">Landing Page for weather App</span>
+            <p class="project__description">Team builded landing page for our
+              weather app.</p>
+            <div class="project__btns">
+              <button class="link__border">
+                <a class="project__link link" target="_blank" rel="noopener"
+                  href="http://popeyeweather.jfdz14.is-academy.pl/">
+                  <span class="text">Live Preview</span>
+                </a>
+              </button>
+              <button class="btn btn__github">
+                <a class="project__link" target="_blank" rel="noopener"
+                  href="https://github.com/StaszekZ/jfdz14-popeye-weather">GitHub
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="project">
+          <div class="project__image project__five project-left">
+          </div>
+          <div class="project__about">
+            <span class="project__title">Landing Page</span>
+            <p class="project__description">Simple page with only HTML and
+              CSS.</p>
+            <div class="project__btns">
+              <button class="link__border">
+                <a class="project__link link" target="_blank" rel="noopener"
+                  href="https://staszekz.github.io/landingPageOne/">
+                  <span class="text">Live Preview</span>
+                </a>
+              </button>
+              <button class="btn btn__github">
+                <a class="project__link" target="_blank" rel="noopener"
+                  href="https://github.com/StaszekZ/landingPageOne">GitHub
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project">
+          <div class="project__image project__six project-right">
+          </div>
+          <div class="project__about">
+            <span class="project__title">Joanna Miklosz website</span>
+            <p class="project__description">Landing page for Joanna Miklosz
+              PhD, build with use of Bootstrap 4.5,
+              Cloud Functions and SendGrid</p>
+            <div class="project__btns">
+              <button class="link__border">
+                <a class="project__link link" target="_blank" rel="noopener" href="https://www.joanna.science/">
+                  <span class="text">Live Preview</span>
+                </a>
+              </button>
+              <button class="btn btn__github">
+                <a class="project__link" target="_blank" rel="noopener"
+                  href="https://github.com/StaszekZ/joannaWebsite">GitHub
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="project">
+          <div class="project__image project__seven project-left">
+
+          </div>
+          <div class="project__about">
+            <span class="project__title">Shopping-List App</span>
+            <p class="project__description">Shopping-List App build in Vanilla
+              JS with the use of Webpack 5, Bootstrap 5 and Google Firebase.
+              Feel free to use it!</p>
+            <div class="project__btns">
+              <button class="link__border">
+                <a class="project__link link" target="_blank" rel="noopener"
+                  href="https://shopping-list-d75b7.web.app/">
+                  <span class="text">Live Preview</span>
+                </a>
+              </button>
+              <button class="btn btn__github">
+                <a class="project__link" target="_blank" rel="noopener"
+                  href="https://github.com/StaszekZ/ShoppingListJS">GitHub
+                </a>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" id="contact">
+    <div class="footer__info">
+      <p class="footer__description">&copy; Stanislaw Zajaczkowski <span
+          class="footer__date footer__description"></span></p>
+      <p class="footer__description">Location: Gdansk, Poland</p>
+    </div>
+    <ul class="footer__list">
+      <li><a class="footer__socialLink footer__github" href="https://github.com/StaszekZ" target="_blank"
+          rel="noopener noreferrer">GitHub</a></li>
+      <li><a class="footer__socialLink footer__linkedin" href="https://www.linkedin.com/in/s-zajaczkowski/"
+          target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+    </ul>
+    <a class="footer__link" href="mailto:staszek.zajaczkowski@gmail.com"><i
+        class="far fa-envelope footer__envelope"></i>
+      staszek.zajaczkowski@gmail.com </a>
+
+    <p class="footer__link footer__small">Icons by <a class="footer__iconLink
+          footer__small" target="_blank" rel="noopener" href="https://icons8.com">Icons8
+      </a>
+    </p>
+  </footer>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-functions.js"></script>
+  <script src=./dist/main.js></script>
+</body>
 
 </html>
