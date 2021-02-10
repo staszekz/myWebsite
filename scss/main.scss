@@ -544,6 +544,11 @@ hr {
 		justify-content: center;
 		flex-wrap: wrap;
 		width: 80%;
+		&--img {
+			width: 48px;
+			height: 48px;
+			margin: 0.5rem;
+		}
 	}
 }
 
