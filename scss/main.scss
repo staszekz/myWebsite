@@ -117,7 +117,7 @@ hr {
 		animation: showHeroText 2s ease;
 		&--red {
 			@extend .hero__title;
-			color: hotpink;
+			color: $fontMainColor;
 		}
 	}
 
@@ -178,12 +178,12 @@ hr {
 	align-self: center;
 	justify-content: space-evenly;
 	list-style: none;
-
+	&__icon {
+		transition: all 0.3s ease;
+	}
 	&__icon:hover {
 		transform: translateY(-7px);
-		transition: all 0.3s ease;
-		color: #2ee59d;
-		text-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+		color: $fontMainColor;
 	}
 }
 
@@ -269,37 +269,34 @@ hr {
 		display: grid;
 		place-content: center;
 		color: white;
+		transition: all 0.3s ease;
 
 		&:hover {
-			transform: translateY(-7px);
-			transition: all 0.3s ease;
-			color: $greenColor;
-			text-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+			@extend .social__icon:hover;
 		}
 	}
 }
 
 .button {
-	height: 45px;
+	height: 40px;
 	font-family: $mainFont;
-	font-size: 11px;
+	font-size: 12px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	background-color: #fff;
 	border: none;
-	border-radius: 45px;
+	border-radius: 40px;
 	box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1);
-	transition: all 0.3s ease;
 	outline: none;
-	padding: 0.5rem;
+	padding: 0.7rem;
 	cursor: pointer;
+	transition: all 0.4s ease;
 	font-family: $mainFont;
 
 	&:hover {
-		background-color: $greenColor;
-		box-shadow: 0px 5px 10px rgba(46, 229, 157, 0.4);
+		@extend .social__icon:hover;
+		background-color: $fontMainColor;
 		color: #fff;
-		transform: translateY(-7px);
 	}
 }
 .fade {
@@ -349,14 +346,15 @@ hr {
 		justify-content: center;
 	}
 
-	&__pictureWrapper {
-		display: none;
-	}
+	// &__pictureWrapper {
+	// 	display: none;
+	// }
 
 	&__picture {
-		max-width: 20vw;
+		max-width: 30vw;
 		height: auto;
-		clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+		// display: none;
+		// clip-path: circle(50% at 50% 50%);
 	}
 
 	&__content {
@@ -421,7 +419,7 @@ hr {
 
 	&__title {
 		text-align: center;
-		color: white;
+		color: $mainColor;
 		font-family: $secondFont;
 		font-size: 2rem;
 		margin-top: 1rem;
@@ -579,12 +577,11 @@ hr {
 		color: white;
 		font-size: clamp(3vmin, 14px, 3.5vmin);
 		font-weight: lighter;
-		text-shadow: 1px 1px 1px grey, 1px 2px 1px black;
 		text-decoration: none;
 		padding-top: 1rem;
+		transition: all 0.3s ease;
 
 		&:visited {
-			text-shadow: 1px 1px 1px grey, 1px 2px 1px black;
 			color: white;
 		}
 	}
@@ -592,9 +589,7 @@ hr {
 	&__link:hover,
 	&__link:hover > &__iconLink {
 		transform: translateY(-7px);
-		transition: all 0.3s ease;
-		color: #2ee59d;
-		text-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+		color: $fontMainColor;
 	}
 
 	&__info {
@@ -611,22 +606,29 @@ hr {
 		text-decoration: none;
 		color: white;
 		font-size: clamp(3vmin, 16px, 4vmin);
-	}
-	&__github:hover,
-	&__linkedin:hover {
-		transform: translateY(-7px);
-		transition: all 0.3s ease;
-		color: #2ee59d;
-		text-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+		&:visited {
+			color: white;
+		}
 	}
 
+	&__github,
+	&__linkedin {
+		transition: all 0.3s ease;
+		&:hover {
+			transform: translateY(-7px);
+			color: $fontMainColor;
+		}
+		&:hover .footer__socialLink {
+			color: $fontMainColor;
+		}
+	}
 	&__envelope {
 		visibility: hidden;
 	}
 }
 
-@media (max-width: 375px) {
-	.aboutMe__pictureWrapper {
+@media (max-width: 400px) {
+	.aboutMe__picture {
 		display: none !important;
 	}
 }
@@ -636,9 +638,11 @@ hr {
 		&__wrapper {
 			flex-direction: row;
 		}
-
-		&__picture {
+		&__pictureWrapper {
 			display: flex;
+		}
+		&__picture {
+			clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
 		}
 	}
 	.project {
@@ -716,7 +720,6 @@ hr {
 		}
 		&__btns {
 			width: 80%;
-			// justify-content: space-between;
 		}
 	}
 }
@@ -741,12 +744,7 @@ hr {
 			font-size: 1rem;
 		}
 	}
-	.project {
-		// &__btns {
-		// 	width: 50%;
 
-		// }
-	}
 	.aboutMe__content {
 		font-size: 2.7vmax;
 		padding: 6rem;
@@ -759,5 +757,12 @@ hr {
 			width: 50%;
 			justify-content: space-evenly;
 		}
+	}
+}
+
+@media (min-width: 1700px) {
+	.project {
+		width: 85%;
+		margin: 0.5rem auto 2rem;
 	}
 }

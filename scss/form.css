@@ -6,8 +6,8 @@
   width: 100%;
   z-index: 99999;
   background-color: #252934;
-  border-left: 8px solid #2ee59d;
-  border-top: 1px solid #2ee59d;
+  border-left: 8px solid mediumvioletred;
+  border-top: 1px solid mediumvioletred;
   border-top-left-radius: 1%;
   border-bottom-left-radius: 1%;
   color: white;
@@ -32,7 +32,7 @@
 }
 
 .form__input:focus {
-  background-color: #2ee59d;
+  background-color: rgba(199, 21, 133, 0.5);
 }
 
 .form__input::placeholder {
@@ -67,7 +67,7 @@
 
 .form__warning {
   margin-bottom: 1rem;
-  color: red;
+  color: mediumvioletred;
   font-family: Heebo, Arial, sans-serif;
   font-size: 0.8rem;
   opacity: 0.9;
@@ -76,7 +76,7 @@
 .form__sent {
   margin-top: 1rem;
   font-size: 1.4rem;
-  color: #2ee59d;
+  color: mediumvioletred;
   visibility: hidden;
 }
 

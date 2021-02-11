@@ -8,8 +8,8 @@
 	width: 100%;
 	z-index: 99999;
 	background-color: $mainColor;
-	border-left: 8px solid $greenColor;
-	border-top: 1px solid $greenColor;
+	border-left: 8px solid $fontMainColor;
+	border-top: 1px solid $fontMainColor;
 	border-top-left-radius: 1%;
 	border-bottom-left-radius: 1%;
 	color: white;
@@ -30,7 +30,7 @@
 		border: none;
 		background-color: gainsboro;
 		&:focus {
-			background-color: $greenColor;
+			background-color: $fontMainColorLight;
 		}
 		&::placeholder {
 			text-transform: uppercase;
@@ -60,7 +60,7 @@
 	}
 	&__warning {
 		margin-bottom: 1rem;
-		color: red;
+		color: $fontMainColor;
 		font-family: $secondFont;
 		font-size: 0.8rem;
 		opacity: 0.9;
@@ -68,7 +68,7 @@
 	&__sent {
 		margin-top: 1rem;
 		font-size: 1.4rem;
-		color: $greenColor;
+		color: $fontMainColor;
 		visibility: hidden;
 	}
 }
