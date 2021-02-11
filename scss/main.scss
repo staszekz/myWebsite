@@ -379,19 +379,11 @@ hr {
 	display: flex;
 }
 
-// .show {
-// 	opacity: 1;
-// 	transform: translateX(0);
-// 	transition-delay: calc(1s * var(--index));
-// }
-
 .projects {
 	width: 100%;
 	height: 100%;
 	background-color: $mainColor;
 	background: rgba(37, 41, 52, 0.9);
-	// url('../img/heroBgr.png');
-	// background-blend-mode: darken;
 
 	&__title {
 		@extend .aboutMe__title;
@@ -417,7 +409,7 @@ hr {
 	height: 100%;
 	width: 100%;
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
 	box-shadow: $box-shadow;
@@ -427,8 +419,16 @@ hr {
 		opacity: 1;
 	}
 
+	&__title {
+		text-align: center;
+		color: white;
+		font-family: $secondFont;
+		font-size: 2rem;
+		margin-top: 1rem;
+	}
+
 	&__about {
-		width: 50%;
+		width: 80%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -437,7 +437,9 @@ hr {
 	&-right {
 		order: 1;
 	}
-
+	&-left {
+		order: 1;
+	}
 	&__link {
 		text-decoration: none;
 	}
@@ -446,10 +448,11 @@ hr {
 		box-shadow: $box-shadow;
 		overflow: hidden;
 		transition: all 0.85s;
-		background-color: black;
-		background-size: contain;
-		width: 36%;
-		height: 300px;
+		background-color: transparent;
+		background-size: cover;
+		background-position: center;
+		width: 80%;
+		height: 150px;
 		opacity: 0.8;
 		&:hover {
 			transform: scale(1.1);
@@ -466,13 +469,6 @@ hr {
 		justify-content: center;
 		text-align: center;
 		transition: 0.3s;
-	}
-
-	&__title {
-		text-align: center;
-		color: white;
-		font-family: $secondFont;
-		font-size: 2rem;
 	}
 
 	&__one {
@@ -504,8 +500,8 @@ hr {
 	&__btns {
 		display: flex;
 		flex-direction: row;
-		width: 50%;
-		justify-content: space-between;
+		width: 100%;
+		justify-content: space-evenly;
 	}
 	&__btn {
 		position: relative;
@@ -543,7 +539,7 @@ hr {
 		align-items: center;
 		justify-content: center;
 		flex-wrap: wrap;
-		width: 80%;
+		width: 100%;
 		&--img {
 			width: 48px;
 			height: 48px;
@@ -566,11 +562,6 @@ hr {
 	padding: 0;
 	color: $secondColor;
 }
-
-// .link__border:hover a {
-// 	color: white;
-// 	left: 150px;
-// }
 
 .footer {
 	min-height: 15vh;
@@ -634,36 +625,6 @@ hr {
 	}
 }
 
-//blobs in header
-.blob {
-	position: absolute;
-	top: 500px;
-	left: 200px;
-	width: 23vmax;
-	animation: move 40s ease-in-out infinite;
-	transform-origin: 50% 30%;
-}
-
-.blob2 {
-	position: absolute;
-	top: 30px;
-	right: 30px;
-	width: 25vmax;
-	animation: move2 50s ease-in-out infinite;
-	transform-origin: 50% 30%;
-	box-shadow: 1px 1px -8px black;
-}
-
-.blob3 {
-	position: absolute;
-	top: 30px;
-	left: 300px;
-	width: 28vmax;
-	height: 30vmax;
-	animation: move3 50s ease-in infinite;
-	transform-origin: 30% 30%;
-}
-
 @media (max-width: 375px) {
 	.aboutMe__pictureWrapper {
 		display: none !important;
@@ -680,11 +641,12 @@ hr {
 			display: flex;
 		}
 	}
-
-	.skills {
-		&__icon {
-			width: 144px;
-			height: 144px;
+	.project {
+		&__image {
+			height: 300px;
+		}
+		&__btns {
+			width: 90%;
 		}
 	}
 
@@ -695,7 +657,7 @@ hr {
 	}
 }
 
-//up to iPad
+//over iPad
 @media (min-width: 769px) {
 	.hero {
 		&__name {
@@ -737,6 +699,26 @@ hr {
 			background: transparent;
 		}
 	}
+
+	.project {
+		flex-direction: row;
+		&__title {
+			margin-top: 0;
+		}
+		&__about {
+			width: 50%;
+		}
+		&-left {
+			order: 0;
+		}
+		&__image {
+			width: 36%;
+		}
+		&__btns {
+			width: 80%;
+			// justify-content: space-between;
+		}
+	}
 }
 
 //over iPad pro
@@ -759,9 +741,23 @@ hr {
 			font-size: 1rem;
 		}
 	}
+	.project {
+		// &__btns {
+		// 	width: 50%;
 
+		// }
+	}
 	.aboutMe__content {
 		font-size: 2.7vmax;
 		padding: 6rem;
+	}
+}
+
+@media (min-width: 1200px) {
+	.project {
+		&__btns {
+			width: 50%;
+			justify-content: space-evenly;
+		}
 	}
 }
