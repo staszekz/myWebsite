@@ -514,13 +514,14 @@ hr {
 		align-items: center;
 		justify-content: center;
 		overflow: hidden;
+		left: 0;
 		cursor: pointer;
 		transition: 0.3s ease-out all;
 		&:hover .slide {
-			left: 0;
+			transform: translateX(200px);
 		}
 		&:hover .project__btn--text {
-			left: 150px;
+			transform: translateX(150px);
 		}
 		&--text {
 			position: relative;

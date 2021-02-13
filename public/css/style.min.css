@@ -206,158 +206,158 @@ hr {
 	transform: translateX(50%) rotateZ(-45deg);
 }
 .hero__star:nth-child(1) {
-	top: calc(10% - -33px);
-	left: calc(10% - 510px);
-	-webkit-animation-delay: 5284ms;
-	animation-delay: 5284ms;
+	top: calc(10% - 532px);
+	left: calc(10% - 29px);
+	-webkit-animation-delay: 188ms;
+	animation-delay: 188ms;
 }
 .hero__star:nth-child(1)::before,
 .hero__star:nth-child(1)::after {
-	-webkit-animation-delay: 5284ms;
-	animation-delay: 5284ms;
+	-webkit-animation-delay: 188ms;
+	animation-delay: 188ms;
 }
 .hero__star:nth-child(2) {
-	top: calc(10% - -9px);
-	left: calc(10% - 565px);
-	-webkit-animation-delay: 112ms;
-	animation-delay: 112ms;
+	top: calc(10% - 356px);
+	left: calc(10% - 336px);
+	-webkit-animation-delay: 7104ms;
+	animation-delay: 7104ms;
 }
 .hero__star:nth-child(2)::before,
 .hero__star:nth-child(2)::after {
-	-webkit-animation-delay: 112ms;
-	animation-delay: 112ms;
+	-webkit-animation-delay: 7104ms;
+	animation-delay: 7104ms;
 }
 .hero__star:nth-child(3) {
-	top: calc(10% - 367px);
-	left: calc(10% - 551px);
-	-webkit-animation-delay: 7662ms;
-	animation-delay: 7662ms;
+	top: calc(10% - 164px);
+	left: calc(10% - 441px);
+	-webkit-animation-delay: 6713ms;
+	animation-delay: 6713ms;
 }
 .hero__star:nth-child(3)::before,
 .hero__star:nth-child(3)::after {
-	-webkit-animation-delay: 7662ms;
-	animation-delay: 7662ms;
+	-webkit-animation-delay: 6713ms;
+	animation-delay: 6713ms;
 }
 .hero__star:nth-child(4) {
-	top: calc(10% - 7px);
-	left: calc(10% - 66px);
-	-webkit-animation-delay: 3580ms;
-	animation-delay: 3580ms;
+	top: calc(10% - 83px);
+	left: calc(10% - 347px);
+	-webkit-animation-delay: 9735ms;
+	animation-delay: 9735ms;
 }
 .hero__star:nth-child(4)::before,
 .hero__star:nth-child(4)::after {
-	-webkit-animation-delay: 3580ms;
-	animation-delay: 3580ms;
+	-webkit-animation-delay: 9735ms;
+	animation-delay: 9735ms;
 }
 .hero__star:nth-child(5) {
-	top: calc(10% - 396px);
-	left: calc(10% - 360px);
-	-webkit-animation-delay: 9459ms;
-	animation-delay: 9459ms;
+	top: calc(10% - 184px);
+	left: calc(10% - 180px);
+	-webkit-animation-delay: 6420ms;
+	animation-delay: 6420ms;
 }
 .hero__star:nth-child(5)::before,
 .hero__star:nth-child(5)::after {
-	-webkit-animation-delay: 9459ms;
-	animation-delay: 9459ms;
+	-webkit-animation-delay: 6420ms;
+	animation-delay: 6420ms;
 }
 .hero__star:nth-child(6) {
-	top: calc(10% - 504px);
-	left: calc(10% - 207px);
-	-webkit-animation-delay: 331ms;
-	animation-delay: 331ms;
+	top: calc(10% - 449px);
+	left: calc(10% - 443px);
+	-webkit-animation-delay: 6452ms;
+	animation-delay: 6452ms;
 }
 .hero__star:nth-child(6)::before,
 .hero__star:nth-child(6)::after {
-	-webkit-animation-delay: 331ms;
-	animation-delay: 331ms;
+	-webkit-animation-delay: 6452ms;
+	animation-delay: 6452ms;
 }
 .hero__star:nth-child(7) {
-	top: calc(10% - 434px);
-	left: calc(10% - 208px);
-	-webkit-animation-delay: 6434ms;
-	animation-delay: 6434ms;
+	top: calc(10% - 418px);
+	left: calc(10% - 238px);
+	-webkit-animation-delay: 3848ms;
+	animation-delay: 3848ms;
 }
 .hero__star:nth-child(7)::before,
 .hero__star:nth-child(7)::after {
-	-webkit-animation-delay: 6434ms;
-	animation-delay: 6434ms;
+	-webkit-animation-delay: 3848ms;
+	animation-delay: 3848ms;
 }
 .hero__star:nth-child(8) {
-	top: calc(10% - 207px);
-	left: calc(10% - 48px);
-	-webkit-animation-delay: 1518ms;
-	animation-delay: 1518ms;
+	top: calc(10% - 542px);
+	left: calc(10% - 296px);
+	-webkit-animation-delay: 6286ms;
+	animation-delay: 6286ms;
 }
 .hero__star:nth-child(8)::before,
 .hero__star:nth-child(8)::after {
-	-webkit-animation-delay: 1518ms;
-	animation-delay: 1518ms;
+	-webkit-animation-delay: 6286ms;
+	animation-delay: 6286ms;
 }
 .hero__star:nth-child(9) {
-	top: calc(10% - 435px);
-	left: calc(10% - 386px);
-	-webkit-animation-delay: 5369ms;
-	animation-delay: 5369ms;
+	top: calc(10% - 385px);
+	left: calc(10% - 117px);
+	-webkit-animation-delay: 6943ms;
+	animation-delay: 6943ms;
 }
 .hero__star:nth-child(9)::before,
 .hero__star:nth-child(9)::after {
-	-webkit-animation-delay: 5369ms;
-	animation-delay: 5369ms;
+	-webkit-animation-delay: 6943ms;
+	animation-delay: 6943ms;
 }
 .hero__star:nth-child(10) {
-	top: calc(10% - 104px);
-	left: calc(10% - 400px);
-	-webkit-animation-delay: 1158ms;
-	animation-delay: 1158ms;
+	top: calc(10% - 191px);
+	left: calc(10% - 500px);
+	-webkit-animation-delay: 2415ms;
+	animation-delay: 2415ms;
 }
 .hero__star:nth-child(10)::before,
 .hero__star:nth-child(10)::after {
-	-webkit-animation-delay: 1158ms;
-	animation-delay: 1158ms;
+	-webkit-animation-delay: 2415ms;
+	animation-delay: 2415ms;
 }
 .hero__star:nth-child(11) {
-	top: calc(10% - 357px);
-	left: calc(10% - 298px);
-	-webkit-animation-delay: 9989ms;
-	animation-delay: 9989ms;
+	top: calc(10% - 77px);
+	left: calc(10% - 132px);
+	-webkit-animation-delay: 5330ms;
+	animation-delay: 5330ms;
 }
 .hero__star:nth-child(11)::before,
 .hero__star:nth-child(11)::after {
-	-webkit-animation-delay: 9989ms;
-	animation-delay: 9989ms;
+	-webkit-animation-delay: 5330ms;
+	animation-delay: 5330ms;
 }
 .hero__star:nth-child(12) {
-	top: calc(10% - -39px);
-	left: calc(10% - 366px);
-	-webkit-animation-delay: 4472ms;
-	animation-delay: 4472ms;
+	top: calc(10% - 334px);
+	left: calc(10% - 294px);
+	-webkit-animation-delay: 3391ms;
+	animation-delay: 3391ms;
 }
 .hero__star:nth-child(12)::before,
 .hero__star:nth-child(12)::after {
-	-webkit-animation-delay: 4472ms;
-	animation-delay: 4472ms;
+	-webkit-animation-delay: 3391ms;
+	animation-delay: 3391ms;
 }
 .hero__star:nth-child(13) {
-	top: calc(10% - -24px);
-	left: calc(10% - 37px);
-	-webkit-animation-delay: 9696ms;
-	animation-delay: 9696ms;
+	top: calc(10% - 317px);
+	left: calc(10% - 256px);
+	-webkit-animation-delay: 8229ms;
+	animation-delay: 8229ms;
 }
 .hero__star:nth-child(13)::before,
 .hero__star:nth-child(13)::after {
-	-webkit-animation-delay: 9696ms;
-	animation-delay: 9696ms;
+	-webkit-animation-delay: 8229ms;
+	animation-delay: 8229ms;
 }
 .hero__star:nth-child(14) {
-	top: calc(10% - 2px);
-	left: calc(10% - 254px);
-	-webkit-animation-delay: 5299ms;
-	animation-delay: 5299ms;
+	top: calc(10% - 180px);
+	left: calc(10% - 402px);
+	-webkit-animation-delay: 150ms;
+	animation-delay: 150ms;
 }
 .hero__star:nth-child(14)::before,
 .hero__star:nth-child(14)::after {
-	-webkit-animation-delay: 5299ms;
-	animation-delay: 5299ms;
+	-webkit-animation-delay: 150ms;
+	animation-delay: 150ms;
 }
 .hero__header {
 	display: flex;
@@ -726,14 +726,15 @@ hr {
 	align-items: center;
 	justify-content: center;
 	overflow: hidden;
+	left: 0;
 	cursor: pointer;
 	transition: 0.3s ease-out all;
 }
 .project__btn:hover .slide {
-	left: 0;
+	transform: translateX(200px);
 }
 .project__btn:hover .project__btn--text {
-	left: 150px;
+	transform: translateX(150px);
 }
 .project__btn--text {
 	position: relative;

@@ -149,143 +149,143 @@ hr {
 }
 
 .hero__star:nth-child(1) {
-  top: calc(10% - 87px);
-  left: calc(10% - 554px);
-  animation-delay: 2250ms;
+  top: calc(10% - -173px);
+  left: calc(10% - 233px);
+  animation-delay: 9875ms;
 }
 
 .hero__star:nth-child(1)::before, .hero__star:nth-child(1)::after {
-  animation-delay: 2250ms;
+  animation-delay: 9875ms;
 }
 
 .hero__star:nth-child(2) {
-  top: calc(10% - 323px);
-  left: calc(10% - 480px);
-  animation-delay: 9405ms;
+  top: calc(10% - -196px);
+  left: calc(10% - 210px);
+  animation-delay: 4980ms;
 }
 
 .hero__star:nth-child(2)::before, .hero__star:nth-child(2)::after {
-  animation-delay: 9405ms;
+  animation-delay: 4980ms;
 }
 
 .hero__star:nth-child(3) {
-  top: calc(10% - 199px);
-  left: calc(10% - 491px);
-  animation-delay: 4731ms;
+  top: calc(10% - 216px);
+  left: calc(10% - 30px);
+  animation-delay: 7108ms;
 }
 
 .hero__star:nth-child(3)::before, .hero__star:nth-child(3)::after {
-  animation-delay: 4731ms;
+  animation-delay: 7108ms;
 }
 
 .hero__star:nth-child(4) {
-  top: calc(10% - 303px);
-  left: calc(10% - 481px);
-  animation-delay: 331ms;
+  top: calc(10% - 400px);
+  left: calc(10% - 59px);
+  animation-delay: 3816ms;
 }
 
 .hero__star:nth-child(4)::before, .hero__star:nth-child(4)::after {
-  animation-delay: 331ms;
+  animation-delay: 3816ms;
 }
 
 .hero__star:nth-child(5) {
-  top: calc(10% - -191px);
-  left: calc(10% - 570px);
-  animation-delay: 82ms;
+  top: calc(10% - 208px);
+  left: calc(10% - 80px);
+  animation-delay: 4606ms;
 }
 
 .hero__star:nth-child(5)::before, .hero__star:nth-child(5)::after {
-  animation-delay: 82ms;
+  animation-delay: 4606ms;
 }
 
 .hero__star:nth-child(6) {
-  top: calc(10% - -10px);
-  left: calc(10% - 375px);
-  animation-delay: 7406ms;
+  top: calc(10% - 4px);
+  left: calc(10% - 113px);
+  animation-delay: 3460ms;
 }
 
 .hero__star:nth-child(6)::before, .hero__star:nth-child(6)::after {
-  animation-delay: 7406ms;
+  animation-delay: 3460ms;
 }
 
 .hero__star:nth-child(7) {
-  top: calc(10% - 411px);
-  left: calc(10% - 108px);
-  animation-delay: 737ms;
+  top: calc(10% - -192px);
+  left: calc(10% - 416px);
+  animation-delay: 9543ms;
 }
 
 .hero__star:nth-child(7)::before, .hero__star:nth-child(7)::after {
-  animation-delay: 737ms;
+  animation-delay: 9543ms;
 }
 
 .hero__star:nth-child(8) {
-  top: calc(10% - 151px);
-  left: calc(10% - 500px);
-  animation-delay: 8851ms;
+  top: calc(10% - -171px);
+  left: calc(10% - 257px);
+  animation-delay: 6523ms;
 }
 
 .hero__star:nth-child(8)::before, .hero__star:nth-child(8)::after {
-  animation-delay: 8851ms;
+  animation-delay: 6523ms;
 }
 
 .hero__star:nth-child(9) {
-  top: calc(10% - 465px);
-  left: calc(10% - 162px);
-  animation-delay: 1997ms;
+  top: calc(10% - 430px);
+  left: calc(10% - 260px);
+  animation-delay: 2626ms;
 }
 
 .hero__star:nth-child(9)::before, .hero__star:nth-child(9)::after {
-  animation-delay: 1997ms;
+  animation-delay: 2626ms;
 }
 
 .hero__star:nth-child(10) {
-  top: calc(10% - 335px);
-  left: calc(10% - 484px);
-  animation-delay: 7723ms;
+  top: calc(10% - 590px);
+  left: calc(10% - 329px);
+  animation-delay: 8669ms;
 }
 
 .hero__star:nth-child(10)::before, .hero__star:nth-child(10)::after {
-  animation-delay: 7723ms;
+  animation-delay: 8669ms;
 }
 
 .hero__star:nth-child(11) {
-  top: calc(10% - 283px);
-  left: calc(10% - 431px);
-  animation-delay: 8956ms;
+  top: calc(10% - 411px);
+  left: calc(10% - 342px);
+  animation-delay: 6243ms;
 }
 
 .hero__star:nth-child(11)::before, .hero__star:nth-child(11)::after {
-  animation-delay: 8956ms;
+  animation-delay: 6243ms;
 }
 
 .hero__star:nth-child(12) {
-  top: calc(10% - -138px);
-  left: calc(10% - 57px);
-  animation-delay: 8380ms;
+  top: calc(10% - 471px);
+  left: calc(10% - 326px);
+  animation-delay: 3328ms;
 }
 
 .hero__star:nth-child(12)::before, .hero__star:nth-child(12)::after {
-  animation-delay: 8380ms;
+  animation-delay: 3328ms;
 }
 
 .hero__star:nth-child(13) {
-  top: calc(10% - -169px);
-  left: calc(10% - 100px);
-  animation-delay: 6241ms;
+  top: calc(10% - -74px);
+  left: calc(10% - 162px);
+  animation-delay: 7818ms;
 }
 
 .hero__star:nth-child(13)::before, .hero__star:nth-child(13)::after {
-  animation-delay: 6241ms;
+  animation-delay: 7818ms;
 }
 
 .hero__star:nth-child(14) {
-  top: calc(10% - 247px);
-  left: calc(10% - 559px);
-  animation-delay: 7812ms;
+  top: calc(10% - 43px);
+  left: calc(10% - 283px);
+  animation-delay: 5081ms;
 }
 
 .hero__star:nth-child(14)::before, .hero__star:nth-child(14)::after {
-  animation-delay: 7812ms;
+  animation-delay: 5081ms;
 }
 
 .hero__header {
@@ -706,16 +706,17 @@ hr {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  left: 0;
   cursor: pointer;
   transition: 0.3s ease-out all;
 }
 
 .project__btn:hover .slide {
-  left: 0;
+  transform: translateX(200px);
 }
 
 .project__btn:hover .project__btn--text {
-  left: 150px;
+  transform: translateX(150px);
 }
 
 .project__btn--text {
