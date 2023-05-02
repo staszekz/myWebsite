@@ -1,6 +1,6 @@
 # aboutMe
 
-My personal website with my portfolio. Coded mostly in HTML and SCSS, with a little bit of TypeScript. Website hosted by Google Firebase.
+My personal website with my portfolio. Coded mostly in HTML and SCSS, with a little bit of TypeScript. Website hosted by Google Firebase and deployes with netlify.
 You can find it under the link: www.staszek.ovh
 Feel free to contact me.
 Enjoy!
