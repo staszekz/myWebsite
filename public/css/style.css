@@ -681,20 +681,34 @@ hr {
 	padding: 4rem 1rem;
 	text-align: center;
 	color: aliceblue;
-	font-size: 3vmax;
+	font-size: 2.5vmax;
 	text-shadow: 1px 1px 1px black;
 }
+.aboutMe__link{
+	display: inline;
+	text-decoration: none;
+	font-style: italic;
+	color: aliceblue;
+		font-size: 2vmax;
+		text-shadow: 1px 1px 1px black;
+}
+	.aboutMe__link:visited{
+			color: aliceblue
+		}
 
 .fromLeft {
 	-webkit-animation: slideLeft 0.8s;
 	animation: slideLeft 0.8s;
 	display: flex;
+
 }
 
 .fromRight {
 	-webkit-animation: slideRight 0.8s;
 	animation: slideRight 0.8s;
-	display: flex;
+	display: inline;
+
+
 }
 
 .projects {
@@ -1068,7 +1082,7 @@ hr {
 		font-size: 1rem;
 	}
 	.aboutMe__content {
-		font-size: 2.7vmax;
+		font-size: 2.3vmax;
 		padding: 6rem;
 	}
 }
