@@ -6,7 +6,7 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-C4V68M76J2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
+    function gtag(...args) { dataLayer.push(args); }
     gtag('js', new Date());
 
     gtag('config', 'G-C4V68M76J2');
@@ -18,6 +18,7 @@
      <!-- end of goole adsense -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Stanislaw Zajaczkowski - frontend developer projects, experience, and contact." />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
@@ -44,6 +45,9 @@
         </li>
         <li class="menu__item">
           <a class="menu__link" href="#projects">Projects</a>
+        </li>
+        <li class="menu__item">
+          <a class="menu__link" href="/blog.html">Blog</a>
         </li>
         <li class="menu__item">
           <a class="menu__link" id="openForm" href="#contact">Contact</a>
@@ -120,7 +124,7 @@
             </span>
           </div>
         </div>
-        <a href="#aboutMe" class="hero__btn" role="button">
+        <a href="#aboutMe" class="hero__btn" aria-label="Scroll to About section">
           <i class="hero__arrow"></i>
           <i class="hero__arrow"></i>
           <i class="hero__arrow"></i>
@@ -142,14 +146,26 @@
               zajaczkowski photo" />
         </picture>
 
-        <p class="aboutMe__content">
-          Hello there! I am thrilled to introduce myself as a passionate and ambitious front-end developer.
-          Currently, I am working for a software house <a class="aboutMe__link" href="https://inspeerity.com/" rel="noopener noreferrer" target="_blank">(inspeerity)</a> as a React developer, where I am able to hone my skills.
-          My ultimate goal is to become a skilled and versatile programmer who is capable of tackling any challenge with confidence and creativity. 
-          I believe that the key to achieving this goal is through hard work, dedication, and a willingness to constantly learn and adapt.
-          I am excited about the future and look forward to working with other passionate professionals 
-          to create innovative and cutting-edge solutions that push the boundaries of what is possible in the world of front-end development.
-        </p>
+        <div class="aboutMe__content">
+          <p class="aboutMe__lead">
+            Hello there! I am thrilled to introduce myself as a passionate and ambitious front-end developer.
+          </p>
+          <p>
+            Currently, I am working for a software house
+            <a class="aboutMe__link" href="https://www.operend.com" rel="noopener noreferrer" target="_blank">Operend</a>
+            as a React developer, where I am able to hone my skills.
+          </p>
+          <p>
+            My ultimate goal is to become a skilled and versatile programmer who is capable of tackling any challenge with confidence and creativity.
+          </p>
+          <p>
+            I believe that the key to achieving this goal is through hard work, dedication, and a willingness to constantly learn and adapt.
+          </p>
+          <p>
+            I am excited about the future and look forward to working with other passionate professionals
+            to create innovative and cutting-edge solutions that push the boundaries of what is possible in the world of front-end development.
+          </p>
+        </div>
       </div>
     </section>
     <section id="projects" class="projects">
@@ -322,6 +338,7 @@
             </div>
           </div>
         </div>
+      </div>
     </section>
   </main>
   <footer class="footer" id="contact">

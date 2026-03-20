@@ -1,43 +1,59 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const functions = require("firebase-functions");
+exports.staszek_ovh_form_to_sender = exports.staszek_ovh_form = void 0;
+const functions = require("firebase-functions/v1");
 const sendGridEmail = require("@sendgrid/mail");
-const admin = require("firebase-admin");
-admin.initializeApp(functions.config().firebase);
-const SENDGRID_API_KEY = functions.config().sendgrid.key;
-const TEMPLATE_ID = functions.config().sendgrid.template;
-const TEMPLATE_TO_SENDER = functions.config().sendgrid.templatetosender;
+const app_1 = require("firebase-admin/app");
+(0, app_1.initializeApp)();
+const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY ?? "";
+const TEMPLATE_ID = process.env.SENDGRID_TEMPLATE_ID ?? "";
+const TEMPLATE_TO_SENDER = process.env.SENDGRID_TEMPLATE_TO_SENDER ?? "";
+if (!SENDGRID_API_KEY || !TEMPLATE_ID || !TEMPLATE_TO_SENDER) {
+    throw new Error("Missing SendGrid environment variables");
+}
 sendGridEmail.setApiKey(SENDGRID_API_KEY);
-exports.staszek_ovh_form = functions.firestore.document('/mails/{mailsId}').onCreate((snap) => {
+const isMessageData = (value) => {
+    if (typeof value !== "object" || value === null) {
+        return false;
+    }
+    const candidate = value;
+    return (typeof candidate.name === "string" &&
+        typeof candidate.email === "string" &&
+        typeof candidate.location === "string" &&
+        typeof candidate.message === "string");
+};
+exports.staszek_ovh_form = functions.firestore
+    .document("/mails/{mailsId}")
+    .onCreate(async (snap) => {
     const messageData = snap.data();
-    const msg = {
-        to: 'staszek.zajaczkowski@gmail.com',
-        from: 'ktulu.inc@gmail.com',
+    if (!isMessageData(messageData)) {
+        throw new Error("Invalid payload for staszek_ovh_form");
+    }
+    await sendGridEmail.send({
+        to: "staszek.zajaczkowski@gmail.com",
+        from: "ktulu.inc@gmail.com",
         templateId: TEMPLATE_ID,
-        dynamic_template_data: {
+        dynamicTemplateData: {
             name: messageData.name,
             email: messageData.email,
             location: messageData.location,
             message: messageData.message,
         },
-    };
-    return sendGridEmail
-        .send(msg)
-        .then(() => console.log('email sent'))
-        .catch((error) => { throw new Error(error.toString()); });
+    });
 });
-exports.staszek_ovh_form_to_sender = functions.firestore.document('/mails/{mailsId}').onCreate((snap) => {
+exports.staszek_ovh_form_to_sender = functions.firestore
+    .document("/mails/{mailsId}")
+    .onCreate(async (snap) => {
     const messageData = snap.data();
-    const msg = {
+    if (!isMessageData(messageData)) {
+        throw new Error("Invalid payload for staszek_ovh_form_to_sender");
+    }
+    await sendGridEmail.send({
         to: messageData.email,
-        from: 'ktulu.inc@gmail.com',
+        from: "ktulu.inc@gmail.com",
         templateId: TEMPLATE_TO_SENDER,
-        dynamic_template_data: {
+        dynamicTemplateData: {
             message: messageData.message,
         },
-    };
-    return sendGridEmail
-        .send(msg)
-        .then(() => console.log('email sent'))
-        .catch((error) => { throw new Error(error.toString()); });
+    });
 });

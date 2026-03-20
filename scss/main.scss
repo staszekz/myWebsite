@@ -16,6 +16,8 @@ body {
 	font-family: $mainFont;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background: $mainColor;
+	color: #fff;
 }
 
 section {
@@ -165,7 +167,7 @@ hr {
 	flex-direction: row;
 	justify-content: space-between;
 	background-color: $mainColor;
-	box-shadow: 0px 4px 8px -3px rgba(0, 0, 0, 0.75);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 	transition: opacity 0.7s;
 }
 .withOpacity {
@@ -270,9 +272,18 @@ hr {
 		place-content: center;
 		color: white;
 		transition: all 0.3s ease;
+		border-bottom: 2px solid transparent;
 
 		&:hover {
-			@extend .social__icon:hover;
+			transform: translateY(-7px);
+			color: $fontMainColor;
+			border-bottom-color: $fontMainColor;
+		}
+
+		&:focus-visible {
+			outline: 2px solid $fontMainColor;
+			outline-offset: 4px;
+			border-radius: 4px;
 		}
 	}
 }
@@ -285,8 +296,8 @@ hr {
 	letter-spacing: 2px;
 	background-color: #fff;
 	border: none;
-	border-radius: 40px;
-	box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1);
+	border-radius: $radius-full;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 	outline: none;
 	padding: 0.7rem;
 	cursor: pointer;
@@ -294,9 +305,14 @@ hr {
 	font-family: $mainFont;
 
 	&:hover {
-		@extend .social__icon:hover;
+		transform: translateY(-7px);
 		background-color: $fontMainColor;
 		color: #fff;
+	}
+
+	&:focus-visible {
+		outline: 2px solid $fontMainColor;
+		outline-offset: 3px;
 	}
 }
 .fade {
@@ -318,11 +334,12 @@ hr {
 }
 
 .aboutMe {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/omnie.jpg');
+	background-image: linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.78)), url('../img/omnie.jpg');
 	background-attachment: fixed;
 	background-size: cover;
 	background-repeat: no-repeat;
-	min-height: 100vh;
+	background-position: center;
+	min-height: auto;
 	scroll-snap-align: start;
 
 	&__title {
@@ -333,44 +350,83 @@ hr {
 		justify-content: center;
 		transition: all 0.5s;
 		padding-top: 80px;
-		min-height: calc(20vh - 60px);
-		font-size: clamp(1.4vmax, 1.7rem, 3vmax);
+		min-height: 120px;
+		font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.75rem);
+		font-weight: 600;
+		color: $mainColor;
 		box-shadow: 0px 4px 8px -3px rgba(0, 0, 0, 0.75);
 	}
 
 	&__wrapper {
-		min-height: 80vh;
+		min-height: auto;
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: stretch;
 		justify-content: center;
+		gap: $space-lg;
+		padding: 2rem 1.25rem 2.5rem;
+		max-width: 72rem;
+		margin: 0 auto;
+		width: 100%;
 	}
-
-	// &__pictureWrapper {
-	// 	display: none;
-	// }
 
 	&__picture {
-		max-width: 30vw;
+		max-width: min(220px, 42vw);
 		height: auto;
-		// display: none;
-		// clip-path: circle(50% at 50% 50%);
+		border-radius: 16px;
+		box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
 	}
 
+	// Prose block: card on photo, even type scale (rem + clamp), comfortable line length
 	&__content {
 		display: none;
-		padding: 4rem 1rem;
-		text-align: center;
-		color: aliceblue;
-		font-size: 3vmax;
-		text-shadow: 1px 1px 1px black;
+		flex: 1;
+		min-width: 0;
+		max-width: $about-prose-max;
+		margin: 0 auto;
+		padding: $space-lg 1.25rem;
+		text-align: left;
+		color: rgba(255, 255, 255, 0.95);
+		background: rgba(22, 27, 38, 0.82);
+		border: 1px solid rgba(255, 255, 255, 0.12);
+		border-radius: $radius-md;
+		box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+
+		p {
+			margin: 0 0 1rem;
+			font-size: $about-prose-size;
+			line-height: 1.65;
+			max-width: 100%;
+		}
+
+		p:last-child {
+			margin-bottom: 0;
+		}
 	}
+
+	&__lead {
+		font-size: $about-lead-size;
+		font-weight: 600;
+		line-height: 1.5;
+		color: #fff;
+	}
+
 	&__link {
-		color: aliceblue;
-		font-size: 3vmax;
-		text-shadow: 1px 1px 1px black;
-		:visited{
-			color: aliceblue
+		color: lighten($fontMainColorLight, 8%);
+		font-size: inherit;
+		font-weight: 600;
+		text-decoration: underline;
+		text-decoration-thickness: 1px;
+		text-underline-offset: 3px;
+		text-shadow: none;
+
+		&:hover,
+		&:focus-visible {
+			color: #fff;
+		}
+
+		&:visited {
+			color: lighten($fontMainColorLight, 8%);
 		}
 	}
 }
@@ -383,6 +439,12 @@ hr {
 .fromRight {
 	animation: slideRight 0.8s;
 	display: flex;
+}
+
+// Stack paragraphs when animating About copy (avoid row flex from .fromRight)
+.aboutMe__content.fromRight {
+	flex-direction: column;
+	align-items: stretch;
 }
 
 .projects {
@@ -411,14 +473,16 @@ hr {
 .project {
 	position: relative;
 	margin: 0.5rem 0.5rem 2rem;
-	background: rgba(230, 230, 220, 0.7);
+	background: rgba(230, 230, 220, 0.85);
 	height: 100%;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
-	box-shadow: $box-shadow;
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	border-radius: $radius-md;
+	box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
 	min-height: 50vh;
 
 	&:hover > .project__description {
@@ -451,7 +515,7 @@ hr {
 	}
 	&__image {
 		margin: 2rem;
-		box-shadow: $box-shadow;
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 		overflow: hidden;
 		transition: all 0.85s;
 		background-color: transparent;
@@ -459,9 +523,9 @@ hr {
 		background-position: center;
 		width: 80%;
 		height: 150px;
-		opacity: 0.8;
+		opacity: 0.92;
 		&:hover {
-			transform: scale(1.1);
+			transform: scale(1.04);
 			opacity: 1;
 		}
 	}
@@ -636,6 +700,23 @@ hr {
 	}
 }
 
+.blog {
+	padding-top: 110px;
+	min-height: 100vh;
+
+	&__content {
+		padding: 2rem 0;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation: none !important;
+		transition: none !important;
+		scroll-behavior: auto !important;
+	}
+}
+
 @media (max-width: 400px) {
 	.aboutMe__picture {
 		display: none !important;
@@ -646,12 +727,21 @@ hr {
 	.aboutMe {
 		&__wrapper {
 			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			gap: 2rem;
 		}
 		&__pictureWrapper {
 			display: flex;
+			flex-shrink: 0;
+			align-self: center;
 		}
 		&__picture {
-			clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+			clip-path: none;
+		}
+		&__content {
+			margin: 0;
+			padding: 1.5rem 1.75rem;
 		}
 	}
 	.project {
@@ -754,10 +844,6 @@ hr {
 		}
 	}
 
-	.aboutMe__content {
-		font-size: 2.7vmax;
-		padding: 6rem;
-	}
 }
 
 @media (min-width: 1200px) {

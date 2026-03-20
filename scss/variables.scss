@@ -13,3 +13,14 @@ $secondColor: #e6e6dc;
 $fontMainColor: rgb(199, 21, 133);
 $fontMainColorLight: rgb(240, 128, 128);
 $shooting-time: 5000ms;
+$surfaceColor: rgba(255, 255, 255, 0.1);
+$radius-md: 14px;
+$radius-full: 9999px;
+$space-sm: 0.5rem;
+$space-md: 1rem;
+$space-lg: 1.5rem;
+
+// About section — readable body copy (avoid vmax for uneven scaling)
+$about-prose-size: clamp(0.9375rem, 0.88rem + 0.28vw, 1.0625rem);
+$about-prose-max: 38rem;
+$about-lead-size: clamp(1.0625rem, 0.98rem + 0.35vw, 1.1875rem);

@@ -1,1 +1,20 @@
-{}
+{
+  "private": true,
+  "scripts": {
+    "build:frontend": "tsc",
+    "watch:frontend": "tsc --watch",
+    "build:css": "sass public/css/style.scss public/css/style.css && sass --style=compressed public/css/style.scss public/css/style.min.css",
+    "watch:css": "sass --watch public/css/style.scss:public/css/style.css",
+    "serve": "npx --yes serve public",
+    "dev": "concurrently -k -n TS,CSS,WEB \"npm:watch:frontend\" \"npm:watch:css\" \"npm:serve\"",
+    "build": "npm run build:frontend && npm run build:css",
+    "typecheck": "tsc --noEmit",
+    "verify:functions": "npm --prefix functions run lint && npm --prefix functions run build",
+    "verify": "npm run typecheck && npm run build:css && npm run verify:functions"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "sass": "^1.93.2",
+    "typescript": "^5.9.3"
+  }
+}

@@ -77,7 +77,6 @@ const showNavBar = () => {
 };
 //loading of skills icons
 const skillsEl = document.querySelectorAll('.skills__listElement');
-const skills = document.querySelector('.skills');
 const slideSkills = () => {
     if (window.scrollY > heroHeight + 200) {
         skillsEl.forEach(el => {

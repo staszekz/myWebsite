@@ -23,14 +23,17 @@
 
 	&__input {
 		width: 80%;
-		border-radius: 8px;
+		border-radius: 10px;
 		line-height: 1.2;
 		padding: 10px;
 		padding-left: 30px;
 		border: none;
 		background-color: gainsboro;
-		&:focus {
-			background-color: $fontMainColorLight;
+		&:focus,
+		&:focus-visible {
+			background-color: white;
+			outline: 2px solid $fontMainColor;
+			outline-offset: 2px;
 		}
 		&::placeholder {
 			text-transform: uppercase;

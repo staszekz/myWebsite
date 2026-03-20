@@ -1,4 +1,25 @@
 const hamburger = document.querySelector('.hamburger') as HTMLElement;
+interface FirebaseConfig {
+	apiKey: string;
+	authDomain: string;
+	projectId: string;
+	storageBucket: string;
+	messagingSenderId: string;
+	appId: string;
+	measurementId: string;
+}
+
+interface FirestoreDb {
+	collection: (name: string) => {
+		add: (data: Record<string, string>) => Promise<unknown>;
+	};
+}
+
+declare const firebase: {
+	initializeApp: (config: FirebaseConfig) => void;
+	firestore: () => FirestoreDb;
+};
+
 const lines: NodeListOf<Element> = document.querySelectorAll('.line');
 const menuLinks = document.querySelector('.menu') as HTMLUListElement;
 const links: NodeListOf<Element> = document.querySelectorAll('.menu__item');
@@ -49,7 +70,7 @@ links.forEach(link => {
 const hero = document.querySelector('.hero') as HTMLElement;
 const heroHeight: number = parseFloat(getComputedStyle(hero, null).height.replace('px', ''));
 const myImage = document.querySelector('.aboutMe__pictureWrapper') as HTMLImageElement;
-const aboutMeContent = document.querySelector('.aboutMe__content') as HTMLParagraphElement;
+const aboutMeContent = document.querySelector('.aboutMe__content') as HTMLElement;
 
 const slide = (): void => {
 	// console.log('dd', heroHeight)
@@ -86,7 +107,6 @@ const showNavBar = (): void => {
 
 //loading of skills icons
 const skillsEl: NodeListOf<Element> = document.querySelectorAll('.skills__listElement');
-const skills = document.querySelector('.skills') as HTMLElement;
 
 const slideSkills = (): void => {
 	if (window.scrollY > heroHeight + 200) {
@@ -145,7 +165,7 @@ footerDate.innerText = date.toString();
 // renderFlake(snowContainer);🔭
 
 //////////////////////// **contact form** ////////////////////////////
-const config = {
+const config: FirebaseConfig = {
 	apiKey: 'AIzaSyBi7I2rU9W1lrLwmQaJBilOn9X0IowDpK0',
 	authDomain: 'mywebsite-19aa3.firebaseapp.com',
 	projectId: 'mywebsite-19aa3',
