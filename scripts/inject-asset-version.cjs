@@ -15,6 +15,7 @@ function shortHash(filePath) {
 
 const cssPath = path.join(publicDir, "css", "style.css");
 const jsPath = path.join(publicDir, "dist", "main.js");
+const firebaseConfigPath = path.join(publicDir, "dist", "firebase-config.js");
 
 if (!fs.existsSync(cssPath)) {
   console.error("inject-asset-version: missing", cssPath);
@@ -23,6 +24,9 @@ if (!fs.existsSync(cssPath)) {
 
 const cssV = shortHash(cssPath);
 const jsV = fs.existsSync(jsPath) ? shortHash(jsPath) : null;
+const firebaseConfigV = fs.existsSync(firebaseConfigPath)
+  ? shortHash(firebaseConfigPath)
+  : null;
 
 function patchHtml(relativePath) {
   const fp = path.join(publicDir, relativePath);
@@ -35,6 +39,13 @@ function patchHtml(relativePath) {
     /href=(["'])css\/style\.css(?:\?[^"']*)?\1/g,
     `href=$1css/style.css?v=${cssV}$1`,
   );
+
+  if (firebaseConfigV) {
+    html = html.replace(
+      /src=\.\/dist\/firebase-config\.js(?:\?[^"'>\s]*)?/g,
+      `src=./dist/firebase-config.js?v=${firebaseConfigV}`,
+    );
+  }
 
   if (jsV) {
     html = html.replace(
@@ -50,5 +61,5 @@ patchHtml("index.html");
 patchHtml("blog.html");
 
 console.log(
-  `inject-asset-version: css?v=${cssV}${jsV ? ` main.js?v=${jsV}` : ""}`,
+  `inject-asset-version: css?v=${cssV}${firebaseConfigV ? ` firebase-config.js?v=${firebaseConfigV}` : ""}${jsV ? ` main.js?v=${jsV}` : ""}`,
 );

@@ -20,6 +20,22 @@ npm install
 npm --prefix functions install
 ```
 
+## Firebase Web SDK (hosting / `main.ts`)
+
+Do not commit API keys. Root `.env` (gitignored) must define:
+
+- `FIREBASE_WEB_API_KEY`
+- `FIREBASE_WEB_AUTH_DOMAIN`
+- `FIREBASE_WEB_PROJECT_ID`
+- `FIREBASE_WEB_STORAGE_BUCKET`
+- `FIREBASE_WEB_MESSAGING_SENDER_ID`
+- `FIREBASE_WEB_APP_ID`
+- `FIREBASE_WEB_MEASUREMENT_ID`
+
+`npm run build` runs `scripts/write-firebase-web-config.cjs`, which writes `public/dist/firebase-config.js` (also gitignored). That file is loaded before `main.js` in `public/index.html`.
+
+If a browser key was ever pushed to GitHub, rotate it in [Google Cloud Console](https://console.cloud.google.com/apis/credentials) and update `FIREBASE_WEB_API_KEY` locally; restrict the key by HTTP referrer to your hosting domain.
+
 ## Build and Verify
 
 ```bash

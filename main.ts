@@ -20,6 +20,20 @@ declare const firebase: {
 	firestore: () => FirestoreDb;
 };
 
+type WindowWithFirebaseWebConfig = Window & {
+	__FIREBASE_WEB_CONFIG__?: FirebaseConfig;
+};
+
+function getFirebaseWebConfig(): FirebaseConfig {
+	const c = (window as WindowWithFirebaseWebConfig).__FIREBASE_WEB_CONFIG__;
+	if (!c) {
+		throw new Error(
+			'Missing Firebase web config. Run `npm run build` with FIREBASE_WEB_* in .env, or load dist/firebase-config.js before main.js.',
+		);
+	}
+	return c;
+}
+
 const lines: NodeListOf<Element> = document.querySelectorAll('.line');
 const menuLinks = document.querySelector('.menu') as HTMLUListElement;
 const links: NodeListOf<Element> = document.querySelectorAll('.menu__item');
@@ -165,17 +179,7 @@ footerDate.innerText = date.toString();
 // renderFlake(snowContainer);🔭
 
 //////////////////////// **contact form** ////////////////////////////
-const config: FirebaseConfig = {
-	apiKey: 'AIzaSyBi7I2rU9W1lrLwmQaJBilOn9X0IowDpK0',
-	authDomain: 'mywebsite-19aa3.firebaseapp.com',
-	projectId: 'mywebsite-19aa3',
-	storageBucket: 'mywebsite-19aa3.appspot.com',
-	messagingSenderId: '998446798549',
-	appId: '1:998446798549:web:939e8a7cb7b110b8e1b45c',
-	measurementId: 'G-7QLBHHESBS',
-};
-
-firebase.initializeApp(config);
+firebase.initializeApp(getFirebaseWebConfig());
 const db = firebase.firestore();
 
 const form = document.querySelector('.form') as HTMLElement;
