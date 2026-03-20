@@ -30,15 +30,22 @@ npm run build
 npm run verify
 ```
 
-## Cloud Functions configuration
+## Cloud Functions configuration (new Firebase params/secrets)
 
-Functions now use environment variables for SendGrid:
+Functions use Firebase params/secrets:
 
-- `SENDGRID_API_KEY`
-- `SENDGRID_TEMPLATE_ID`
-- `SENDGRID_TEMPLATE_TO_SENDER`
+- secret: `SENDGRID_API_KEY`
+- params: `SENDGRID_TEMPLATE_ID`, `SENDGRID_TEMPLATE_TO_SENDER`
 
-Set them in your deployment environment before deploying functions.
+Set them before deploy:
+
+```bash
+firebase functions:secrets:set SENDGRID_API_KEY
+firebase functions:params:set SENDGRID_TEMPLATE_ID
+firebase functions:params:set SENDGRID_TEMPLATE_TO_SENDER
+```
+
+For local emulator/tests, keep matching values in `functions/.env`.
 
 ## Deploy
 
