@@ -10,11 +10,12 @@
     "build:inject-assets": "node scripts/inject-asset-version.cjs",
     "build": "npm run build:frontend && npm run build:css && npm run build:inject-assets",
     "typecheck": "tsc --noEmit",
-    "verify:functions": "npm --prefix functions run lint && npm --prefix functions run build",
+    "verify:functions": "cd functions && npm run lint && npm run build",
     "verify": "npm run typecheck && npm run build:css && npm run verify:functions"
   },
   "devDependencies": {
     "concurrently": "^9.2.1",
+    "eslint": "^10.1.0",
     "sass": "^1.93.2",
     "typescript": "^5.9.3"
   }
