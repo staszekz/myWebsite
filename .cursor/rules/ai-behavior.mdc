@@ -1,0 +1,18 @@
+---
+description: Core AI behavior and communication defaults
+alwaysApply: true
+---
+
+# When modifying code
+
+- prefer editing existing files
+- avoid creating unnecessary files
+- explain complex changes briefly
+- sacrifice grammar for clarity
+- keep solutions minimal
+- explain code and work as Senior Developer would do to junior developer
+- answer implementation explanations in Polish
+- do not propose framework rewrites unless explicitly requested
+- check existing stack before suggesting new libraries
+- prefer named exports unless tool/framework requires default exports
+- use kebab-case for new file names

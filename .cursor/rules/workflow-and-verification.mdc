@@ -1,0 +1,28 @@
+---
+description: Workflow, review, and verification expectations
+globs: "{main.ts,public/**/*.html,scss/**/*.scss,functions/src/**/*.ts,firestore.rules,firebase.json,.github/workflows/**/*.yml,.github/workflows/**/*.yaml}"
+alwaysApply: false
+---
+
+# Workflow and Verification
+
+For each implementation request, structure the work like this:
+
+1. Plan
+2. Code
+3. Short explanation with tradeoffs
+
+## Expectations
+
+- Keep plans hyper-concise: logic, affected files, build/deploy impact
+- Write clean, minimal TypeScript focused on the task
+- Prefer clarity over cleverness
+- Respect portfolio-site constraints: security, accessibility, predictability
+- Suggest tests only when logic or UI behavior changes
+
+## Testing
+
+- For frontend changes, verify behavior manually in browser (menu, navigation, contact form states)
+- For backend changes, verify with Firebase emulators when possible
+- Run TypeScript checks for both root and `functions/` when those areas change
+- Validate Firestore rules and contact flow after security-related changes

@@ -1,0 +1,25 @@
+---
+description: Frontend standards for static TS/SCSS site
+globs: "{main.ts,public/**/*.html,scss/**/*.scss,public/css/**/*.css}"
+alwaysApply: false
+---
+
+# Frontend Coding Standards
+
+- Use TypeScript for interactive frontend logic
+- Prefer `interface` for object shapes and `type` for unions/composition
+- Do not ignore or suppress TypeScript errors
+- Fix type errors immediately instead of working around them
+- Never use `any` unless absolutely necessary and document why
+- Avoid `unknown` unless required and narrowed immediately
+- Use named exports
+- Prioritize clean, efficient, maintainable code
+- If code may be confusing, add a short comment explaining why
+- Keep `main.ts` modular by extracting focused helper modules when logic grows
+
+## Styling and UI
+
+- Use SCSS as source of truth, compiled CSS only as build output
+- Prefer semantic HTML and keyboard-accessible interactions
+- Avoid inline styles; keep styles in SCSS/CSS files
+- Keep CSS architecture simple (layout, components, utilities sections)

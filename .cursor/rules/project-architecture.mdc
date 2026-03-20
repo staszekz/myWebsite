@@ -1,0 +1,24 @@
+---
+description: Project architecture and state boundaries
+globs: "{main.ts,public/**/*.html,scss/**/*.scss,functions/src/**/*.ts,firestore.rules,firebase.json}"
+alwaysApply: false
+---
+
+# Project Architecture
+
+- Frontend is a static site: `public/index.html` + `main.ts` + `scss/main.scss`
+- Backend is Firebase: Cloud Functions (`functions/src`) + Firestore + Hosting
+- Keep source files separate from generated artifacts (`public/dist`, compiled CSS)
+
+## State Boundaries
+
+- Browser code should handle only UI concerns and validated form submission
+- Sensitive operations (email sending, privileged logic) belong in Cloud Functions
+- Firestore writes from client must stay strictly constrained by security rules
+
+## Errors and Security
+
+- Never expose secrets in frontend code or committed files
+- Show safe, user-friendly errors in UI
+- Do not leak raw backend/internal errors to users
+- Validate and sanitize contact-form payloads consistently on both client and backend
