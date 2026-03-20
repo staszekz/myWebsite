@@ -30,6 +30,8 @@ npm run build
 npm run verify
 ```
 
+After `npm run build`, HTML gets **cache-busting** query strings on `css/style.css` and `dist/main.js` (see `scripts/inject-asset-version.cjs`). Always run full `npm run build` before `firebase deploy --only hosting` so production pulls fresh CSS/JS.
+
 ## Cloud Functions configuration (new Firebase params/secrets)
 
 Functions use Firebase params/secrets:
@@ -37,15 +39,20 @@ Functions use Firebase params/secrets:
 - secret: `SENDGRID_API_KEY`
 - params: `SENDGRID_TEMPLATE_ID`, `SENDGRID_TEMPLATE_TO_SENDER`
 
-Set them before deploy:
+Set the API key as a secret:
 
 ```bash
 firebase functions:secrets:set SENDGRID_API_KEY
-firebase functions:params:set SENDGRID_TEMPLATE_ID
-firebase functions:params:set SENDGRID_TEMPLATE_TO_SENDER
 ```
 
-For local emulator/tests, keep matching values in `functions/.env`.
+Put template IDs in `functions/.env` (not committed) for deploy analysis:
+
+```env
+SENDGRID_TEMPLATE_ID=...
+SENDGRID_TEMPLATE_TO_SENDER=...
+```
+
+For local emulator/tests, use the same `functions/.env` file.
 
 ## Deploy
 

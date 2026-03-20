@@ -7,7 +7,8 @@
     "watch:css": "sass --watch public/css/style.scss:public/css/style.css",
     "serve": "npx --yes serve public",
     "dev": "concurrently -k -n TS,CSS,WEB \"npm:watch:frontend\" \"npm:watch:css\" \"npm:serve\"",
-    "build": "npm run build:frontend && npm run build:css",
+    "build:inject-assets": "node scripts/inject-asset-version.cjs",
+    "build": "npm run build:frontend && npm run build:css && npm run build:inject-assets",
     "typecheck": "tsc --noEmit",
     "verify:functions": "npm --prefix functions run lint && npm --prefix functions run build",
     "verify": "npm run typecheck && npm run build:css && npm run verify:functions"
