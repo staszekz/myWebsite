@@ -20,20 +20,47 @@ const escapeHtml = (value: string): string =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
 
-const wrap = (bodyBg: string, cardBg: string, content: string): string => `<!DOCTYPE html>
+// Palette mirrors the site (scss/variables.scss): $mainColor, $secondColor,
+// $greenColor. Heebo falls back to Arial where the client lacks the font.
+const BG = "#1c212b";
+const CARD = "#252934";
+const INSET = "#1f242e";
+const TEXT = "#e6e6dc";
+const MUTED = "#8b93a3";
+const ACCENT = "#2ee59d";
+const FONT = "Heebo, Arial, sans-serif";
+
+const wrap = (title: string, content: string): string => `<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
   </head>
-  <body style="margin:0; padding:0; background-color:${bodyBg}; font-family:arial,helvetica,sans-serif; font-size:14px; color:#000000;">
-    <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${bodyBg}">
+  <body style="margin:0; padding:0; background-color:${BG}; font-family:${FONT}; font-size:15px; color:${TEXT};">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${BG}">
       <tr>
-        <td align="center" style="padding:24px 12px;">
-          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;" bgcolor="${cardBg}">
+        <td align="center" style="padding:32px 12px;">
+          <table width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px; background-color:${CARD}; border-radius:14px; overflow:hidden;">
             <tr>
-              <td style="padding:24px 20px;">
+              <td style="height:4px; background-color:${ACCENT}; font-size:0; line-height:0;">&nbsp;</td>
+            </tr>
+            <tr>
+              <td style="padding:28px 32px 0 32px;">
+                <span style="color:${ACCENT}; font-family:${FONT}; font-size:13px; font-weight:bold; letter-spacing:3px; text-transform:uppercase;">staszek.ovh</span>
+                <h1 style="margin:14px 0 0 0; color:${TEXT}; font-family:${FONT}; font-size:22px; font-weight:bold;">${title}</h1>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:20px 32px 28px 32px;">
                 ${content}
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:0 32px 24px 32px;">
+                <p style="margin:0; border-top:1px solid ${INSET}; padding-top:16px; color:${MUTED}; font-family:${FONT}; font-size:12px;">
+                  <a href="https://staszek.ovh" style="color:${ACCENT}; text-decoration:none;">staszek.ovh</a>
+                </p>
               </td>
             </tr>
           </table>
@@ -43,32 +70,40 @@ const wrap = (bodyBg: string, cardBg: string, content: string): string => `<!DOC
   </body>
 </html>`;
 
+const fieldRow = (label: string, value: string): string => `
+  <tr>
+    <td style="padding:6px 16px 6px 0; color:${MUTED}; font-family:${FONT}; font-size:13px; white-space:nowrap; vertical-align:top;">${label}</td>
+    <td style="padding:6px 0; color:${TEXT}; font-family:${FONT}; font-size:15px;">${value}</td>
+  </tr>`;
+
+const messageBox = (message: string): string => `
+  <div style="margin-top:16px; padding:16px 18px; background-color:${INSET}; border-left:3px solid ${ACCENT}; border-radius:0 8px 8px 0;">
+    <p style="margin:0; color:${TEXT}; font-family:${FONT}; font-size:15px; line-height:1.6; white-space:pre-wrap;">${escapeHtml(message)}</p>
+  </div>`;
+
 export const adminEmail = (data: MessageData): EmailContent => ({
   subject: "New Message from staszek.ovh",
   html: wrap(
-    "#f5d9b2",
-    "#e6f0c4",
-    `<h1 style="text-align:center; margin:0 0 18px 0;">
-       <span style="color:#1d327d; font-size:18px; font-family:'trebuchet ms',helvetica,sans-serif;">Nowa wiadomość ze strony staszek.ovh</span>
-     </h1>
-     <hr style="border:none; border-top:1px solid #1d327d; margin:0 0 18px 0;">
-     <p style="margin:0 0 8px 0;"><strong>Imię:</strong> ${escapeHtml(data.name)}</p>
-     <p style="margin:0 0 8px 0;"><strong>E-mail:</strong> ${escapeHtml(data.email)}</p>
-     <p style="margin:0 0 8px 0;"><strong>Lokalizacja:</strong> ${escapeHtml(data.location)}</p>
-     <p style="margin:16px 0 4px 0;"><strong>Wiadomość:</strong></p>
-     <p style="margin:0; white-space:pre-wrap;">${escapeHtml(data.message)}</p>`,
+    "Nowa wiadomość ze strony",
+    `<table cellpadding="0" cellspacing="0" border="0">
+       ${fieldRow("Imię", escapeHtml(data.name))}
+       ${fieldRow(
+         "E-mail",
+         `<a href="mailto:${escapeHtml(data.email)}" style="color:${ACCENT}; text-decoration:none;">${escapeHtml(data.email)}</a>`,
+       )}
+       ${fieldRow("Lokalizacja", escapeHtml(data.location))}
+     </table>
+     ${messageBox(data.message)}`,
   ),
 });
 
 export const senderConfirmationEmail = (message: string): EmailContent => ({
   subject: "You just sent this message to Staszek Zajaczkowski",
   html: wrap(
-    "#bbf79e",
-    "#d3e090",
-    `<h3 style="text-align:center; margin:0 0 18px 0;">
-       <span style="color:#080b77; font-family:'trebuchet ms',helvetica,sans-serif;">Message sent:</span>
-     </h3>
-     <p style="margin:0 0 18px 18px; white-space:pre-wrap;">${escapeHtml(message)}</p>
-     <p style="margin:0; text-align:center;"><a href="https://staszek.ovh" style="color:#1188E6; text-decoration:none;">https://staszek.ovh</a></p>`,
+    "Message sent:",
+    `${messageBox(message)}
+     <p style="margin:18px 0 0 0; color:${MUTED}; font-family:${FONT}; font-size:13px; line-height:1.6;">
+       Thanks for reaching out &mdash; I&#39;ll get back to you soon.
+     </p>`,
   ),
 });
