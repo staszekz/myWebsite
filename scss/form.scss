@@ -110,6 +110,17 @@
 		resize: none;
 	}
 
+	// Honeypot: kept out of sight and out of tab order, but present in the
+	// DOM so naive bots fill it. Not display:none — some bots skip those.
+	&__hp {
+		position: absolute;
+		left: -9999px;
+		width: 1px;
+		height: 1px;
+		opacity: 0;
+		pointer-events: none;
+	}
+
 	&__submit {
 		font: 600 15px/1 $font-mono;
 		color: $color-bg;
