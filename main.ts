@@ -6,6 +6,7 @@ interface FirebaseConfig {
 	messagingSenderId: string;
 	appId: string;
 	measurementId: string;
+	recaptchaSiteKey: string;
 }
 
 interface FirestoreDb {
@@ -14,9 +15,20 @@ interface FirestoreDb {
 	};
 }
 
+interface AppCheckNamespace {
+	(): {
+		activate: (
+			provider: unknown,
+			isTokenAutoRefreshEnabled: boolean,
+		) => void;
+	};
+	ReCaptchaEnterpriseProvider: new (siteKey: string) => unknown;
+}
+
 declare const firebase: {
 	initializeApp: (config: FirebaseConfig) => void;
 	firestore: () => FirestoreDb;
+	appCheck: AppCheckNamespace;
 };
 
 type WindowWithFirebaseWebConfig = Window & {
@@ -33,7 +45,16 @@ function getFirebaseWebConfig(): FirebaseConfig {
 	return c;
 }
 
-firebase.initializeApp(getFirebaseWebConfig());
+const firebaseWebConfig = getFirebaseWebConfig();
+firebase.initializeApp(firebaseWebConfig);
+firebase
+	.appCheck()
+	.activate(
+		new firebase.appCheck.ReCaptchaEnterpriseProvider(
+			firebaseWebConfig.recaptchaSiteKey,
+		),
+		true,
+	);
 const db = firebase.firestore();
 
 // Footer year
@@ -79,9 +100,26 @@ const setStatus = (message: string, isError: boolean): void => {
 	formStatus.classList.toggle('form-panel__status--error', isError);
 };
 
+const showSentAndClose = (): void => {
+	setStatus('✓ message sent — thank you!', false);
+	contactForm.reset();
+	closeTimeout = window.setTimeout(() => {
+		closeForm();
+		setStatus('', false);
+	}, 3500);
+};
+
 contactForm.addEventListener('submit', async event => {
 	event.preventDefault();
 	const data = new FormData(contactForm);
+
+	// Honeypot: humans never see the "company" field, bots fill it.
+	// Pretend success so the bot moves on, but write nothing.
+	if (String(data.get('company') ?? '').trim() !== '') {
+		showSentAndClose();
+		return;
+	}
+
 	const message = {
 		name: String(data.get('name') ?? '').trim(),
 		email: String(data.get('email') ?? '').trim(),
@@ -93,12 +131,7 @@ contactForm.addEventListener('submit', async event => {
 	setStatus('sending…', false);
 	try {
 		await db.collection('mails').add(message);
-		setStatus('✓ message sent — thank you!', false);
-		contactForm.reset();
-		closeTimeout = window.setTimeout(() => {
-			closeForm();
-			setStatus('', false);
-		}, 3500);
+		showSentAndClose();
 	} catch (error) {
 		console.error('Failed to send message:', error);
 		setStatus('✗ something went wrong — try again or email me directly.', true);

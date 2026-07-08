@@ -841,6 +841,14 @@ button {
   line-height: 1.5;
   resize: none;
 }
+.form-panel__hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
 .form-panel__submit {
   font: 600 15px/1 "JetBrains Mono", monospace;
   color: #0a0e0d;

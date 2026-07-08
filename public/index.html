@@ -20,7 +20,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=f9fcf245d72c" />
+  <link rel="stylesheet" href="css/style.css?v=5b7f8ab26bf8" />
 
   <link rel='shortcut icon' type='image/x-icon' href='./img/icons/favicon.ico' />
   <title>Staszek Zajaczkowski — Front-end Developer</title>
@@ -432,6 +432,7 @@
         <input class="form-panel__input" required name="name" placeholder="name">
         <input class="form-panel__input" required type="email" name="email" placeholder="email">
         <input class="form-panel__input" name="location" placeholder="location (optional)">
+        <input class="form-panel__hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
         <textarea class="form-panel__input form-panel__textarea" required name="msg" rows="5"
           placeholder="message"></textarea>
         <button class="form-panel__submit" type="submit">send_message()</button>
@@ -440,11 +441,11 @@
     </div>
   </div>
 
-  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-functions.js"></script>
-  <script src=./dist/firebase-config.js?v=92b0b924c626></script>
-  <script src=./dist/main.js?v=0efe6e831c94></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-check-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+  <script src=./dist/firebase-config.js?v=7f52064cc572></script>
+  <script src=./dist/main.js?v=d1956db0328d></script>
 </body>
 
 </html>

@@ -42,6 +42,7 @@ const keys = [
   "FIREBASE_WEB_MESSAGING_SENDER_ID",
   "FIREBASE_WEB_APP_ID",
   "FIREBASE_WEB_MEASUREMENT_ID",
+  "FIREBASE_WEB_RECAPTCHA_SITE_KEY",
 ];
 
 const missing = keys.filter((k) => !env[k] || String(env[k]).trim() === "");
@@ -61,6 +62,7 @@ const config = {
   messagingSenderId: env.FIREBASE_WEB_MESSAGING_SENDER_ID,
   appId: env.FIREBASE_WEB_APP_ID,
   measurementId: env.FIREBASE_WEB_MEASUREMENT_ID,
+  recaptchaSiteKey: env.FIREBASE_WEB_RECAPTCHA_SITE_KEY,
 };
 
 if (!fs.existsSync(distDir)) {
