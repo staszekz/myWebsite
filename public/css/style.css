@@ -597,13 +597,6 @@ button {
   font: 500 14px/1 "JetBrains Mono", monospace;
   color: #d6e4df;
 }
-.chip--text {
-  gap: 8px;
-}
-.chip__marker {
-  color: #34d399;
-  font: 600 14px/1 "JetBrains Mono", monospace;
-}
 
 .skills__chips {
   display: flex;
@@ -720,6 +713,10 @@ button {
   .about__grid {
     grid-template-columns: 1fr;
     gap: 26px;
+  }
+  .about__photo {
+    height: auto;
+    aspect-ratio: 4/5;
   }
   .journey__card {
     grid-template-columns: 1fr;
