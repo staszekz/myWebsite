@@ -1,26 +1,45 @@
-$shadow: 1px 1px 1px black, 1px 2px 1px black, 1px 3px 1px black, 1px 4px 1px black,
-	1px 5px 1px black, 1px 8px 10px white;
-$titleShadow: 1px 1px 1px white, 1px 2px 1px black;
-$box-shadow: 0px 9px 23px 0px rgba(15, 13, 15, 0.65);
+// Design tokens — "Terminal" theme (see design handoff README)
 
-$mainFont: Heebo, Arial, sans-serif;
-$secondFont: Heebo, Arial, sans-serif;
-$yellowColor: rgb(255, 230, 0);
-$greenColor: #2ee59d;
+// Colors
+$color-bg: #0a0e0d;
+$color-surface-1: #0c1210;
+$color-surface-2: #0f1614;
+$color-border: #16201c;
+$color-border-strong: #1c2a26;
+$color-accent: #34d399;
+$color-accent-hover: #5eead4;
+$color-accent-tint-bg: rgba(52, 211, 153, 0.06);
+$color-accent-tint-border: rgba(52, 211, 153, 0.35);
+$color-text-primary: #ffffff;
+$color-text-body: #d6e4df;
+$color-text-strong: #c9d6d1;
+$color-text-muted: #9db0aa;
+$color-text-meta: #a8bab4;
+$color-text-card: #8ba099;
+$color-text-dim: #7c8f89;
+$color-text-dimmer: #5a6b66;
+$color-text-comment: #4a5a55;
 
-$mainColor: #252934;
-$secondColor: #e6e6dc;
-$fontMainColor: rgb(199, 21, 133);
-$fontMainColorLight: rgb(240, 128, 128);
-$shooting-time: 5000ms;
-$surfaceColor: rgba(255, 255, 255, 0.1);
-$radius-md: 14px;
-$radius-full: 9999px;
-$space-sm: 0.5rem;
-$space-md: 1rem;
-$space-lg: 1.5rem;
+// Code syntax
+$color-code-keyword: #c792ea;
+$color-code-identifier: #82aaff;
+$color-code-literal: #f78c6c;
 
-// About section — readable body copy (avoid vmax for uneven scaling)
-$about-prose-size: clamp(0.9375rem, 0.88rem + 0.28vw, 1.0625rem);
-$about-prose-max: 38rem;
-$about-lead-size: clamp(1.0625rem, 0.98rem + 0.35vw, 1.1875rem);
+// Traffic lights
+$color-dot-red: #ff5f57;
+$color-dot-yellow: #febc2e;
+$color-dot-green: #28c840;
+
+// Typography
+$font-mono: 'JetBrains Mono', monospace;
+$font-body: Manrope, sans-serif;
+
+// Layout
+$content-max-width: 1180px;
+$breakpoint-mobile: 760px;
+
+// Radii
+$radius-card: 14px;
+$radius-input: 8px;
+$radius-chip: 7px;
+$radius-btn: 8px;

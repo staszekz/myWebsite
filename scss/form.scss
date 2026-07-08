@@ -1,99 +1,143 @@
 @import 'variables.scss';
 
-.form {
+// Slide-in contact panel
+
+.form-overlay {
 	position: fixed;
-	top: 80px;
+	inset: 0;
+	z-index: 100;
+	pointer-events: none;
+	visibility: hidden;
+	transition: visibility 0s 0.45s;
+
+	&.is-open {
+		pointer-events: auto;
+		visibility: visible;
+		transition: visibility 0s;
+	}
+
+	&__dimmer {
+		position: absolute;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.55);
+		opacity: 0;
+		transition: opacity 0.4s;
+	}
+
+	&.is-open &__dimmer {
+		opacity: 1;
+	}
+}
+
+.form-panel {
+	position: absolute;
+	top: 0;
 	right: 0;
-	height: calc(100vh - 80px);
-	width: 100%;
-	z-index: 99999;
-	background-color: $mainColor;
-	border-left: 8px solid $fontMainColor;
-	border-top: 1px solid $fontMainColor;
-	border-top-left-radius: 1%;
-	border-bottom-left-radius: 1%;
-	color: white;
+	height: 100%;
+	width: min(520px, 100%);
+	background: $color-surface-1;
+	border-left: 1px solid rgba(52, 211, 153, 0.4);
+	box-shadow: -30px 0 80px rgba(0, 0, 0, 0.6);
+	padding: 56px 44px;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	justify-content: center;
-	&__header {
-		color: white;
+	transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+	transform: translateX(102%);
+
+	.form-overlay.is-open & {
+		transform: translateX(0);
+	}
+
+	&__close {
+		position: absolute;
+		top: 26px;
+		right: 30px;
+		width: 40px;
+		height: 40px;
+		border-radius: 8px;
+		background: rgba(255, 255, 255, 0.05);
+		border: 1px solid $color-border-strong;
+		color: $color-text-body;
+		font-size: 18px;
+		cursor: pointer;
+		transition: border-color 0.2s, color 0.2s;
+
+		&:hover {
+			border-color: $color-accent;
+			color: $color-accent;
+		}
+	}
+
+	&__title {
+		font: 700 30px/1 $font-mono;
+		margin: 0 0 8px;
+		color: $color-text-primary;
+	}
+
+	&__sub {
+		font: 400 15px/1.5 $font-body;
+		color: $color-text-card;
+		margin: 0 0 28px;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
 	}
 
 	&__input {
-		width: 80%;
-		border-radius: 10px;
-		line-height: 1.2;
-		padding: 10px;
-		padding-left: 30px;
-		border: none;
-		background-color: gainsboro;
-		&:focus,
-		&:focus-visible {
-			background-color: white;
-			outline: 2px solid $fontMainColor;
-			outline-offset: 2px;
+		background: $color-bg;
+		border: 1px solid $color-border-strong;
+		color: $color-text-body;
+		padding: 14px 16px;
+		border-radius: $radius-input;
+		font: 400 15px/1 $font-mono;
+
+		&:focus {
+			outline: none;
+			border-color: $color-accent;
 		}
+
 		&::placeholder {
-			text-transform: uppercase;
-			letter-spacing: 1px;
-			color: gray;
-			font-family: $mainFont;
-		}
-	}
-	&__btn {
-		width: 50%;
-		height: initial;
-		z-index: 99999999;
-		font-size: 1rem;
-	}
-	&__show {
-		transform: translate(0);
-		transition: transform 0.5s ease-in-out;
-	}
-	&__hide {
-		transform: translate(100%);
-		transition: transform 0.5s ease-in-out;
-	}
-	&__close {
-		position: absolute;
-		bottom: 5%;
-		right: 5%;
-	}
-	&__warning {
-		margin-bottom: 1rem;
-		color: $fontMainColor;
-		font-family: $secondFont;
-		font-size: 0.8rem;
-		opacity: 0.9;
-	}
-	&__sent {
-		margin-top: 1rem;
-		font-size: 1.4rem;
-		color: $fontMainColor;
-		visibility: hidden;
-	}
-}
-
-.redBorder {
-	border: 2px solid red;
-}
-.showMsgSent {
-	visibility: visible;
-}
-
-@media (min-width: 769px) {
-	.form {
-		width: 70%;
-		&__input {
-			width: 50%;
+			color: $color-text-dimmer;
 		}
 	}
 
-	@media (min-width: 1025px) {
-		.form {
-			width: 50%;
+	&__textarea {
+		line-height: 1.5;
+		resize: none;
+	}
+
+	&__submit {
+		font: 600 15px/1 $font-mono;
+		color: $color-bg;
+		background: $color-accent;
+		border: none;
+		padding: 15px;
+		border-radius: $radius-input;
+		cursor: pointer;
+		transition: background 0.2s;
+
+		&:hover {
+			background: $color-accent-hover;
+		}
+
+		&:disabled {
+			opacity: 0.6;
+			cursor: default;
+		}
+	}
+
+	&__status {
+		font: 600 14px/1.4 $font-mono;
+		color: $color-accent;
+		text-align: center;
+		min-height: 20px;
+
+		&--error {
+			color: $color-dot-red;
 		}
 	}
 }
