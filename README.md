@@ -1,12 +1,12 @@
 # myWebsite
 
-Personal portfolio website built with static HTML, SCSS, and TypeScript, with Firebase Hosting + Firestore + Cloud Functions for contact form processing.
+Personal portfolio website (one-page, dark "terminal" theme) built with static HTML, SCSS, and TypeScript, with Firebase Hosting + Firestore + Cloud Functions for contact form processing.
 
 ## Stack
 
-- Frontend: `public/index.html`, `main.ts`, `scss/*`
+- Frontend: `public/index.html`, `main.ts`, `scss/*` (JetBrains Mono + Manrope, breakpoint 760px)
 - Backend: Firebase Functions in `functions/src/index.ts`
-- Email delivery: SendGrid dynamic templates
+- Email delivery: Brevo transactional API (HTML templates in `functions/src/emailTemplates.ts`)
 
 ## Requirements
 
@@ -48,27 +48,19 @@ npm run verify
 
 After `npm run build`, HTML gets **cache-busting** query strings on `css/style.css` and `dist/main.js` (see `scripts/inject-asset-version.cjs`). Always run full `npm run build` before `firebase deploy --only hosting` so production pulls fresh CSS/JS.
 
-## Cloud Functions configuration (new Firebase params/secrets)
+## Cloud Functions configuration (Firebase secrets)
 
-Functions use Firebase params/secrets:
+Functions use one Firebase secret:
 
-- secret: `SENDGRID_API_KEY`
-- params: `SENDGRID_TEMPLATE_ID`, `SENDGRID_TEMPLATE_TO_SENDER`
+- secret: `BREVO_API_KEY`
 
-Set the API key as a secret:
+Set it with:
 
 ```bash
-firebase functions:secrets:set SENDGRID_API_KEY
+firebase functions:secrets:set BREVO_API_KEY
 ```
 
-Put template IDs in `functions/.env` (not committed) for deploy analysis:
-
-```env
-SENDGRID_TEMPLATE_ID=...
-SENDGRID_TEMPLATE_TO_SENDER=...
-```
-
-For local emulator/tests, use the same `functions/.env` file.
+Email HTML is generated in `functions/src/emailTemplates.ts` (no external template IDs needed).
 
 ## Deploy
 

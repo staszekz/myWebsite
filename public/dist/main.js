@@ -1,5 +1,4 @@
 "use strict";
-const hamburger = document.querySelector('.hamburger');
 function getFirebaseWebConfig() {
     const c = window.__FIREBASE_WEB_CONFIG__;
     if (!c) {
@@ -7,214 +6,65 @@ function getFirebaseWebConfig() {
     }
     return c;
 }
-const lines = document.querySelectorAll('.line');
-const menuLinks = document.querySelector('.menu');
-const links = document.querySelectorAll('.menu__item');
-const navBar = document.querySelector('.navigation');
-const aboutTitle = document.querySelector('.aboutMe__title');
-const projectsTitle = document.querySelector('.projects__title');
-//włączanie i wyłączanie menu po kliknięciu w hamburger
-const toggleHamburgerClasses = () => {
-    menuLinks.classList.toggle('open');
-    if ((document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) &&
-        window.innerWidth > 769) {
-        menuLinks.classList.add('shortMenu');
-    }
-    links.forEach(link => {
-        link.classList.toggle('fade');
-    });
-    lines.forEach(line => {
-        line.classList.toggle('makeCross');
-    });
-};
-//zamykanie menu po kliknięciu w link - obsługa
-const closeMenu = () => {
-    if (window.innerWidth < 769) {
-        //żeby nie właczało się po kliknięciu w link na szerokim oknie
-        menuLinks.classList.toggle('open');
-        links.forEach(link => {
-            link.classList.toggle('fade');
-        });
-        lines.forEach(line => {
-            line.classList.toggle('makeCross');
-        });
-    }
-};
-//działający hamburger
-hamburger.addEventListener('click', toggleHamburgerClasses);
-//zamykanie menu po kliknięciu w link
-links.forEach(link => {
-    link.addEventListener('click', closeMenu);
-});
-//ładowanie w seksji aboutMe
-const hero = document.querySelector('.hero');
-const heroHeight = parseFloat(getComputedStyle(hero, null).height.replace('px', ''));
-const myImage = document.querySelector('.aboutMe__pictureWrapper');
-const aboutMeContent = document.querySelector('.aboutMe__content');
-const slide = () => {
-    // console.log('dd', heroHeight)
-    if (window.scrollY > heroHeight / 2) {
-        myImage.classList.add('fromLeft');
-        aboutMeContent.classList.add('fromRight');
-    }
-};
-// dostosowanie szerokośći paska tytułu jesli nachodzi na niego nav bar
-const setTitlesPaddingTop = () => {
-    const navBarBottom = navBar.getBoundingClientRect().bottom;
-    const aboutTitlePosition = aboutTitle.getBoundingClientRect().top + 40;
-    const projectsTitlePosition = projectsTitle.getBoundingClientRect().top + 40;
-    if (navBarBottom <= aboutTitlePosition) {
-        aboutTitle.style.paddingTop = '0px';
-    }
-    if (navBarBottom > aboutTitlePosition) {
-        aboutTitle.style.paddingTop = '80px';
-    }
-    if (navBarBottom <= projectsTitlePosition) {
-        projectsTitle.style.paddingTop = '0px';
-    }
-    if (navBarBottom > projectsTitlePosition) {
-        projectsTitle.style.paddingTop = '80px';
-    }
-};
-//ładowanie navbar po scrollu do innej sekcji
-const showNavBar = () => {
-    if (window.scrollY >= heroHeight - 50) {
-        navBar.classList.add('withOpacity');
-    }
-};
-//loading of skills icons
-const skillsEl = document.querySelectorAll('.skills__listElement');
-const slideSkills = () => {
-    if (window.scrollY > heroHeight + 200) {
-        skillsEl.forEach(el => {
-            el.classList.add('show');
-        });
-    }
-};
-const allOnScroll = () => {
-    slide();
-    slideSkills();
-    showNavBar();
-    setTitlesPaddingTop();
-};
-window.addEventListener('scroll', allOnScroll);
-const date = new Date().getFullYear();
-const footerDate = document.querySelector('.footer__date');
-footerDate.innerText = date.toString();
-///////////////////////////////// SNOW /////////////////////////////////////
-// const flakes: string[] = [
-// 	'./img/flakes/flake1.svg',
-// 	'./img/flakes/flake2.svg',
-// 	'./img/flakes/flake3.svg',
-// 	'./img/flakes/flake4.svg'
-// ]
-// const renderSnow = () => {
-// 	const snowContainer = document.createElement('div');
-// 	snowContainer.id = 'snow-container';
-// 	document.body.appendChild(snowContainer);
-// 	return snowContainer;
-// }
-// const renderFlake = (snowContainer: HTMLElement) => {
-// 	const flakeContainer = document.createElement('div');
-// 	flakeContainer.classList.add('flake-container');
-// 	flakeContainer.style.left = `${Math.random() * 100}%`;
-// 	flakeContainer.style.transform = `scale(${Math.random()})`;
-// 	const img = document.createElement('img');
-// 	img.src = flakes[Math.floor(Math.random() * flakes.length)];
-// 	flakeContainer.appendChild(img);
-// 	snowContainer.appendChild(flakeContainer);
-// 	setTimeout(renderFlake, 500, snowContainer);
-// }
-// const snowContainer = renderSnow();
-// renderFlake(snowContainer);🔭
-//////////////////////// **contact form** ////////////////////////////
 firebase.initializeApp(getFirebaseWebConfig());
 const db = firebase.firestore();
-const form = document.querySelector('.form');
-const submitBtn = document.querySelector('.form__btn');
-const closeBtn = document.querySelector('.form__close');
-const openForm = document.querySelector('#openForm');
-const formToReset = document.querySelector('#form');
-const nameInput = document.querySelector('#name');
-const emailInput = document.querySelector('#email');
-const messageInput = document.querySelector('#msg');
-const confirmation = document.querySelector('.form__sent');
-const nameWarning = document.querySelector('.form__warning--name');
-const emailWarning = document.querySelector('.form__warning--email');
-const msgWarning = document.querySelector('.form__warning--message');
-const clearFormWarnings = () => {
-    nameInput.classList.remove('redBorder');
-    emailInput.classList.remove('redBorder');
-    messageInput.classList.remove('redBorder');
-    nameWarning.innerText = '';
-    emailWarning.innerText = '';
-    msgWarning.innerText = '';
+// Footer year
+const yearEl = document.querySelector('#year');
+yearEl.textContent = String(new Date().getFullYear());
+// Contact form panel (slide-in)
+const formOverlay = document.querySelector('#formOverlay');
+const contactForm = document.querySelector('#contactForm');
+const formStatus = document.querySelector('#formStatus');
+const submitButton = contactForm.querySelector('.form-panel__submit');
+let closeTimeout;
+const openForm = (event) => {
+    event.preventDefault();
+    window.clearTimeout(closeTimeout);
+    formOverlay.classList.add('is-open');
 };
-const closeForm = (e) => {
-    e.preventDefault();
-    form.classList.toggle('form__hide');
-    form.classList.toggle('form__show');
-    formToReset.reset();
-    clearFormWarnings();
+const closeForm = () => {
+    formOverlay.classList.remove('is-open');
 };
-const checkValidity = (name, email, message) => {
-    if (!name.length) {
-        nameWarning.innerText = 'please enter a valid name';
-        nameInput.classList.add('redBorder');
-        return false;
+document.querySelectorAll('.js-open-form').forEach(el => {
+    el.addEventListener('click', openForm);
+});
+document.querySelectorAll('.js-close-form').forEach(el => {
+    el.addEventListener('click', closeForm);
+});
+document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+        closeForm();
     }
-    if (!/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email)) {
-        nameInput.classList.remove('redBorder');
-        nameWarning.innerText = '';
-        emailWarning.innerText = 'please enter a valid email address';
-        emailInput.classList.add('redBorder');
-        return false;
+});
+const setStatus = (message, isError) => {
+    formStatus.textContent = message;
+    formStatus.classList.toggle('form-panel__status--error', isError);
+};
+contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const data = new FormData(contactForm);
+    const message = {
+        name: String(data.get('name') ?? '').trim(),
+        email: String(data.get('email') ?? '').trim(),
+        location: String(data.get('location') ?? '').trim(),
+        message: String(data.get('msg') ?? '').trim(),
+    };
+    submitButton.disabled = true;
+    setStatus('sending…', false);
+    try {
+        await db.collection('mails').add(message);
+        setStatus('✓ message sent — thank you!', false);
+        contactForm.reset();
+        closeTimeout = window.setTimeout(() => {
+            closeForm();
+            setStatus('', false);
+        }, 3500);
     }
-    if (!message) {
-        emailInput.classList.remove('redBorder');
-        emailWarning.innerText = '';
-        msgWarning.innerText = 'please write something nice';
-        messageInput.classList.add('redBorder');
-        return false;
+    catch (error) {
+        console.error('Failed to send message:', error);
+        setStatus('✗ something went wrong — try again or email me directly.', true);
     }
-    messageInput.classList.remove('redBorder');
-    msgWarning.innerText = '';
-    return true;
-};
-const showConfirmation = () => {
-    confirmation.classList.add('showMsgSent');
-    setTimeout(() => {
-        confirmation.classList.remove('showMsgSent');
-    }, 3000);
-};
-//save message to firebase
-function saveMessage(name, email, location, message, e) {
-    if (checkValidity(name, email, message)) {
-        db.collection('mails')
-            .add({
-            name: name,
-            email: email,
-            location: location,
-            message: message,
-        })
-            .then(() => showConfirmation())
-            .then(() => setTimeout(() => closeForm(e), 2000));
+    finally {
+        submitButton.disabled = false;
     }
-}
-//to get form values
-const getInputVal = (id) => {
-    return document.querySelector(id);
-};
-//sending form
-const submitForm = (e) => {
-    e.preventDefault();
-    const name = getInputVal('#name').value;
-    const email = getInputVal('#email').value;
-    const location = getInputVal('#location').value;
-    const message = getInputVal('#msg').value;
-    saveMessage(name, email, location, message, e);
-};
-// form.addEventListener('keydown', checkValidity);
-submitBtn.addEventListener('click', submitForm);
-closeBtn.addEventListener('click', closeForm);
-openForm.addEventListener('click', closeForm);
+});

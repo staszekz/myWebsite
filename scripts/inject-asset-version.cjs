@@ -58,7 +58,6 @@ function patchHtml(relativePath) {
 }
 
 patchHtml("index.html");
-patchHtml("blog.html");
 
 console.log(
   `inject-asset-version: css?v=${cssV}${firebaseConfigV ? ` firebase-config.js?v=${firebaseConfigV}` : ""}${jsV ? ` main.js?v=${jsV}` : ""}`,

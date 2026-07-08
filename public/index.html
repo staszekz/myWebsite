@@ -11,363 +11,438 @@
 
     gtag('config', 'G-C4V68M76J2');
   </script>
-  <!-- ///////////////////////////// -->
-  <!-- google adsense  -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9059584685143224"
-     crossorigin="anonymous"></script>
-     <!-- end of goole adsense -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio of Stanislaw Zajaczkowski - frontend developer projects, experience, and contact." />
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css?v=e4e5eb1182d3" />
+  <meta name="description"
+    content="Stanislaw Zajaczkowski — front-end developer (React / TypeScript) with a PhD in human physiology. From the lab to the browser: projects, career journey, skills and contact." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=f0b9018b11be" />
 
   <link rel='shortcut icon' type='image/x-icon' href='./img/icons/favicon.ico' />
-  <title>Stan Zajaczkowski</title>
+  <title>Stan Zajaczkowski — Front-end Developer</title>
 </head>
 
-<body>
+<body id="top">
+  <nav class="nav">
+    <a class="nav__logo" href="#top">~/stan_z</a>
+    <div class="nav__right">
+      <div class="nav__links">
+        <a class="nav__link" href="#about">about</a>
+        <a class="nav__link" href="#journey">journey</a>
+        <a class="nav__link" href="#work">work</a>
+        <a class="nav__link" href="#skills">skills</a>
+        <a class="nav__link js-open-form" href="#contact">contact</a>
+      </div>
+      <a class="nav__cv" href="./pdf/Stan_Zajaczkowski_resume.pdf" target="_blank"
+        rel="noopener">./download_cv</a>
+    </div>
+  </nav>
+
   <main>
-    <nav id="navigation" class="navigation">
-      <div class="hamburger">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero__grid-bg" aria-hidden="true"></div>
+      <div class="hero__glow" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <div class="code-window">
+          <div class="code-window__bar">
+            <span class="code-window__dot code-window__dot--red"></span>
+            <span class="code-window__dot code-window__dot--yellow"></span>
+            <span class="code-window__dot code-window__dot--green"></span>
+            <span class="code-window__title">developer.ts</span>
+          </div>
+          <div class="code-window__body">
+            <div><span class="tok-kw">const</span> <span class="tok-id">developer</span> = {</div>
+            <div class="code-window__indent">name: <span class="tok-str">'Stanislaw Zajaczkowski'</span>,</div>
+            <div class="code-window__indent">role: <span class="tok-str">'Front-end Developer'</span>,</div>
+            <div class="code-window__indent">stack: [<span class="tok-str">'React'</span>, <span
+                class="tok-str">'TypeScript'</span>, <span class="tok-str">'Next.js'</span>],</div>
+            <div class="code-window__indent">at: <span class="tok-str">'Operend'</span>,</div>
+            <div class="code-window__indent">background: <span class="tok-str">'PhD, human physiology'</span>,</div>
+            <div class="code-window__indent">learning: <span class="tok-str">'AI-assisted dev'</span>,</div>
+            <div class="code-window__indent">available: <span class="tok-lit">false</span> <span class="tok-cm">//
+                happily building @ Operend</span></div>
+            <div>}<span class="code-window__caret"></span></div>
+          </div>
+        </div>
+        <h1 class="hero__title">From the lab<br>to the <span class="hero__title-accent">browser</span>.</h1>
+        <p class="hero__sub">Front-end developer with a scientist's mindset. I turn messy, data-heavy problems into
+          clean, fast React interfaces — and I'm always learning what's next.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--solid" href="#work">view_work()</a>
+          <a class="btn btn--outline js-open-form" href="#contact">contact()</a>
+        </div>
       </div>
-      <ul class="menu">
-        <li class="menu__item">
-          <a class="menu__link" href="#home">Home</a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link" href="#aboutMe">About</a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link" href="#projects">Projects</a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link" href="/blog.html">Blog</a>
-        </li>
-        <li class="menu__item">
-          <a class="menu__link" id="openForm" href="#contact">Contact</a>
-        </li>
-        <li class="menu__item">
-          <button class="menu__button button" type="submit"
-            onclick="window.open('./pdf/Stan_Zajaczkowski_resume.pdf')">Download
-            CV</button>
-        </li>
-      </ul>
-      <ul class="social">
-        <li class="social__item">
-          <a class="social__link" href="https://github.com/StaszekZ" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github social__icon"></i>
-          </a>
-        </li>
-        <li class="social__item">
-          <a class="social__link" href="https://www.linkedin.com/in/s-zajaczkowski/" target="_blank"
-            rel="noopener noreferrer">
-            <i class="fab fa-linkedin social__icon"></i>
-          </a>
-        </li>
-      </ul>
-    </nav>
+      <a class="hero__scroll-cue" href="#about" aria-label="Scroll to about section"></a>
+    </header>
 
-
-    <form id="form" type="submit">
-      <fieldset class="form form__hide">
-        <h1 class="form__header">Contact Me:</h1>
-        <input class="form__input" type="text" id="name" name="name" placeholder="name" required>
-        <span class="form__warning form__warning--name"></span>
-        <input class="form__input" type="text" id="email" name="email" placeholder="email" required>
-        <span class="form__warning form__warning--email"></span>
-        <input class="form__input" type="text" id="location" name="location" placeholder="Location">
-        <span class="form__warning form__warning--location"></span>
-        <textarea required class="form__input" rows="7" id="msg" name="msg" placeholder="message"></textarea>
-        <span class="form__warning form__warning--message"></span>
-        <input class="button form__btn" type="button" value="submit">
-        <button class="button form__close">close</button>
-        <span class="form__sent">Message was sent!</span>
-      </fieldset>
-    </form>
-
-
-    <section id='home' class="hero">
-
-      <header class="hero__header">
-        <div class="hero__star--wrapper">
-          <div class="hero__star"></div>
-          <div class="hero__star"></div>
-          <div class="hero__star"></div>
-          <div class="hero__star"></div>
-          <div class="hero__star"></div>
-          <div class="hero__star"></div>
-          <div class="hero__star"></div>
-          <div class="hero__star"></div>
-          <div class="hero__star"></div>
-          <div class="hero__star"></div>
-          <div class="hero__star"></div>
-          <div class="hero__star"></div>
-          <div class="hero__star"></div>
-          <div class="hero__star"></div>
-        </div>
-        <div class="hero__name">
-          <div class="hide">
-            <span class="hero__title">Hi, I'm </span>
-            <span class="hero__title--red">
-              Stanislaw Zajaczkowski
-            </span>
+    <!-- ABOUT -->
+    <section id="about" class="section section--alt about">
+      <div class="section__inner">
+        <div class="section__label">// about_me</div>
+        <div class="about__grid">
+          <div class="about__photo-frame">
+            <img class="about__photo" src="./img/me.jpg" alt="Stanislaw Zajaczkowski">
+            <div class="about__badge"><span class="about__badge-dot"></span>@ Operend</div>
           </div>
-          <hr class="hero__hr">
-          <div class="hide">
-            <span class="hero__latin"> I'm Front-end Developer
-            </span>
+          <div>
+            <p class="about__lead">I didn't take the usual route into code — and that's exactly my edge.</p>
+            <p class="about__para">I earned a <strong>PhD in human physiology at the Medical University of
+                Gdańsk</strong> — years of research, data and rigor. I'm a biologist by training (not a physician), and
+              at some point I realized the thing I most wanted to build was software.</p>
+            <p class="about__para">That science background still shapes how I work: I pick up complex domains quickly,
+              I care about correctness, and I'm comfortable turning data-heavy problems into interfaces people actually
+              enjoy using. Today I build with <strong>React and TypeScript at <a class="link-accent"
+                  href="https://www.operend.com" target="_blank" rel="noopener">Operend</a></strong> — and previously
+              shipped interactive clinical data visualizations at <a class="link-accent" href="https://inspeerity.com/"
+                target="_blank" rel="noopener">inspeerity</a>.</p>
+            <p class="about__para about__para--last">I'm not standing still: I'm going deeper with the
+              <strong>Developer Jutra</strong> program — architecture, product thinking and using <strong>AI as a
+                genuine co-engineer</strong> across the full stack — the next layer beyond the front-end.</p>
+            <div class="about__stats">
+              <div class="about__stat">
+                <div class="about__stat-value">4+ yrs</div>
+                <div class="about__stat-caption">building for the web</div>
+              </div>
+              <div class="about__stat-divider"></div>
+              <div class="about__stat">
+                <div class="about__stat-value">PhD</div>
+                <div class="about__stat-caption">medical sciences</div>
+              </div>
+              <div class="about__stat-divider"></div>
+              <div class="about__stat">
+                <div class="about__stat-value">EN / PL</div>
+                <div class="about__stat-caption">fluent</div>
+              </div>
+            </div>
           </div>
-        </div>
-        <a href="#aboutMe" class="hero__btn" aria-label="Scroll to About section">
-          <i class="hero__arrow"></i>
-          <i class="hero__arrow"></i>
-          <i class="hero__arrow"></i>
-        </a>
-      </header>
-
-    </section>
-    <section id="aboutMe" class="aboutMe">
-      <header>
-        <h2 class="aboutMe__title">
-          About Me &#9759;
-        </h2>
-      </header>
-      <div class="aboutMe__wrapper">
-        <picture class="aboutMe__pictureWrapper">
-          <source media="(min-width: 1024px)" srcset="./img/me.jpg">
-          <source media="(max-width: 1023px)" srcset="./img/meSmall.jpg">
-          <img class="aboutMe__picture" src="./img/meSmall.jpg" alt="stanislaw
-              zajaczkowski photo" />
-        </picture>
-
-        <div class="aboutMe__content">
-          <p class="aboutMe__lead">
-            Hello there! I am thrilled to introduce myself as a passionate and ambitious front-end developer.
-          </p>
-          <p>
-            Currently, I am working for a software house
-            <a class="aboutMe__link" href="https://www.operend.com" rel="noopener noreferrer" target="_blank">Operend</a>
-            as a React developer, where I am able to hone my skills.
-          </p>
-          <p>
-            My ultimate goal is to become a skilled and versatile programmer who is capable of tackling any challenge with confidence and creativity.
-          </p>
-          <p>
-            I believe that the key to achieving this goal is through hard work, dedication, and a willingness to constantly learn and adapt.
-          </p>
-          <p>
-            I am excited about the future and look forward to working with other passionate professionals
-            to create innovative and cutting-edge solutions that push the boundaries of what is possible in the world of front-end development.
-          </p>
         </div>
       </div>
     </section>
-    <section id="projects" class="projects">
-      <header>
-        <h2 class="projects__title">
-          Own Projects
-        </h2>
-      </header>
-      <div class="projects__wrapper">
-        <div class="project">
-          <div class="project__image project__one project-left">
+
+    <!-- JOURNEY -->
+    <section id="journey" class="section journey">
+      <div class="section__inner">
+        <div class="section__label section__label--tight">// journey</div>
+        <h2 class="section__title">$ git log --author=stan</h2>
+        <p class="section__sub">The road from a physiology lab to a React codebase — most recent first.</p>
+
+        <div class="journey__card journey__card--now">
+          <div class="journey__meta">
+            <div class="journey__date journey__date--now">2025 — now
+              <div class="journey__now-badge">NOW</div>
+            </div>
           </div>
-          <div class="project__about">
-            <span class="project__title">Game in JS</span>
-            <p class="project__description">Simple game build in pure JS. Game is based upon object oriented
-              programming. I have used Google Firebase Firestore to keep list of winners. Enjoy!</p>
-            <span class="project__description"><strong>Tech Stack:</strong></span>
-            <div class="project__tech">
-              <img class="project__tech--img" src="./img/icons/icons8-html-5.svg" alt="html5" title="html5">
-              <img class="project__tech--img" src="./img/icons/icons8-css3.svg" alt="css3" title="css3">
-              <img class="project__tech--img" src="./img/icons/icons8-javascript.svg" alt="javascript" title="javascript">
-              <img class="project__tech--img" src="./img/icons/icons8-firebase.svg" alt="google firebase firestore" title="firebase">
-              <img class="project__tech--img" src="./img/icons/icons8-git.svg" alt="git" title="git">
-            </div>
-            <hr>
-            <div class="project__btns">
-              <div class="project__btn" role="button">
-                <a class="project__link" target="_blank" rel="noopener"
-                  href="https://infallible-brown-27d243.netlify.app/">
-                  <div class="slide">
-                    <i class="fas fa-forward"></i>
-                  </div>
-                </a>
-                <span class="project__btn--text">Preview</span>
-              </div>
-              <div class="project__btn" role="button">
-                <a class="project__link" target="_blank" rel="noopener" href="https://github.com/StaszekZ/myFirstGame">
-                  <span class="project__btn--text">GitHub</span>
-                  <div class="slide">
-                    <i class="fab fa-github"></i>
-                  </div>
-                </a>
-              </div>
-            </div>
+          <div>
+            <h3 class="journey__role">Learning, always</h3>
+            <div class="journey__org journey__org--plain">Developer Jutra · AI-assisted dev</div>
+            <p class="journey__desc">Going deeper with Tomasz Ducin's Developer Jutra program — architecture, product
+              thinking and using AI as a genuine co-engineer across the full stack. The next layer beyond the UI.</p>
           </div>
         </div>
 
-        <div class="project">
-          <div class="project__image project-left project__three">
+        <div class="journey__card">
+          <div class="journey__meta">
+            <div class="journey__date">Jul 2025 — Present</div>
+            <div class="journey__place">Boston, MA · Remote</div>
           </div>
-          <div class="project__about">
-            <span class="project__title">Notes & Todos</span>
-            <p class="project__description">Advanced todos and notes list
-              build in React and Google firebase. Feel
-              free to use it!</p>
-            <span class="project__description"><strong>Tech Stack:</strong></span>
-            <div class="project__tech">
-              <img class="project__tech--img" src="./img/icons/icons8-html-5.svg" alt="html5" title="html5">
-              <img class="project__tech--img" src="./img/icons/icons8-css3.svg" alt="css3" title="css3">
-              <img class="project__tech--img" src="./img/icons/styled-components.png" alt="styled components react" title="styled components">
-              <img class="project__tech--img" src="./img/icons/icons8-javascript.svg" alt="javascript" title="javascript">
-              <img class="project__tech--img" src="./img/icons/icons8-react.svg" alt="react" title="react">
-              <img class="project__tech--img" src="./img/icons/icons8-redux.svg" alt="react-redux" title="redux">
-              <img class="project__tech--img" src="./img/icons/rest-api.svg" alt="rest api" title="REST API">
-              <img class="project__tech--img" src="./img/icons/icons8-firebase.svg" alt="google firebase firestore" title="firebase">
-              <img class="project__tech--img" src="./img/icons/icons8-git.svg" alt="git" title="git">
-            </div>
-            <hr>
-            <div class="project__btns">
-              <div class="project__btn" role="button">
-                <a class="project__link" target="_blank" rel="noopener"
-                  href="https://notesandtodos.netlify.app">
-                  <div class="slide">
-                    <i class="fas fa-forward"></i>
-                  </div>
-                </a>
-                <span class="project__btn--text">Preview</span>
-              </div>
-              <div class="project__btn" role="button">
-                <a class="project__link" target="_blank" rel="noopener"
-                  href="https://github.com/StaszekZ/notes.github.io">
-                  <span class="project__btn--text">GitHub</span>
-                  <div class="slide">
-                    <i class="fab fa-github"></i>
-                  </div>
-                </a>
-              </div>
-            </div>
+          <div>
+            <h3 class="journey__role">React Developer</h3>
+            <a class="journey__org" href="https://www.operend.com" target="_blank" rel="noopener">Operend ↗</a>
+            <p class="journey__desc">Building data-heavy web applications in React and TypeScript, with a focus on
+              clean architecture and maintainable code.</p>
           </div>
         </div>
-       
-       
-        <div class="project">
-          <div class="project__image project__six project-left">
+
+        <div class="journey__card">
+          <div class="journey__meta">
+            <div class="journey__date">Mar 2024 — Jul 2025</div>
+            <div class="journey__place">Białystok · Remote</div>
           </div>
-          <div class="project__about">
-            <span class="project__title">Joanna Miklosz website</span>
-            <p class="project__description">Landing page for Joanna Miklosz
-              PhD, build with use of Bootstrap 4.5,
-              Cloud Functions and SendGrid</p>
-            <span class="project__description"><strong>Tech Stack:</strong></span>
-            <div class="project__tech">
-              <img class="project__tech--img" src="./img/icons/icons8-html-5.svg" alt="html5" title="html5">
-              <img class="project__tech--img" src="./img/icons/icons8-css3.svg" alt="css3" title="css3">
-              <img class="project__tech--img" src="./img/icons/icons8-javascript.svg" alt="javascript" title="javascript">
-              <img class="project__tech--img" src="./img/icons/icons8-bootstrap.svg" alt="bootstrap 4" title="bootstrap">
-              <img class="project__tech--img" src="./img/icons/icons8-firebase.svg" alt="google firebase firestore" title="firebase">
-              <img class="project__tech--img" src="./img/icons/icons8-git.svg" alt="git" title="git">
-            </div>
-            <hr>
-            <div class="project__btns">
-              <div class="project__btn" role="button">
-                <a class="project__link" target="_blank" rel="noopener" href="https://www.joannascience.com/">
-                  <div class="slide">
-                    <i class="fas fa-forward"></i>
-                  </div>
-                </a>
-                <span class="project__btn--text">Preview</span>
-              </div>
-              <div class="project__btn" role="button">
-                <a class="project__link" target="_blank" rel="noopener"
-                  href="https://github.com/StaszekZ/joannaWebsite">
-                  <span class="project__btn--text">GitHub</span>
-                  <div class="slide">
-                    <i class="fab fa-github"></i>
-                  </div>
-                </a>
-              </div>
-            </div>
+          <div>
+            <h3 class="journey__role">React Developer</h3>
+            <a class="journey__org" href="https://inspeerity.com/" target="_blank" rel="noopener">inspeerity ↗</a>
+            <p class="journey__desc">Owned scalable, performant front-end features across React, TypeScript, Next.js
+              and Tailwind CSS. Led interactive clinical data visualizations for the Ambr platform.</p>
           </div>
         </div>
-        <div class="project">
-          <div class="project__image project__seven project-left">
+
+        <div class="journey__card">
+          <div class="journey__meta">
+            <div class="journey__date">Dec 2021 — Mar 2024</div>
+            <div class="journey__place">Białystok · Hybrid</div>
           </div>
-          <div class="project__about">
-            <span class="project__title">Shopping-List App</span>
-            <p class="project__description">Shopping-List App build in Vanilla
-              JS with the use of Webpack 5, Bootstrap 5 and Google Firebase.
-              Feel free to use it!</p>
-            <span class="project__description"><strong>Tech Stack:</strong></span>
-            <div class="project__tech">
-              <img class="project__tech--img" src="./img/icons/icons8-html-5.svg" alt="html5" title="html5">
-              <img class="project__tech--img" src="./img/icons/icons8-css3.svg" alt="css3" title="css3">
-              <img class="project__tech--img" src="./img/icons/icons8-bootstrap.svg" alt="bootstrap 4" title="bootstrap">
-              <img class="project__tech--img" src="./img/icons/icons8-javascript.svg" alt="javascript" title="javascript">
-              <img class="project__tech--img" src="./img/icons/rest-api.svg" alt="rest api" title="REST API">
-              <img class="project__tech--img" src="./img/icons/icons8-webpack.svg" alt="webpack 5" title="webpack">
-              <img class="project__tech--img" src="./img/icons/icons8-firebase.svg" alt="google firebase firestore" title="firebase">
-              <img class="project__tech--img" src="./img/icons/icons8-git.svg" alt="git" title="git">
+          <div>
+            <h3 class="journey__role">Junior React Developer</h3>
+            <a class="journey__org" href="https://inspeerity.com/" target="_blank" rel="noopener">inspeerity ↗</a>
+            <p class="journey__desc">Developed and maintained React applications and built strong front-end foundations
+              while collaborating with designers and back-end teams.</p>
+          </div>
+        </div>
+
+        <div class="journey__card">
+          <div class="journey__meta">
+            <div class="journey__date">Feb 2021 — Nov 2022</div>
+            <div class="journey__place">Gdańsk · Remote</div>
+          </div>
+          <div>
+            <h3 class="journey__role">Junior Front-end Developer</h3>
+            <a class="journey__org" href="https://enterosoft.com/en" target="_blank" rel="noopener">Enterosoft ↗</a>
+            <p class="journey__desc">Built and maintained multilingual Gatsby + React sites, improving performance and
+              accessibility through careful JS, HTML and CSS work.</p>
+          </div>
+        </div>
+
+        <div class="journey__card">
+          <div class="journey__meta">
+            <div class="journey__date">2020</div>
+            <div class="journey__place">Gdańsk</div>
+          </div>
+          <div>
+            <h3 class="journey__role">Front-end Bootcamp (240h)</h3>
+            <a class="journey__org" href="https://infoshareacademy.com" target="_blank" rel="noopener">infoShare
+              Academy ↗</a>
+            <p class="journey__desc">An intensive front-end programming course — the deliberate switch from science to
+              software.</p>
+          </div>
+        </div>
+
+        <div class="journey__card">
+          <div class="journey__meta">
+            <div class="journey__date">2010 — 2019</div>
+            <div class="journey__place">Gdańsk</div>
+          </div>
+          <div>
+            <h3 class="journey__role">PhD, Human Physiology</h3>
+            <a class="journey__org" href="https://gumed.edu.pl" target="_blank" rel="noopener">Medical University of
+              Gdańsk (GUMed) ↗</a>
+            <p class="journey__desc">Doctorate in medical sciences, with a background in biology (not a physician).
+              Years of research, data and rigor that still shape how I build software.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="section section--alt work">
+      <div class="section__inner">
+        <div class="work__header">
+          <div>
+            <div class="section__label section__label--tight">// selected_work</div>
+            <h2 class="section__title section__title--flush">Own Projects</h2>
+          </div>
+          <a class="work__all-link" href="https://github.com/StaszekZ" target="_blank" rel="noopener">all_on_github
+            →</a>
+        </div>
+        <div class="work__grid">
+
+          <div class="project">
+            <div class="project__thumb">
+              <img src="./img/mygame.png" alt="Game in JS">
             </div>
-            <hr>
-            <div class="project__btns">
-              <div class="project__btn" role="button">
-                <a class="project__link" target="_blank" rel="noopener" href="https://shopping-list-d75b7.web.app/">
-                  <div class="slide">
-                    <i class="fas fa-forward"></i>
-                  </div>
-                </a>
-                <span class="project__btn--text">Preview</span>
+            <div class="project__body">
+              <h3 class="project__title">Game in JS</h3>
+              <p class="project__desc">A browser game built in pure JavaScript on an object-oriented core, with a
+                Firebase Firestore leaderboard for the winners. Small, fast, and fun to poke at.</p>
+              <div class="project__tags">
+                <div class="chip chip--tag" title="HTML5"><img src="./img/icons/icons8-html-5.svg" alt="HTML5"><span>HTML5</span></div>
+                <div class="chip chip--tag" title="CSS3"><img src="./img/icons/icons8-css3.svg" alt="CSS3"><span>CSS3</span></div>
+                <div class="chip chip--tag" title="JavaScript"><img src="./img/icons/icons8-javascript.svg" alt="JavaScript"><span>JavaScript</span></div>
+                <div class="chip chip--tag" title="Firebase"><img src="./img/icons/icons8-firebase.svg" alt="Firebase"><span>Firebase</span></div>
+                <div class="chip chip--tag" title="Git"><img src="./img/icons/icons8-git.svg" alt="Git"><span>Git</span></div>
               </div>
-              <div class="project__btn" role="button">
-                <a class="project__link" target="_blank" rel="noopener"
-                  href="https://github.com/StaszekZ/ShoppingListJS">
-                  <span class="project__btn--text">GitHub</span>
-                  <div class="slide">
-                    <i class="fab fa-github"></i>
-                  </div>
-                </a>
+              <div class="project__links">
+                <a class="project__link project__link--live" href="https://infallible-brown-27d243.netlify.app/"
+                  target="_blank" rel="noopener">live →</a>
+                <a class="project__link project__link--github" href="https://github.com/StaszekZ/myFirstGame"
+                  target="_blank" rel="noopener">github →</a>
               </div>
             </div>
+          </div>
+
+          <div class="project">
+            <div class="project__thumb">
+              <img src="./img/notes.png" alt="Notes & Todos">
+            </div>
+            <div class="project__body">
+              <h3 class="project__title">Notes & Todos</h3>
+              <p class="project__desc">A React + Firebase app for managing notes and todos, with real-time persistence
+                and a clean, focused UI. Built to actually be used day to day.</p>
+              <div class="project__tags">
+                <div class="chip chip--tag" title="HTML5"><img src="./img/icons/icons8-html-5.svg" alt="HTML5"><span>HTML5</span></div>
+                <div class="chip chip--tag" title="CSS3"><img src="./img/icons/icons8-css3.svg" alt="CSS3"><span>CSS3</span></div>
+                <div class="chip chip--tag" title="styled-components"><img src="./img/icons/styled-components.png" alt="styled-components"><span>styled-components</span></div>
+                <div class="chip chip--tag" title="JavaScript"><img src="./img/icons/icons8-javascript.svg" alt="JavaScript"><span>JavaScript</span></div>
+                <div class="chip chip--tag" title="React"><img src="./img/icons/icons8-react.svg" alt="React"><span>React</span></div>
+                <div class="chip chip--tag" title="Redux"><img src="./img/icons/icons8-redux.svg" alt="Redux"><span>Redux</span></div>
+                <div class="chip chip--tag" title="REST API"><img src="./img/icons/rest-api.svg" alt="REST API"><span>REST API</span></div>
+                <div class="chip chip--tag" title="Firebase"><img src="./img/icons/icons8-firebase.svg" alt="Firebase"><span>Firebase</span></div>
+                <div class="chip chip--tag" title="Git"><img src="./img/icons/icons8-git.svg" alt="Git"><span>Git</span></div>
+              </div>
+              <div class="project__links">
+                <a class="project__link project__link--live" href="https://notesandtodos.netlify.app" target="_blank"
+                  rel="noopener">live →</a>
+                <a class="project__link project__link--github" href="https://github.com/StaszekZ/notes.github.io"
+                  target="_blank" rel="noopener">github →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project__thumb">
+              <img src="./img/joannascience.png" alt="Joanna Miklosz — science site">
+            </div>
+            <div class="project__body">
+              <h3 class="project__title">Joanna Miklosz — science site</h3>
+              <p class="project__desc">A landing page for Joanna Miklosz PhD, with a Cloud Functions + Brevo contact
+                pipeline. Bridging my science world and my dev world.</p>
+              <div class="project__tags">
+                <div class="chip chip--tag" title="HTML5"><img src="./img/icons/icons8-html-5.svg" alt="HTML5"><span>HTML5</span></div>
+                <div class="chip chip--tag" title="CSS3"><img src="./img/icons/icons8-css3.svg" alt="CSS3"><span>CSS3</span></div>
+                <div class="chip chip--tag" title="JavaScript"><img src="./img/icons/icons8-javascript.svg" alt="JavaScript"><span>JavaScript</span></div>
+                <div class="chip chip--tag" title="Bootstrap"><img src="./img/icons/icons8-bootstrap.svg" alt="Bootstrap"><span>Bootstrap</span></div>
+                <div class="chip chip--tag" title="Firebase"><img src="./img/icons/icons8-firebase.svg" alt="Firebase"><span>Firebase</span></div>
+                <div class="chip chip--tag" title="Git"><img src="./img/icons/icons8-git.svg" alt="Git"><span>Git</span></div>
+              </div>
+              <div class="project__links">
+                <a class="project__link project__link--live" href="https://www.joannascience.com/" target="_blank"
+                  rel="noopener">live →</a>
+                <a class="project__link project__link--github" href="https://github.com/StaszekZ/joannaWebsite"
+                  target="_blank" rel="noopener">github →</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="project">
+            <div class="project__thumb">
+              <img src="./img/shopping-list.png" alt="Shopping-List App">
+            </div>
+            <div class="project__body">
+              <h3 class="project__title">Shopping-List App</h3>
+              <p class="project__desc">A Vanilla JS shopping-list app bundled with Webpack 5, styled with Bootstrap 5
+                and backed by Firebase. A study in doing more with no framework.</p>
+              <div class="project__tags">
+                <div class="chip chip--tag" title="HTML5"><img src="./img/icons/icons8-html-5.svg" alt="HTML5"><span>HTML5</span></div>
+                <div class="chip chip--tag" title="CSS3"><img src="./img/icons/icons8-css3.svg" alt="CSS3"><span>CSS3</span></div>
+                <div class="chip chip--tag" title="Bootstrap"><img src="./img/icons/icons8-bootstrap.svg" alt="Bootstrap"><span>Bootstrap</span></div>
+                <div class="chip chip--tag" title="JavaScript"><img src="./img/icons/icons8-javascript.svg" alt="JavaScript"><span>JavaScript</span></div>
+                <div class="chip chip--tag" title="REST API"><img src="./img/icons/rest-api.svg" alt="REST API"><span>REST API</span></div>
+                <div class="chip chip--tag" title="Webpack"><img src="./img/icons/icons8-webpack.svg" alt="Webpack"><span>Webpack</span></div>
+                <div class="chip chip--tag" title="Firebase"><img src="./img/icons/icons8-firebase.svg" alt="Firebase"><span>Firebase</span></div>
+                <div class="chip chip--tag" title="Git"><img src="./img/icons/icons8-git.svg" alt="Git"><span>Git</span></div>
+              </div>
+              <div class="project__links">
+                <a class="project__link project__link--live" href="https://shopping-list-d75b7.web.app/"
+                  target="_blank" rel="noopener">live →</a>
+                <a class="project__link project__link--github" href="https://github.com/StaszekZ/ShoppingListJS"
+                  target="_blank" rel="noopener">github →</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section skills">
+      <div class="section__inner">
+        <div class="section__label section__label--tight">// toolbox</div>
+        <h2 class="section__title section__title--skills">Skills &amp; tech</h2>
+        <div class="skills__chips">
+          <div class="chip chip--skill"><img src="./img/icons/icons8-react.svg" alt="React"><span>React</span></div>
+          <div class="chip chip--skill"><img src="./img/icons/icons8-javascript.svg" alt="JavaScript"><span>JavaScript</span></div>
+          <div class="chip chip--skill"><img src="./img/icons/icons8-redux.svg" alt="Redux"><span>Redux</span></div>
+          <div class="chip chip--skill"><img src="./img/icons/styled-components.png" alt="styled-components"><span>styled-components</span></div>
+          <div class="chip chip--skill"><img src="./img/icons/icons8-html-5.svg" alt="HTML5"><span>HTML5</span></div>
+          <div class="chip chip--skill"><img src="./img/icons/icons8-css3.svg" alt="CSS3"><span>CSS3</span></div>
+          <div class="chip chip--skill"><img src="./img/icons/icons8-bootstrap.svg" alt="Bootstrap"><span>Bootstrap</span></div>
+          <div class="chip chip--skill"><img src="./img/icons/icons8-firebase.svg" alt="Firebase"><span>Firebase</span></div>
+          <div class="chip chip--skill"><img src="./img/icons/rest-api.svg" alt="REST API"><span>REST API</span></div>
+          <div class="chip chip--skill"><img src="./img/icons/icons8-git.svg" alt="Git"><span>Git</span></div>
+          <div class="chip chip--skill chip--text"><span class="chip__marker">▹</span><span>TypeScript</span></div>
+          <div class="chip chip--skill chip--text"><span class="chip__marker">▹</span><span>Next.js</span></div>
+          <div class="chip chip--skill chip--text"><span class="chip__marker">▹</span><span>Tailwind CSS</span></div>
+          <div class="chip chip--skill chip--text"><span class="chip__marker">▹</span><span>shadcn/ui</span></div>
+          <div class="chip chip--skill chip--text"><span class="chip__marker">▹</span><span>Material UI</span></div>
+          <div class="chip chip--skill chip--text"><span class="chip__marker">▹</span><span>MUI Data Grid Pro</span></div>
+          <div class="chip chip--skill chip--text"><span class="chip__marker">▹</span><span>TanStack Query</span></div>
+          <div class="chip chip--skill chip--text"><span class="chip__marker">▹</span><span>TanStack Table</span></div>
+          <div class="chip chip--skill chip--text"><span class="chip__marker">▹</span><span>TanStack Form</span></div>
+          <div class="chip chip--skill chip--text"><span class="chip__marker">▹</span><span>TanStack Router</span></div>
+          <div class="chip chip--skill chip--text"><span class="chip__marker">▹</span><span>React Router</span></div>
+          <div class="chip chip--skill chip--text"><span class="chip__marker">▹</span><span>Agile</span></div>
+        </div>
+        <div class="skills__cards">
+          <div class="skills__card">
+            <div class="skills__card-label">// currently_learning</div>
+            <div class="skills__card-body">Developer Jutra — architecture, product thinking &amp; AI as a co-engineer
+              (Tomasz Ducin) · full-stack delivery · AI-assisted development.</div>
+          </div>
+          <div class="skills__card">
+            <div class="skills__card-label">// certifications</div>
+            <div class="skills__card-body">React Query — query.gg (2025) · Just JavaScript — Dan Abramov (2025) ·
+              Front-end Bootcamp — infoShare Academy.</div>
           </div>
         </div>
       </div>
     </section>
   </main>
-  <footer class="footer" id="contact">
-    <div class="footer__info">
-      <p class="footer__description">&copy; Stanislaw Zajaczkowski <span
-          class="footer__date footer__description"></span></p>
-      <p class="footer__description">Location: Chapel Hill, NC, Unites States</p>
-    </div>
-    <ul class="footer__list">
-      <li class="footer__github">
-        <a class="footer__socialLink" href="https://github.com/StaszekZ" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </li>
-      <li class="footer__linkedin"><a class="footer__socialLink" href="https://www.linkedin.com/in/s-zajaczkowski/"
-          target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-    </ul>
-    <a class="footer__link" href="mailto:staszek.zajaczkowski@gmail.com"><i
-        class="far fa-envelope footer__envelope"></i>
-      staszek.zajaczkowski@gmail.com </a>
 
-    <p class="footer__link footer__small">Icons by <a class="footer__iconLink
-          footer__small" target="_blank" rel="noopener" href="https://icons8.com">Icons8
-      </a>
-    </p>
+  <!-- FOOTER / CONTACT -->
+  <footer id="contact" class="section section--alt footer">
+    <div class="section__inner">
+      <div class="footer__cols">
+        <div>
+          <div class="section__label section__label--footer">// let's_talk</div>
+          <h2 class="footer__title">Got an interesting problem? Let's build it.</h2>
+          <a class="btn btn--solid js-open-form" href="#contact">contact()</a>
+        </div>
+        <div class="footer__right">
+          <a class="footer__email" href="mailto:staszek.zajaczkowski@gmail.com">staszek.zajaczkowski@gmail.com</a>
+          <div class="footer__socials">
+            <a class="footer__social" href="https://github.com/StaszekZ" target="_blank" rel="noopener">github</a>
+            <a class="footer__social" href="https://www.linkedin.com/in/s-zajaczkowski/" target="_blank"
+              rel="noopener">linkedin</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© Stanislaw Zajaczkowski <span id="year"></span></span>
+        <span>Chapel Hill, NC · United States</span>
+      </div>
+    </div>
   </footer>
+
+  <!-- CONTACT FORM PANEL (slide-in) -->
+  <div class="form-overlay" id="formOverlay">
+    <div class="form-overlay__dimmer js-close-form"></div>
+    <div class="form-panel">
+      <button class="form-panel__close js-close-form" type="button" aria-label="Close contact form">×</button>
+      <div class="section__label section__label--tight">// contact_form</div>
+      <h2 class="form-panel__title">Contact me</h2>
+      <p class="form-panel__sub">I'll get back to you within a day or two.</p>
+      <form id="contactForm" class="form-panel__form">
+        <input class="form-panel__input" required name="name" placeholder="name">
+        <input class="form-panel__input" required type="email" name="email" placeholder="email">
+        <input class="form-panel__input" name="location" placeholder="location (optional)">
+        <textarea class="form-panel__input form-panel__textarea" required name="msg" rows="5"
+          placeholder="message"></textarea>
+        <button class="form-panel__submit" type="submit">send_message()</button>
+        <div class="form-panel__status" id="formStatus" role="status"></div>
+      </form>
+    </div>
+  </div>
+
   <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-functions.js"></script>
   <script src=./dist/firebase-config.js?v=92b0b924c626></script>
-  <script src=./dist/main.js?v=20067eecc0fc></script>
+  <script src=./dist/main.js?v=0efe6e831c94></script>
 </body>
 
 </html>
