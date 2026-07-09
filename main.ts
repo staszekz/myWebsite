@@ -69,6 +69,11 @@ const submitButton = contactForm.querySelector(
 	'.form-panel__submit',
 ) as HTMLButtonElement;
 
+// Bot trap: time from page load to submit. Humans need seconds; headless
+// bots that pass App Check still tend to fill + submit near-instantly.
+const formLoadedAt = Date.now();
+const MIN_FILL_TIME_MS = 3000;
+
 let closeTimeout: number | undefined;
 
 const openForm = (event: Event): void => {
@@ -116,6 +121,13 @@ contactForm.addEventListener('submit', async event => {
 	// Honeypot: humans never see the "company" field, bots fill it.
 	// Pretend success so the bot moves on, but write nothing.
 	if (String(data.get('company') ?? '').trim() !== '') {
+		showSentAndClose();
+		return;
+	}
+
+	// Too-fast submit = automated. Same silent fake-success as the honeypot:
+	// pretend it sent, write nothing, give the bot no signal to adapt.
+	if (Date.now() - formLoadedAt < MIN_FILL_TIME_MS) {
 		showSentAndClose();
 		return;
 	}
