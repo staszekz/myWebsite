@@ -47,7 +47,7 @@ const wrap = (title: string, content: string): string => `<!DOCTYPE html>
             </tr>
             <tr>
               <td style="padding:28px 32px 0 32px;">
-                <span style="color:${ACCENT}; font-family:${FONT}; font-size:13px; font-weight:bold; letter-spacing:3px; text-transform:uppercase;">staszek.ovh</span>
+                <span style="color:${ACCENT}; font-family:${FONT}; font-size:13px; font-weight:bold; letter-spacing:3px; text-transform:uppercase;">staszek.it</span>
                 <h1 style="margin:14px 0 0 0; color:${TEXT}; font-family:${FONT}; font-size:22px; font-weight:bold;">${title}</h1>
               </td>
             </tr>
@@ -59,7 +59,7 @@ const wrap = (title: string, content: string): string => `<!DOCTYPE html>
             <tr>
               <td style="padding:0 32px 24px 32px;">
                 <p style="margin:0; border-top:1px solid ${INSET}; padding-top:16px; color:${MUTED}; font-family:${FONT}; font-size:12px;">
-                  <a href="https://staszek.ovh" style="color:${ACCENT}; text-decoration:none;">staszek.ovh</a>
+                  <a href="https://staszek.it" style="color:${ACCENT}; text-decoration:none;">staszek.it</a>
                 </p>
               </td>
             </tr>
@@ -82,7 +82,7 @@ const messageBox = (message: string): string => `
   </div>`;
 
 export const adminEmail = (data: MessageData): EmailContent => ({
-  subject: "New Message from staszek.ovh",
+  subject: "New Message from staszek.it",
   html: wrap(
     "Nowa wiadomość ze strony",
     `<table cellpadding="0" cellspacing="0" border="0">

@@ -11,7 +11,7 @@ initializeApp();
 
 const BREVO_API_KEY = defineSecret("BREVO_API_KEY");
 
-const SENDER = { name: "Formularz staszek.ovh", email: "kontakt@staszek.ovh" };
+const SENDER = { name: "Formularz staszek.it", email: "kontakt@staszek.it" };
 
 interface BrevoEmail {
   sender: { name: string; email: string };
